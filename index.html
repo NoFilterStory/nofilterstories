@@ -604,12 +604,11 @@
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
 
-    <!-- Replace src with your own hero image URL -->
     <div class="hero-photo-1">
-      <img src="YOUR_HERO_IMAGE_URL" alt="Dance photography by No Filters Stories" onerror="this.style.display='none'"/>
+      <img src="hero.jpg" alt="Dance photography by No Filters Stories"/>
     </div>
     <div class="hero-photo-2">
-      <img src="YOUR_SECOND_IMAGE_URL" alt="" onerror="this.style.display='none'"/>
+      <img src="hero-2.jpg" alt="No Filters Stories photography"/>
     </div>
 
     <div class="hero-content">
@@ -629,13 +628,13 @@
   <section id="about">
     <div class="about-image">
       <!-- Replace with a portrait/behind the scenes photo -->
-      <img src="YOUR_ABOUT_IMAGE_URL" alt="About No Filters Stories" onerror="this.style.background='#1a1a1a'"/>
+      <img src="about.jpg" alt="Georgiana — No Filters Stories"/>
     </div>
     <div class="about-text">
-      <p class="section-label">Our Story</p>
+      <p class="section-label">About Georgiana</p>
       <h2>We don't just take photos —<br>we create <em>art.</em></h2>
-      <p>At No Filters Stories, we believe every image should tell the truth. No filters, no masks — just the raw beauty of authentic moments captured with intention and passion.</p>
-      <p>Specialising in dance and artistic portrait photography, we work with movement, light, and emotion to create images that last a lifetime.</p>
+      <p>Georgiana is the heart and eye behind No Filters Stories — a photographer driven by authenticity, movement, and emotion. Every session is a collaboration, every image a story told without masks or filters.</p>
+      <p>Specialising in dance and artistic portrait photography, Georgiana works with light, shadow, and human expression to create images that feel alive and last a lifetime.</p>
       <p class="about-location">📍 Based in Velingrad · Serving Rakitovo, Kostandovo, Batak, Rila &amp; beyond</p>
     </div>
   </section>
@@ -651,16 +650,15 @@
     </div>
 
     <div class="gallery-grid">
-      <!-- Replace src values with your actual image URLs -->
-      <div class="gallery-item g1"><img src="YOUR_PHOTO_1" alt="Dance photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 1</div>'"/></div>
-      <div class="gallery-item g2"><img src="YOUR_PHOTO_2" alt="Portrait photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 2</div>'"/></div>
-      <div class="gallery-item g3"><img src="YOUR_PHOTO_3" alt="Artistic photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 3</div>'"/></div>
-      <div class="gallery-item g4"><img src="YOUR_PHOTO_4" alt="Dance photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 4</div>'"/></div>
-      <div class="gallery-item g5"><img src="YOUR_PHOTO_5" alt="Portrait photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 5</div>'"/></div>
-      <div class="gallery-item g6"><img src="YOUR_PHOTO_6" alt="Artistic photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 6</div>'"/></div>
-      <div class="gallery-item g7"><img src="YOUR_PHOTO_7" alt="Dance photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 7</div>'"/></div>
-      <div class="gallery-item g8"><img src="YOUR_PHOTO_8" alt="Portrait photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 8</div>'"/></div>
-      <div class="gallery-item g9"><img src="YOUR_PHOTO_9" alt="Artistic photography" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo 9</div>'"/></div>
+      <div class="gallery-item g1"><img src="gallery-1.jpg" alt="Dance photography by Georgiana"/></div>
+      <div class="gallery-item g2"><img src="gallery-2.jpg" alt="Portrait photography"/></div>
+      <div class="gallery-item g3"><img src="gallery-3.jpg" alt="Artistic photography"/></div>
+      <div class="gallery-item g4"><img src="gallery-4.jpg" alt="Dance photography"/></div>
+      <div class="gallery-item g5"><img src="gallery-5.jpg" alt="Portrait photography"/></div>
+      <div class="gallery-item g6"><img src="gallery-6.jpg" alt="Artistic photography"/></div>
+      <div class="gallery-item g7"><img src="gallery-7.jpg" alt="Dance photography"/></div>
+      <div class="gallery-item g8"><img src="gallery-8.jpg" alt="Portrait photography"/></div>
+      <div class="gallery-item g9"><img src="gallery-9.jpg" alt="Artistic photography"/></div>
     </div>
   </section>
 
@@ -702,7 +700,7 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <span>hello.nofilterstories@gmail.com</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="137b767f7f7c3d7d7c757a7f67766160677c617a766053747e727a7f3d707c7e">[email&#160;protected]</a></span>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
@@ -750,7 +748,7 @@
     <div class="footer-location">Velingrad, Bulgaria</div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Custom cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
@@ -791,12 +789,4 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-      observer.observe(el);
-    });
-  </script>
-</body>
-</html>
+    document.querySelectorAll('.service-card, .about-text, .
