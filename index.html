@@ -316,7 +316,8 @@
     .gallery-item:hover::after {
       background: rgba(201,168,76,0.05);
     }
-    /* Grid placement */
+    .g2 img { object-position: center top; }
+    .g9 img { object-position: center top; }
     .g1 { grid-column: 1/6; grid-row: 1/6; }
     .g2 { grid-column: 6/9; grid-row: 1/4; }
     .g3 { grid-column: 9/13; grid-row: 1/5; }
@@ -676,7 +677,7 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <a href="mailto:hello.nofilterstories@gmail.com" style="color: var(--off-white); text-decoration: none;">hello.nofilterstories@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#c5ada0a9a9aaebabaaa3aca9b1a0b7b6b1aab7aca0b685a2a8a4aca9eba6aaa8" style="color: var(--off-white); text-decoration: none;"><span class="__cf_email__" data-cfemail="92faf7fefefdbcfcfdf4fbfee6f7e0e1e6fde0fbf7e1d2f5fff3fbfebcf1fdff">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
@@ -724,15 +725,7 @@
     <div class="footer-location">Velingrad, Bulgaria</div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.service-card, .about-text, .
+      entries
