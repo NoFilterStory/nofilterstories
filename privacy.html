@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — No Filters Stories</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --off-white: #f0ece4;
+      --gold: #c9a84c;
+      --mid: #1a1a1a;
+      --grey: #888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+    }
+    nav::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+      pointer-events: none;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      position: relative;
+      z-index: 1;
+    }
+    .nav-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 12rem 4rem 5rem;
+      background: var(--mid);
+      border-bottom: 1px solid #222;
+    }
+    .page-header .eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1;
+    }
+    .page-header h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .page-header .last-updated {
+      margin-top: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--grey);
+    }
+
+    /* CONTENT */
+    .privacy-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+    .privacy-section {
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .privacy-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .privacy-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--off-white);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #222;
+    }
+    .privacy-section h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .privacy-section p {
+      font-size: 0.8rem;
+      line-height: 2;
+      color: var(--grey);
+      margin-bottom: 1rem;
+    }
+    .privacy-section p strong {
+      color: var(--off-white);
+      font-weight: 500;
+    }
+    .privacy-section ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .privacy-section ul li {
+      font-size: 0.8rem;
+      line-height: 2;
+      color: var(--grey);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .privacy-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .contact-box {
+      background: var(--mid);
+      border: 1px solid #222;
+      border-left: 3px solid var(--gold);
+      padding: 2rem 2.5rem;
+      margin-top: 2rem;
+    }
+    .contact-box p {
+      margin: 0;
+    }
+    .contact-box a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--mid);
+      padding: 2.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1f1f1f;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    .footer-copy {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--grey);
+    }
+    .footer-back {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .footer-back:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.5rem 2rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 8rem 2rem 3rem; }
+      .privacy-content { padding: 4rem 2rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">No Filters Stories</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Book</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="last-updated">Last updated: February 2026</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="privacy-content">
+
+    <div class="privacy-section">
+      <h2>1. <em>Who</em> We Are</h2>
+      <p>This website is operated by <strong>Hello.NoFilterStories</strong>, an artistic photography business based in Velingrad, Bulgaria. We are the data controller responsible for your personal information collected through this website.</p>
+      <p>If you have any questions about this policy, you can contact us at:</p>
+      <div class="contact-box">
+        <p><strong>Email:</strong> <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
+        <strong>Phone:</strong> +359 899 368 857<br/>
+        <strong>Location:</strong> Velingrad, Bulgaria</p>
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. What <em>Data</em> We Collect</h2>
+      <p>We only collect personal data that you voluntarily provide to us through our contact form. This may include:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>The type of photography session you are interested in</li>
+        <li>Any message or information you choose to share with us</li>
+      </ul>
+      <p>We do not collect any data automatically through cookies, tracking scripts, or analytics tools on this website.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>3. How We <em>Use</em> Your Data</h2>
+      <p>The information you provide through our contact form is used solely to:</p>
+      <ul>
+        <li>Respond to your enquiry or booking request</li>
+        <li>Communicate with you about your photography session</li>
+        <li>Send you relevant information you have requested</li>
+      </ul>
+      <p>We will <strong>never</strong> sell, rent, or share your personal data with third parties for marketing purposes.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>4. <em>Legal</em> Basis for Processing</h2>
+      <p>Under the General Data Protection Regulation (GDPR), we process your personal data on the basis of <strong>legitimate interest</strong> — specifically, to respond to your enquiry — and where applicable, on the basis of your consent when you choose to contact us.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. How We <em>Store</em> Your Data</h2>
+      <p>Your contact form submissions are processed and delivered to us via <strong>Formspree</strong> (formspree.io), a secure form handling service. Formspree processes data in accordance with GDPR. You can read their privacy policy at formspree.io/legal/privacy-policy.</p>
+      <p>We retain your contact information only for as long as is necessary to fulfil the purpose for which it was provided, or as required by law.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>6. Your <em>Rights</em></h2>
+      <p>Under GDPR, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> — you can request a copy of the data we hold about you</li>
+        <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data</li>
+        <li><strong>Right to erasure</strong> — you can ask us to delete your data</li>
+        <li><strong>Right to restrict processing</strong> — you can ask us to limit how we use your data</li>
+        <li><strong>Right to object</strong> — you can object to our processing of your data</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at the details above. We will respond within 30 days.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>7. Third Party <em>Links</em></h2>
+      <p>Our website contains links to external social media platforms including Instagram, Facebook, TikTok, and Pinterest. Once you leave our site, we are not responsible for the privacy practices of those platforms. We encourage you to read their individual privacy policies.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>8. <em>Changes</em> to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>9. <em>Contact</em> Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please do not hesitate to get in touch:</p>
+      <div class="contact-box">
+        <p><strong>Hello.NoFilterStories</strong><br/>
+        Velingrad, Bulgaria<br/>
+        <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
+        +359 899 368 857</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">No Filters Stories</div>
+    <div class="footer-copy">© 2025 Hello.NoFilterStories · All rights reserved</div>
+    <a href="index.html" class="footer-back">← Back to site</a>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.privacy-section').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
