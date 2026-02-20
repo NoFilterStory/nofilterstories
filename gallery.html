@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — No Filters Stories</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header { padding: 12rem 4rem 5rem; background: var(--mid); }
+    .page-header .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; line-height: 1; }
+    .page-header h1 em { font-style: italic; color: var(--gold); }
+    .page-header p { margin-top: 1.5rem; font-size: 0.75rem; color: var(--grey); line-height: 1.8; max-width: 500px; }
+
+    /* GALLERY NAV TABS */
+    .gallery-tabs { display: flex; gap: 0; border-bottom: 1px solid #222; padding: 0 4rem; background: var(--mid); overflow-x: auto; }
+    .gallery-tab { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); padding: 1.5rem 2rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Montserrat', sans-serif; }
+    .gallery-tab:hover { color: var(--off-white); }
+    .gallery-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* GALLERY COLLECTIONS (overview) */
+    .collections-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .collection-card { position: relative; overflow: hidden; height: 60vh; cursor: pointer; }
+    .collection-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease, filter 0.5s ease; filter: brightness(0.6); pointer-events: none; }
+    .collection-card:hover img { transform: scale(1.05); filter: brightness(0.4); }
+    .collection-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 3rem; transform: translateY(10px); transition: transform 0.4s ease; }
+    .collection-card:hover .collection-info { transform: translateY(0); }
+    .collection-count { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .collection-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 300; color: var(--off-white); line-height: 1.1; margin-bottom: 1rem; }
+    .collection-cta { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); opacity: 0; transition: opacity 0.3s 0.1s; }
+    .collection-card:hover .collection-cta { opacity: 1; }
+
+    /* INDIVIDUAL GALLERY VIEW */
+    .gallery-view { display: none; padding: 4rem; }
+    .gallery-view.active { display: block; }
+    .gallery-view-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .gallery-view-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; }
+    .gallery-view-header h2 em { font-style: italic; color: var(--gold); }
+    .back-btn { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); background: none; border: 1px solid rgba(201,168,76,0.3); padding: 0.75rem 1.5rem; cursor: pointer; font-family: 'Montserrat', sans-serif; transition: all 0.3s; }
+    .back-btn:hover { background: var(--gold); color: var(--black); }
+    .photo-grid { columns: 3; gap: 8px; }
+    .photo-grid .photo-item { break-inside: avoid; margin-bottom: 8px; overflow: hidden; cursor: pointer; }
+    .photo-grid .photo-item img { width: 100%; display: block; transition: transform 0.5s ease, filter 0.3s ease; filter: brightness(0.9); pointer-events: none; }
+    .photo-grid .photo-item:hover img { transform: scale(1.03); filter: brightness(1); }
+
+    /* OVERVIEW */
+    .overview-view { padding: 4rem; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; pointer-events: none; user-select: none; }
+    .lightbox-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--grey); font-size: 1.5rem; cursor: pointer; font-family: 'Montserrat', sans-serif; letter-spacing: 0.1em; transition: color 0.3s; }
+    .lightbox-close:hover { color: var(--gold); }
+    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(201,168,76,0.3); color: var(--grey); font-size: 1rem; cursor: pointer; padding: 1rem 1.2rem; transition: all 0.3s; font-family: 'Montserrat', sans-serif; }
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+    .lightbox-counter { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-size: 0.6rem; letter-spacing: 0.3em; color: var(--grey); }
+
+    /* FOOTER */
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; margin-top: 4rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
+    .footer-back { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .footer-back:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.5rem 2rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 8rem 2rem 3rem; }
+      .collections-grid { grid-template-columns: 1fr; }
+      .collection-card { height: 50vw; min-height: 250px; }
+      .gallery-tabs { padding: 0 1rem; }
+      .gallery-view, .overview-view { padding: 2rem; }
+      .photo-grid { columns: 2; }
+      .lightbox-prev { left: 0.5rem; }
+      .lightbox-next { right: 0.5rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">No Filters Stories</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Collections</p>
+    <h1>The <em>Stories</em></h1>
+    <p>Four collections. Each one a world of its own. Browse Georgiana's sessions and find the story that speaks to you.</p>
+  </div>
+
+  <!-- GALLERY TABS -->
+  <div class="gallery-tabs">
+    <button class="gallery-tab active" onclick="showOverview()">All Collections</button>
+    <button class="gallery-tab" onclick="openGallery('sun')">Sun Drenched Stories</button>
+    <button class="gallery-tab" onclick="openGallery('cinematic')">Cinematic Portal</button>
+    <button class="gallery-tab" onclick="openGallery('movement')">The Movement Guide</button>
+    <button class="gallery-tab" onclick="openGallery('wild')">Wild Editorial</button>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview-view" id="overview">
+    <div class="collections-grid">
+      <div class="collection-card" onclick="openGallery('sun')">
+        <img src="sun drenched stories-1.jpg" alt="Sun Drenched Stories"/>
+        <div class="collection-info">
+          <p class="collection-count">17 Images</p>
+          <h2 class="collection-name">Sun Drenched Stories</h2>
+          <p class="collection-cta">View Collection →</p>
+        </div>
+      </div>
+      <div class="collection-card" onclick="openGallery('cinematic')">
+        <img src="cinematic-1.jpg" alt="Cinematic Portal"/>
+        <div class="collection-info">
+          <p class="collection-count">6 Images</p>
+          <h2 class="collection-name">Cinematic Portal</h2>
+          <p class="collection-cta">View Collection →</p>
+        </div>
+      </div>
+      <div class="collection-card" onclick="openGallery('movement')">
+        <img src="movement-1.jpg" alt="The Movement Guide"/>
+        <div class="collection-info">
+          <p class="collection-count">5 Images</p>
+          <h2 class="collection-name">The Movement Guide</h2>
+          <p class="collection-cta">View Collection →</p>
+        </div>
+      </div>
+      <div class="collection-card" onclick="openGallery('wild')">
+        <img src="wild edit-1.jpg" alt="Wild Editorial"/>
+        <div class="collection-info">
+          <p class="collection-count">24 Images</p>
+          <h2 class="collection-name">Wild Editorial</h2>
+          <p class="collection-cta">View Collection →</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUN DRENCHED STORIES -->
+  <div class="gallery-view" id="gallery-sun">
+    <div class="gallery-view-header">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">17 Images</p>
+        <h2>Sun Drenched <em>Stories</em></h2>
+      </div>
+      <button class="back-btn" onclick="showOverview()">← All Collections</button>
+    </div>
+    <div class="photo-grid" id="grid-sun"></div>
+  </div>
+
+  <!-- CINEMATIC PORTAL -->
+  <div class="gallery-view" id="gallery-cinematic">
+    <div class="gallery-view-header">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">6 Images</p>
+        <h2>Cinematic <em>Portal</em></h2>
+      </div>
+      <button class="back-btn" onclick="showOverview()">← All Collections</button>
+    </div>
+    <div class="photo-grid" id="grid-cinematic"></div>
+  </div>
+
+  <!-- THE MOVEMENT GUIDE -->
+  <div class="gallery-view" id="gallery-movement">
+    <div class="gallery-view-header">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">5 Images</p>
+        <h2>The Movement <em>Guide</em></h2>
+      </div>
+      <button class="back-btn" onclick="showOverview()">← All Collections</button>
+    </div>
+    <div class="photo-grid" id="grid-movement"></div>
+  </div>
+
+  <!-- WILD EDITORIAL -->
+  <div class="gallery-view" id="gallery-wild">
+    <div class="gallery-view-header">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">24 Images</p>
+        <h2>Wild <em>Editorial</em></h2>
+      </div>
+      <button class="back-btn" onclick="showOverview()">← All Collections</button>
+    </div>
+    <div class="photo-grid" id="grid-wild"></div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ Close</button>
+    <button class="lightbox-prev" onclick="changeImage(-1)">&#8592;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+    <button class="lightbox-next" onclick="changeImage(1)">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">No Filters Stories</div>
+    <div class="footer-copy">© 2025 Hello.NoFilterStories · All rights reserved</div>
+    <a href="index.html" class="footer-back">← Back to site</a>
+  </footer>
+
+  <script>
+    // Gallery data
+    const galleries = {
+      sun: {
+        name: 'Sun Drenched Stories',
+        images: Array.from({length: 17}, (_, i) => `sun drenched stories-${i+1}.jpg`)
+      },
+      cinematic: {
+        name: 'Cinematic Portal',
+        images: Array.from({length: 6}, (_, i) => `cinematic-${i+1}.jpg`)
+      },
+      movement: {
+        name: 'The Movement Guide',
+        images: Array.from({length: 5}, (_, i) => `movement-${i+1}.jpg`)
+      },
+      wild: {
+        name: 'Wild Editorial',
+        images: Array.from({length: 24}, (_, i) => `wild edit-${i+1}.jpg`)
+      }
+    };
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    // Build photo grids
+    function buildGrid(key) {
+      const grid = document.getElementById('grid-' + key);
+      if (grid.children.length > 0) return; // already built
+      const gallery = galleries[key];
+      gallery.images.forEach((src, i) => {
+        const div = document.createElement('div');
+        div.className = 'photo-item';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = gallery.name + ' ' + (i+1);
+        img.loading = 'lazy';
+        div.appendChild(img);
+        div.addEventListener('click', () => openLightbox(gallery.images, i));
+        grid.appendChild(div);
+      });
+    }
+
+    function showOverview() {
+      document.getElementById('overview').style.display = 'block';
+      document.querySelectorAll('.gallery-view').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gallery-tab')[0].classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function openGallery(key) {
+      document.getElementById('overview').style.display = 'none';
+      document.querySelectorAll('.gallery-view').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+      buildGrid(key);
+      document.getElementById('gallery-' + key).classList.add('active');
+      const tabs = document.querySelectorAll('.gallery-tab');
+      const tabMap = {sun: 1, cinematic: 2, movement: 3, wild: 4};
+      tabs[tabMap[key]].classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // Lightbox
+    function openLightbox(images, index) {
+      currentGallery = images;
+      currentIndex = index;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function changeImage(dir) {
+      currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      document.getElementById('lightbox-img').src = currentGallery[currentIndex];
+      document.getElementById('lightbox-counter').textContent = (currentIndex + 1) + ' / ' + currentGallery.length;
+    }
+
+    // Keyboard nav
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Click outside to close
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // Disable right click and drag on images
+    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+  </script>
+</body>
+</html>
