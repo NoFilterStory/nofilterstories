@@ -8,350 +8,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --black: #0a0a0a;
-      --off-white: #f0ece4;
-      --gold: #c9a84c;
-      --mid: #1a1a1a;
-      --grey: #888;
-    }
-
+    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--off-white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 4rem;
-      mix-blend-mode: normal;
-    }
-    nav::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
-      pointer-events: none;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      text-decoration: none;
-      position: relative;
-      z-index: 1;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      position: relative;
-      z-index: 1;
-    }
-    .nav-links a {
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+    body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
-
-    /* Google Translate */
     .translate-wrapper { position: relative; z-index: 1; }
-    #google_translate_element .goog-te-gadget-simple {
-      background: transparent !important;
-      border: 1px solid rgba(201,168,76,0.3) !important;
-      padding: 0.3rem 0.7rem !important;
-      font-size: 0.6rem !important;
-      letter-spacing: 0.1em !important;
-    }
-    #google_translate_element .goog-te-gadget-simple span,
-    #google_translate_element .goog-te-gadget-simple a {
-      color: var(--grey) !important;
-      font-family: 'Montserrat', sans-serif !important;
-      text-decoration: none !important;
-    }
+    .lang-select { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--grey); font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; padding: 0.3rem 0.5rem; outline: none; cursor: pointer; }
+    .lang-select option { background: var(--black); color: var(--off-white); }
     .goog-te-banner-frame { display: none !important; }
     body { top: 0 !important; }
-
-    /* Social icons */
-    .social-icon-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+    #google_translate_element { display: none; }
+    .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .social-icon-link:hover { color: var(--gold); }
-    .social-icon-link svg {
-      width: 18px; height: 18px;
-      fill: currentColor;
-    }
-
-    /* HERO */
-    #hero {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 6rem 4rem;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%);
-    }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    /* Placeholder boxes where photos will go */
-    .hero-photo-1 {
-      position: absolute;
-      top: 8%; right: 6%;
-      width: 32vw; height: 70vh;
-      background: var(--mid);
-      overflow: hidden;
-    }
-    .hero-photo-1 img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: 0.85;
-      filter: contrast(1.05);
-    }
-    .hero-photo-1::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(10,10,10,0.5), transparent);
-    }
-    .hero-photo-2 {
-      position: absolute;
-      top: 55%; right: 30%;
-      width: 16vw; height: 22vh;
-      background: var(--mid);
-      overflow: hidden;
-      border: 1px solid rgba(201,168,76,0.2);
-      z-index: 3;
-    }
-    .hero-photo-2 img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      opacity: 0.9;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 55%;
-    }
-    .hero-eyebrow {
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.3s forwards;
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 7vw, 7rem);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.5s forwards;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .hero-sub {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      color: var(--grey);
-      text-transform: uppercase;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.7s forwards;
-    }
-    .hero-cta {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--gold);
-      padding: 1rem 2.5rem;
-      text-decoration: none;
-      transition: all 0.3s;
-      opacity: 0;
-      animation: fadeUp 1s ease 0.9s forwards;
-    }
-    .hero-cta:hover {
-      background: var(--off-white);
-      transform: translateY(-2px);
-    }
-    .hero-scroll {
-      position: absolute;
-      bottom: 3rem; left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--grey);
-      z-index: 2;
-      animation: fadeIn 2s ease 1.5s both;
-    }
-    .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollPulse 2s ease infinite;
-    }
-
-    /* ABOUT STRIP */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 70vh;
-    }
-    .about-image {
-      position: relative;
-      overflow: hidden;
-      background: var(--mid);
-      min-height: 400px;
-    }
-    .about-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%);
-      transition: transform 0.8s ease;
-    }
+    .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; }
+    #hero { height: 100vh; position: relative; display: flex; align-items: flex-end; padding: 6rem 4rem; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-photo-1 { position: absolute; top: 8%; right: 6%; width: 32vw; height: 70vh; background: var(--mid); overflow: hidden; }
+    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); pointer-events: none; }
+    .hero-photo-1::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); }
+    .hero-photo-2 { position: absolute; top: 55%; right: 30%; width: 16vw; height: 22vh; background: var(--mid); overflow: hidden; border: 1px solid rgba(201,168,76,0.2); z-index: 3; }
+    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; max-width: 55%; }
+    .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2rem; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--grey); text-transform: uppercase; margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s ease 0.7s forwards; }
+    .hero-cta { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
+    .hero-cta:hover { background: var(--off-white); transform: translateY(-2px); }
+    .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); z-index: 2; animation: fadeIn 2s ease 1.5s both; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease infinite; }
+    #about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+    .about-image { position: relative; overflow: hidden; background: var(--mid); min-height: 400px; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; pointer-events: none; }
     .about-image:hover img { transform: scale(1.03); }
-    .about-text {
-      background: var(--mid);
-      padding: 6rem 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .section-label {
-      font-size: 0.55rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 2rem;
-    }
-    .about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 2rem;
-    }
+    .about-text { background: var(--mid); padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+    .section-label { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
+    .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 2rem; }
     .about-text h2 em { font-style: italic; color: var(--gold); }
-    .about-text p {
-      font-size: 0.8rem;
-      line-height: 1.9;
-      color: var(--grey);
-      margin-bottom: 1.5rem;
-    }
-    .about-location {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 1rem;
-    }
-
-    /* GALLERY */
-    #portfolio {
-      padding: 8rem 4rem;
-      background: var(--black);
-    }
-    .portfolio-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
-    .portfolio-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      font-weight: 300;
-      line-height: 1;
-    }
+    .about-text p { font-size: 0.8rem; line-height: 1.9; color: var(--grey); margin-bottom: 1.5rem; }
+    .about-location { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-top: 1rem; }
+    #portfolio { padding: 8rem 4rem; background: var(--black); }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+    .portfolio-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1; }
     .portfolio-header h2 em { font-style: italic; color: var(--gold); }
-    .portfolio-header p {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--grey);
-      text-transform: uppercase;
-      text-align: right;
-      max-width: 200px;
-    }
-    /* Masonry-style grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 80px;
-      gap: 8px;
-    }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      background: var(--mid);
-    }
-    .gallery-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease, filter 0.4s ease;
-      filter: brightness(0.9);
-    }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
-    .gallery-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(201,168,76,0);
-      transition: background 0.3s;
-    }
-    .gallery-item:hover::after {
-      background: rgba(201,168,76,0.05);
-    }
+    .portfolio-header p { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--grey); text-transform: uppercase; text-align: right; max-width: 200px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 80px; gap: 8px; }
+    .gallery-item { position: relative; overflow: hidden; background: var(--mid); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); pointer-events: none; }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1); }
     .g2 img { object-position: center top; }
     .g9 img { object-position: center top; }
     .g1 { grid-column: 1/6; grid-row: 1/6; }
@@ -363,223 +73,40 @@
     .g7 { grid-column: 5/9; grid-row: 8/12; }
     .g8 { grid-column: 9/13; grid-row: 9/13; }
     .g9 { grid-column: 1/5; grid-row: 10/13; }
-
-    /* Placeholder text for empty gallery items */
-    .gallery-placeholder {
-      width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      color: #333;
-      text-transform: uppercase;
-      background: var(--mid);
-    }
-
-    /* SERVICES */
-    #services {
-      padding: 8rem 4rem;
-      background: var(--mid);
-    }
-    .services-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-    .services-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      font-weight: 300;
-    }
+    #services { padding: 8rem 4rem; background: var(--mid); }
+    .services-header { text-align: center; margin-bottom: 5rem; }
+    .services-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; }
     .services-header h2 em { font-style: italic; color: var(--gold); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .service-card {
-      padding: 3.5rem 3rem;
-      background: var(--black);
-      border-top: 1px solid rgba(201,168,76,0.2);
-      transition: background 0.3s;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card { padding: 3.5rem 3rem; background: var(--black); border-top: 1px solid rgba(201,168,76,0.2); transition: background 0.3s; }
     .service-card:hover { background: #111; }
-    .service-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      color: rgba(201,168,76,0.15);
-      font-weight: 300;
-      line-height: 1;
-      margin-bottom: 1.5rem;
-    }
-    .service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      color: var(--off-white);
-    }
-    .service-card p {
-      font-size: 0.75rem;
-      line-height: 1.8;
-      color: var(--grey);
-    }
-
-    /* CONTACT */
-    #contact {
-      padding: 8rem 4rem;
-      background: var(--black);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8rem;
-      align-items: center;
-    }
-    .contact-left h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4.5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 2rem;
-    }
+    .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 300; line-height: 1; margin-bottom: 1.5rem; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: var(--off-white); }
+    .service-card p { font-size: 0.75rem; line-height: 1.8; color: var(--grey); }
+    #contact { padding: 8rem 4rem; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+    .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
     .contact-left h2 em { font-style: italic; color: var(--gold); }
-    .contact-left p {
-      font-size: 0.75rem;
-      line-height: 1.9;
-      color: var(--grey);
-      margin-bottom: 2.5rem;
-    }
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.7rem;
-      color: var(--grey);
-    }
-    .contact-detail-label {
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      min-width: 70px;
-    }
-    .contact-social {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .contact-social a {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .contact-social a:hover { color: var(--gold); }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .form-group label {
-      font-size: 0.55rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #333;
-      color: var(--off-white);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 300;
-      padding: 0.75rem 0;
-      outline: none;
-      transition: border-color 0.3s;
-      width: 100%;
-    }
+    .contact-left p { font-size: 0.75rem; line-height: 1.9; color: var(--grey); margin-bottom: 2.5rem; }
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-detail { display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; color: var(--grey); }
+    .contact-detail-label { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); min-width: 70px; }
+    .contact-social { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+    .form-group input, .form-group textarea, .form-group select { background: transparent; border: none; border-bottom: 1px solid #333; color: var(--off-white); font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 300; padding: 0.75rem 0; outline: none; transition: border-color 0.3s; width: 100%; }
     .form-group select option { background: var(--black); }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-bottom-color: var(--gold);
-    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-bottom-color: var(--gold); }
     .form-group textarea { resize: none; height: 100px; }
-    .form-submit {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--gold);
-      border: none;
-      padding: 1rem 2.5rem;
-      cursor: none;
-      transition: all 0.3s;
-      align-self: flex-start;
-      margin-top: 0.5rem;
-    }
-    .form-submit:hover {
-      background: var(--off-white);
-      transform: translateY(-2px);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--mid);
-      padding: 2.5rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #1f1f1f;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-    }
-    .footer-copy {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--grey);
-    }
-    .footer-location {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--grey);
-      text-align: right;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 1; transform: scaleY(1); }
-      50% { opacity: 0.3; transform: scaleY(0.6); }
-    }
-
-    /* RESPONSIVE */
+    .form-submit { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); border: none; padding: 1rem 2.5rem; cursor: pointer; transition: all 0.3s; align-self: flex-start; margin-top: 0.5rem; }
+    .form-submit:hover { background: var(--off-white); transform: translateY(-2px); }
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
+    .footer-location { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); text-align: right; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
     @media (max-width: 900px) {
       nav { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
@@ -601,72 +128,67 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">No Filters Stories</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Book</a></li>
     </ul>
     <div class="translate-wrapper">
+      <select class="lang-select" onchange="doGTranslate(this.value)">
+        <option value="en|en">🌐 EN</option>
+        <option value="en|bg">BG</option>
+        <option value="en|ro">RO</option>
+        <option value="en|el">GR</option>
+        <option value="en|es">ES</option>
+      </select>
       <div id="google_translate_element"></div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-
-    <div class="hero-photo-1">
-      <img src="hero.jpg" alt="Dance photography by No Filters Stories"/>
-    </div>
-    <div class="hero-photo-2">
-      <img src="hero-2.jpg" alt="No Filters Stories photography"/>
-    </div>
-
+    <div class="hero-photo-1"><img src="hero.jpg" alt="No Filters Stories"/></div>
+    <div class="hero-photo-2"><img src="hero-2.jpg" alt="No Filters Stories"/></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Artistic Photography · Velingrad, Bulgaria</p>
       <h1 class="hero-title">No <em>Filters.</em><br>Just Stories.</h1>
       <p class="hero-sub">Dance &amp; Portrait Photography</p>
       <a href="#contact" class="hero-cta">Book a Session</a>
     </div>
-
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-image">
-      <!-- Replace with a portrait/behind the scenes photo -->
       <img src="about.jpg" alt="Georgiana — No Filters Stories"/>
     </div>
     <div class="about-text">
       <p class="section-label">About Georgiana</p>
-      <h2>We don't just take photos —<br>we create <em>art.</em></h2>
-      <p>Georgiana is the heart and eye behind No Filters Stories — a photographer driven by authenticity, movement, and emotion. Every session is a collaboration, every image a story told without masks or filters.</p>
-      <p>Specialising in dance and artistic portrait photography, Georgiana works with light, shadow, and human expression to create images that feel alive and last a lifetime.</p>
+      <h2>The face behind<br>every <em>story.</em></h2>
+      <p>Georgiana is the soul of No Filters Stories — model, producer, and creative director. She brings vision, authenticity, and fearless energy to every project, transforming locations into stages and moments into art.</p>
+      <p>Whether draped in silk at ancient ruins or moving freely through open landscapes, Georgiana's presence tells stories that no filter could ever capture. Raw. Real. Unforgettable.</p>
       <p class="about-location">📍 Based in Velingrad · Serving Rakitovo, Kostandovo, Batak, Rila &amp; beyond</p>
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="portfolio-header">
       <div>
         <p class="section-label">Our Work</p>
         <h2>Stories <em>told</em><br>through light.</h2>
       </div>
-      <p>A selection of our most<br>recent sessions</p>
+      <a href="gallery.html" style="font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;text-decoration:none;">View All Galleries →</a>
     </div>
-
     <div class="gallery-grid">
-      <div class="gallery-item g1"><img src="gallery-1.jpg" alt="Dance photography by Georgiana"/></div>
+      <div class="gallery-item g1"><img src="gallery-1.jpg" alt="Artistic photography"/></div>
       <div class="gallery-item g2"><img src="gallery-2.jpg" alt="Portrait photography"/></div>
       <div class="gallery-item g3"><img src="gallery-3.jpg" alt="Artistic photography"/></div>
       <div class="gallery-item g4"><img src="gallery-4.jpg" alt="Dance photography"/></div>
@@ -678,7 +200,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="services-header">
       <p class="section-label">What We Offer</p>
@@ -703,7 +224,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-left">
       <p class="section-label">Get In Touch</p>
@@ -716,7 +236,7 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <a href="mailto:hello.nofilterstories@gmail.com" style="color: var(--off-white); text-decoration: none;">hello.nofilterstories@gmail.com</a>
+          <a href="mailto:hello.nofilterstories@gmail.com" style="color:var(--off-white);text-decoration:none;">hello.nofilterstories@gmail.com</a>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
@@ -725,19 +245,19 @@
       </div>
       <div class="contact-social">
         <a href="https://www.instagram.com/nofilterstories8" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram
         </a>
         <a href="https://www.facebook.com/profile.php?id=61579846281691" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
         <a href="https://www.tiktok.com/@nofilterstories" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
           TikTok
         </a>
         <a href="https://pin.it/18yFm2XLx" target="_blank" class="social-icon-link">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
           Pinterest
         </a>
       </div>
@@ -769,25 +289,37 @@
     </form>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">No Filters Stories</div>
     <div class="footer-copy">© 2025 Hello.NoFilterStories · All rights reserved</div>
-    <div class="footer-location">Velingrad, Bulgaria · <a href="privacy.html" style="color: var(--grey); text-decoration: none;">Privacy Policy</a></div>
+    <div class="footer-location">Velingrad, Bulgaria · <a href="privacy.html" style="color:var(--grey);text-decoration:none;">Privacy Policy</a></div>
   </footer>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,bg,ro,el,es',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,ro,el,es', autoDisplay: false }, 'google_translate_element');
+    }
+    function doGTranslate(lang_pair) {
+      var lang = lang_pair.split('|')[1];
+      var teCombo = document.querySelector('.goog-te-combo');
+      if (teCombo) { teCombo.value = lang; teCombo.dispatchEvent(new Event('change')); }
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
+    // Disable right click and drag on all images
+    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
