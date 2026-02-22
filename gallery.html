@@ -48,6 +48,11 @@
     /* INDIVIDUAL GALLERY VIEW */
     .gallery-view { display: none; padding: 4rem; }
     .gallery-view.active { display: block; }
+    /* Image protection overlay */
+    .photo-item { position: relative; }
+    .photo-item::after { content: ''; position: absolute; inset: 0; z-index: 2; cursor: pointer; }
+    .collection-card::after { content: ''; position: absolute; inset: 0; z-index: 2; cursor: pointer; }
+    img { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; }
     .gallery-view-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
     .gallery-view-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; }
     .gallery-view-header h2 em { font-style: italic; color: var(--gold); }
@@ -229,7 +234,25 @@
     const galleries = {
       sun: {
         name: 'Sun Drenched Stories',
-        images: Array.from({length: 17}, (_, i) => `sun drenched stories-${i+1}.jpg`)
+        images: [
+          'sun drenched stories-1.jpeg',
+          'sun drenched stories-2.jpg',
+          'sun drenched stories-3.jpg',
+          'sun drenched stories-4.jpg',
+          'sun drenched stories-5.jpg',
+          'sun drenched stories-6.jpg',
+          'sun drenched stories-7.jpg',
+          'sun drenched stories-8.jpg',
+          'sun drenched stories-9.jpg',
+          'sun drenched stories-10.jpg',
+          'sun drenched stories-11.jpg',
+          'sun drenched stories-12.jpg',
+          'sun drenched stories-13.jpg',
+          'sun drenched stories-14.jpeg',
+          'sun drenched stories-15.jpeg',
+          'sun drenched stories-16.jpeg',
+          'sun drenched stories-17.jpeg'
+        ]
       },
       cinematic: {
         name: 'Cinematic Portal',
@@ -241,7 +264,12 @@
       },
       wild: {
         name: 'Wild Editorial',
-        images: Array.from({length: 24}, (_, i) => `wild edit-${i+1}.jpg`)
+        images: [
+          ...Array.from({length: 21}, (_, i) => `wild edit-${i+1}.jpg`),
+          'wild edit-22.jpeg',
+          'wild edit-23.jpeg',
+          'wild edit-24.jpg'
+        ]
       }
     };
 
@@ -323,9 +351,11 @@
       if (e.target === this) closeLightbox();
     });
 
-    // Disable right click and drag on images
-    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    // Disable right click and drag on all images - including dynamically loaded ones
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
     document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    // Also protect lightbox image
+    document.getElementById('lightbox-img').addEventListener('contextmenu', function(e) { e.preventDefault(); });
   </script>
 </body>
 </html>
