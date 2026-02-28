@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7CK46ZNNYJ');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — No Filters Stories | Dance & Editorial Photography</title>
+  <meta name="description" content="Portfolio of No Filters Stories — specialising in dance, performer and editorial photography. Artistic, raw and international. View our work."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.nofiltersstories.com/portfolio.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.nofiltersstories.com/portfolio.html"/>
+  <meta property="og:title" content="Portfolio — No Filters Stories"/>
+  <meta property="og:description" content="Dance, performer and editorial photography. Raw. Real. Unforgettable."/>
+  <meta property="og:image" content="https://www.nofiltersstories.com/hero.jpg"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+    img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    /* PAGE HEADER */
+    .page-header { min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 10rem 4rem 5rem; position: relative; overflow: hidden; background: var(--mid); }
+    .page-header-bg { position: absolute; inset: 0; }
+    .page-header-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(30%); }
+    .page-header-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,26,26,1) 20%, rgba(26,26,26,0.3) 100%); }
+    .page-header-content { position: relative; z-index: 1; max-width: 700px; }
+    .page-header .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 6rem); font-weight: 300; line-height: 1; margin-bottom: 2rem; }
+    .page-header h1 em { font-style: italic; color: var(--gold); }
+    .page-header p { font-size: 0.8rem; color: var(--grey); line-height: 1.9; max-width: 550px; }
+
+    /* WHAT WE DO */
+    .what-we-do { padding: 8rem 4rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--black); }
+    .wwd-card { padding: 3rem; border-top: 1px solid rgba(201,168,76,0.2); background: var(--mid); }
+    .wwd-card:hover { background: #1f1f1f; }
+    .wwd-number { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: rgba(201,168,76,0.1); font-weight: 300; line-height: 1; margin-bottom: 1.5rem; }
+    .wwd-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; color: var(--off-white); }
+    .wwd-card p { font-size: 0.75rem; line-height: 1.9; color: var(--grey); }
+
+    /* SECTION DIVIDER */
+    .section-divider { padding: 5rem 4rem 3rem; }
+    .section-divider .eyebrow { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-divider h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; }
+    .section-divider h2 em { font-style: italic; color: var(--gold); }
+
+    /* FRAMED PORTFOLIO GRID */
+    .portfolio-grid { padding: 2rem 4rem 6rem; display: grid; gap: 2rem; }
+
+    /* ROW LAYOUTS */
+    .row-full { grid-template-columns: 1fr; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .row-feature { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .row-feature-reverse { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-bottom: 2rem; }
+    .row-tall { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+
+    /* FRAMED PHOTO */
+    .frame { position: relative; overflow: hidden; background: var(--mid); border: 1px solid rgba(201,168,76,0.15); }
+    .frame::before { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.1); z-index: 2; pointer-events: none; }
+    .frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease, filter 0.4s ease; filter: brightness(0.92); }
+    .frame:hover img { transform: scale(1.04); filter: brightness(1); }
+    .frame-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); opacity: 0; transition: opacity 0.3s; z-index: 3; }
+    .frame:hover .frame-caption { opacity: 1; }
+    .frame-caption span { font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); }
+
+    /* HEIGHT VARIANTS */
+    .h-portrait { height: 600px; }
+    .h-landscape { height: 380px; }
+    .h-square { height: 480px; }
+    .h-tall { height: 700px; }
+    .h-short { height: 300px; }
+
+    /* CTA SECTION */
+    .portfolio-cta { background: var(--mid); padding: 7rem 4rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.15); }
+    .portfolio-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 4rem); font-weight: 300; margin-bottom: 1.5rem; }
+    .portfolio-cta h2 em { font-style: italic; color: var(--gold); }
+    .portfolio-cta p { font-size: 0.75rem; color: var(--grey); line-height: 1.9; max-width: 500px; margin: 0 auto 3rem; }
+    .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; }
+    .btn-gold:hover { background: var(--off-white); }
+    .btn-outline { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(201,168,76,0.1); }
+
+    /* FOOTER */
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
+    .footer-link { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); text-align: right; }
+    .footer-link a { color: var(--grey); text-decoration: none; }
+    .footer-link a:hover { color: var(--gold); }
+
+    /* COOKIE */
+    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 99999; gap: 2rem; flex-wrap: wrap; }
+    #cookie-banner p { font-size: 0.7rem; color: #888; line-height: 1.7; flex: 1; min-width: 250px; }
+    #cookie-banner a { color: #c9a84c; text-decoration: none; }
+    #cookie-btn-accept { background: #c9a84c; color: #0a0a0a; border: none; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; margin-left: 1rem; }
+    #cookie-btn-decline { background: transparent; color: #888; border: 1px solid #333; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1.5rem 2rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 8rem 2rem 4rem; }
+      .what-we-do { grid-template-columns: 1fr; padding: 5rem 2rem; }
+      .section-divider { padding: 4rem 2rem 2rem; }
+      .portfolio-grid { padding: 1rem 2rem 4rem; }
+      .row-2, .row-3, .row-feature, .row-feature-reverse, .row-tall { grid-template-columns: 1fr; }
+      .h-portrait, .h-landscape, .h-square, .h-tall, .h-short { height: 70vw; }
+      .portfolio-cta { padding: 5rem 2rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+      #cookie-banner { padding: 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">No Filters Stories</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Book</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-bg">
+      <img src="wild edit-1.jpg" alt="No Filters Stories Portfolio"/>
+    </div>
+    <div class="page-header-content">
+      <p class="eyebrow">Our Work</p>
+      <h1>The Art of<br><em>Authentic</em> Stories</h1>
+      <p>We don't create images — we create moments. Every session with No Filters Stories is a collaboration between vision, movement, and light. Based in Bulgaria, working internationally with dancers, performers, and high-profile clients who demand something extraordinary.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <div class="what-we-do">
+    <div class="wwd-card">
+      <div class="wwd-number">01</div>
+      <h3>Dance & Movement</h3>
+      <p>Movement is our language. We capture the raw power of dance — the split-second of perfect form, the emotional release, the story told through a single pose. From classical to contemporary, we understand the body in motion.</p>
+    </div>
+    <div class="wwd-card">
+      <div class="wwd-number">02</div>
+      <h3>Performer Portraits</h3>
+      <p>Performers live their craft in every frame. We specialise in creating portfolio imagery for dancers, actors, musicians and artists that is both technically perfect and emotionally compelling — images that open doors.</p>
+    </div>
+    <div class="wwd-card">
+      <div class="wwd-number">03</div>
+      <h3>Editorial & High-End</h3>
+      <p>For high-profile clients who want something beyond the ordinary. Conceptual editorial work, location shoots across stunning landscapes, and luxury portrait sessions. We travel wherever the story takes us.</p>
+    </div>
+  </div>
+
+  <!-- SELECTED WORKS -->
+  <div class="section-divider">
+    <p class="eyebrow">Selected Works</p>
+    <h2>Images that <em>speak</em><br>for themselves.</h2>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- Row 1: Feature landscape + portrait -->
+    <div class="row-feature">
+      <div class="frame h-landscape">
+        <img src="wild edit-1.jpg" alt="Wild Editorial"/>
+        <div class="frame-caption"><span>Wild Editorial</span></div>
+      </div>
+      <div class="frame h-landscape">
+        <img src="sun drenched stories-1.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+    </div>
+
+    <!-- Row 2: Three portraits -->
+    <div class="row-3">
+      <div class="frame h-portrait">
+        <img src="cinematic-1.jpg" alt="Cinematic Portal"/>
+        <div class="frame-caption"><span>Cinematic Portal</span></div>
+      </div>
+      <div class="frame h-portrait">
+        <img src="movement-1.jpg" alt="The Movement Guide"/>
+        <div class="frame-caption"><span>The Movement Guide</span></div>
+      </div>
+      <div class="frame h-portrait">
+        <img src="sun drenched stories-3.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+    </div>
+
+    <!-- Row 3: Wide feature -->
+    <div class="row-feature-reverse">
+      <div class="frame h-square">
+        <img src="wild edit-5.jpg" alt="Wild Editorial"/>
+        <div class="frame-caption"><span>Wild Editorial</span></div>
+      </div>
+      <div class="frame h-square">
+        <img src="sun drenched stories-7.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+    </div>
+
+    <!-- Row 4: Two landscapes -->
+    <div class="row-2">
+      <div class="frame h-landscape">
+        <img src="wild edit-9.jpg" alt="Wild Editorial"/>
+        <div class="frame-caption"><span>Wild Editorial</span></div>
+      </div>
+      <div class="frame h-landscape">
+        <img src="cinematic-3.jpg" alt="Cinematic Portal"/>
+        <div class="frame-caption"><span>Cinematic Portal</span></div>
+      </div>
+    </div>
+
+    <!-- Row 5: Three portraits -->
+    <div class="row-3">
+      <div class="frame h-portrait">
+        <img src="sun drenched stories-10.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+      <div class="frame h-portrait">
+        <img src="movement-3.jpg" alt="The Movement Guide"/>
+        <div class="frame-caption"><span>The Movement Guide</span></div>
+      </div>
+      <div class="frame h-portrait">
+        <img src="wild edit-15.jpg" alt="Wild Editorial"/>
+        <div class="frame-caption"><span>Wild Editorial</span></div>
+      </div>
+    </div>
+
+    <!-- Row 6: Feature landscape -->
+    <div class="row-feature">
+      <div class="frame h-landscape">
+        <img src="sun drenched stories-14.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+      <div class="frame h-landscape">
+        <img src="wild edit-20.jpg" alt="Wild Editorial"/>
+        <div class="frame-caption"><span>Wild Editorial</span></div>
+      </div>
+    </div>
+
+    <!-- Row 7: Two tall portraits side by side -->
+    <div class="row-2">
+      <div class="frame h-tall">
+        <img src="cinematic-5.jpg" alt="Cinematic Portal"/>
+        <div class="frame-caption"><span>Cinematic Portal</span></div>
+      </div>
+      <div class="frame h-tall">
+        <img src="sun drenched stories-17.jpg" alt="Sun Drenched Stories"/>
+        <div class="frame-caption"><span>Sun Drenched Stories</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="portfolio-cta">
+    <h2>Ready to create your<br><em>story?</em></h2>
+    <p>Whether you're a dancer building your portfolio, a performer seeking editorial images, or a brand looking for something truly distinctive — we'd love to work with you.</p>
+    <div class="cta-buttons">
+      <a href="index.html#contact" class="btn-gold">Book a Session</a>
+      <a href="gallery.html" class="btn-outline">View Full Gallery</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">No Filters Stories</div>
+    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
+    <div class="footer-link">
+      <a href="privacy.html">Privacy Policy</a> · Velingrad, Bulgaria · Available Worldwide
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div>
+      <button id="cookie-btn-decline" onclick="declineCookies()">Decline</button>
+      <button id="cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.frame, .wwd-card').forEach(el => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
