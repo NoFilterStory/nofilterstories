@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7CK46ZNNYJ');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7CK46ZNNYJ');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>No Filters Stories — Artistic Photography</title>
+  <!-- SEO -->
+  <title>No Filters Stories — Artistic Dance & Editorial Photography Worldwide</title>
+  <meta name="description" content="No Filters Stories is a creative photography brand specialising in dance, performer and editorial photography. Based in Bulgaria, available worldwide. Raw. Real. Unforgettable."/>
+  <meta name="keywords" content="dance photography, performer photography, editorial photography, artistic portrait photography, dancer photographer, high end photography, editorial photographer, creative photography, Bulgaria photographer, worldwide photographer"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.nofiltersstories.com/"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.nofiltersstories.com/"/>
+  <meta property="og:title" content="No Filters Stories — Artistic Dance & Editorial Photography"/>
+  <meta property="og:description" content="Creative photography specialising in dance, performers and editorial. Raw. Real. Unforgettable."/>
+  <meta property="og:image" content="https://www.nofiltersstories.com/hero.jpg"/>
+  <meta property="og:site_name" content="No Filters Stories"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="No Filters Stories — Artistic Dance & Editorial Photography"/>
+  <meta name="twitter:description" content="Creative photography specialising in dance, performers and editorial. Raw. Real. Unforgettable."/>
+  <meta name="twitter:image" content="https://www.nofiltersstories.com/hero.jpg"/>
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "No Filters Stories",
+    "description": "Artistic photography specialising in dance, performers and editorial photography. Available worldwide.",
+    "url": "https://www.nofiltersstories.com",
+    "telephone": "+359899368857",
+    "email": "hello.nofilterstories@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Velingrad",
+      "addressCountry": "BG"
+    },
+    "areaServed": "Worldwide",
+    "sameAs": [
+      "https://www.instagram.com/nofilterstories8",
+      "https://www.facebook.com/profile.php?id=61579846281691",
+      "https://www.tiktok.com/@nofilterstories",
+      "https://pin.it/18yFm2XLx"
+    ]
+  }
+  </script>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
@@ -140,9 +180,28 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
       .footer-location { text-align: center; }
     }
+    /* Cookie Banner */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: var(--mid); border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 999; gap: 2rem; flex-wrap: wrap; }
+    .cookie-banner p { font-size: 0.7rem; color: var(--grey); line-height: 1.7; flex: 1; min-width: 250px; }
+    .cookie-banner a { color: var(--gold); text-decoration: none; }
+    .cookie-banner a:hover { text-decoration: underline; }
+    .cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
+    .cookie-accept { background: var(--gold); color: var(--black); border: none; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
+    .cookie-accept:hover { background: var(--off-white); }
+    .cookie-decline { background: transparent; color: var(--grey); border: 1px solid #333; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+    .cookie-decline:hover { border-color: var(--grey); color: var(--off-white); }
   </style>
 </head>
 <body>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-buttons">
+      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+    </div>
+  </div>
 
   <nav>
     <a href="#hero" class="nav-logo">No Filters Stories</a>
@@ -323,6 +382,18 @@
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
+    // Cookie consent
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
     // Disable right click and drag on all images
     document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); return false; });
     document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
