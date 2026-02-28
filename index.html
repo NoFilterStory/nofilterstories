@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>No Filters Stories — Artistic Dance & Editorial Photography Worldwide</title>
   <meta name="description" content="No Filters Stories is a creative photography brand specialising in dance, performer and editorial photography. Based in Bulgaria, available worldwide. Raw. Real. Unforgettable."/>
-  <meta name="keywords" content="dance photography, performer photography, editorial photography, artistic portrait photography, dancer photographer, high end photography, editorial photographer, creative photography, Bulgaria photographer, worldwide photographer"/>
+  <meta name="keywords" content="dance photography, performer photography, editorial photography, artistic portrait photography, dancer photographer, high end photography, international photographer"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.nofiltersstories.com/"/>
   <meta property="og:type" content="website"/>
@@ -51,6 +51,7 @@
     :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+    img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
     nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent); pointer-events: none; }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
@@ -65,15 +66,15 @@
     #google_translate_element { display: none; }
     .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .social-icon-link:hover { color: var(--gold); }
-    .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; }
+    .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; pointer-events: none; }
     #hero { height: 100vh; position: relative; display: flex; align-items: flex-end; padding: 6rem 4rem; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%); }
     .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 60px 60px; }
     .hero-photo-1 { position: absolute; top: 8%; right: 6%; width: 32vw; height: 70vh; background: var(--mid); overflow: hidden; }
-    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); pointer-events: none; -webkit-user-drag: none; }
+    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); }
     .hero-photo-1::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); pointer-events: none; }
     .hero-photo-2 { position: absolute; top: 55%; right: 30%; width: 16vw; height: 22vh; background: var(--mid); overflow: hidden; border: 1px solid rgba(201,168,76,0.2); z-index: 3; }
-    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; pointer-events: none; -webkit-user-drag: none; }
+    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
     .hero-content { position: relative; z-index: 2; max-width: 55%; }
     .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2rem; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; }
@@ -81,11 +82,11 @@
     .hero-sub { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--grey); text-transform: uppercase; margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s ease 0.7s forwards; }
     .hero-cta { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
     .hero-cta:hover { background: var(--off-white); transform: translateY(-2px); }
-    .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); z-index: 2; animation: fadeIn 2s ease 1.5s both; }
+    .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); z-index: 2; opacity: 0; animation: fadeIn 2s ease 1.5s forwards; }
     .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease infinite; }
     #about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
     .about-image { position: relative; overflow: hidden; background: var(--mid); min-height: 400px; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; pointer-events: none; -webkit-user-drag: none; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; }
     .about-image:hover img { transform: scale(1.03); }
     .about-text { background: var(--mid); padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
     .section-label { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
@@ -99,7 +100,7 @@
     .portfolio-header h2 em { font-style: italic; color: var(--gold); }
     .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 80px; gap: 8px; }
     .gallery-item { position: relative; overflow: hidden; background: var(--mid); }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); pointer-events: none; -webkit-user-drag: none; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); }
     .gallery-item:hover img { transform: scale(1.05); filter: brightness(1); }
     .g2 img { object-position: center top; }
     .g9 img { object-position: center top; }
@@ -122,10 +123,10 @@
     .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 300; line-height: 1; margin-bottom: 1.5rem; }
     .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: var(--off-white); }
     .service-card p { font-size: 0.75rem; line-height: 1.8; color: var(--grey); }
-    #contact { padding: 8rem 4rem; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+    #contact { padding: 8rem 4rem; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
     .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
     .contact-left h2 em { font-style: italic; color: var(--gold); }
-    .contact-left p { font-size: 0.75rem; line-height: 1.9; color: var(--grey); margin-bottom: 2.5rem; }
+    .contact-left > p { font-size: 0.75rem; line-height: 1.9; color: var(--grey); margin-bottom: 2.5rem; }
     .contact-details { display: flex; flex-direction: column; gap: 1rem; }
     .contact-detail { display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; color: var(--grey); }
     .contact-detail-label { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); min-width: 70px; }
@@ -136,14 +137,18 @@
     .form-group input, .form-group textarea, .form-group select { background: transparent; border: none; border-bottom: 1px solid #333; color: var(--off-white); font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 300; padding: 0.75rem 0; outline: none; transition: border-color 0.3s; width: 100%; }
     .form-group select option { background: var(--black); }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-bottom-color: var(--gold); }
+    .form-group input:invalid:not(:placeholder-shown), .form-group textarea:invalid:not(:placeholder-shown) { border-bottom-color: #c0392b; }
     .form-group textarea { resize: none; height: 100px; }
     .form-submit { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); border: none; padding: 1rem 2.5rem; cursor: pointer; transition: all 0.3s; align-self: flex-start; margin-top: 0.5rem; }
     .form-submit:hover { background: var(--off-white); transform: translateY(-2px); }
+    .form-success { display: none; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); padding: 1.5rem; margin-top: 1rem; }
+    .form-success p { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; }
+    .form-error { display: none; background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.3); padding: 1.5rem; margin-top: 1rem; }
+    .form-error p { font-size: 0.75rem; color: #e74c3c; letter-spacing: 0.1em; }
     footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
     .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
     .footer-location { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); text-align: right; }
-    img { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
@@ -177,7 +182,7 @@
     <a href="#hero" class="nav-logo">No Filters Stories</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Book</a></li>
@@ -202,7 +207,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Artistic Photography · Available Worldwide</p>
       <h1 class="hero-title">No <em>Filters.</em><br>Just Stories.</h1>
-      <p class="hero-sub">Dance · Performer · Editorial Photography · International</p>
+      <p class="hero-sub">Dance · Performer · Editorial · International</p>
       <a href="#contact" class="hero-cta">Book a Session</a>
     </div>
     <div class="hero-scroll">
@@ -230,7 +235,7 @@
         <p class="section-label">Our Work</p>
         <h2>Stories <em>told</em><br>through light.</h2>
       </div>
-      <a href="gallery.html" style="font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;text-decoration:none;">View All Galleries →</a>
+      <a href="portfolio.html" style="font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;text-decoration:none;">View Portfolio →</a>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item g1"><img src="gallery-1.jpg" alt="Artistic photography"/></div>
@@ -281,7 +286,7 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#3d55585151521353525b545149584f4e49524f54584e7d5a505c5451135e5250" style="color:var(--off-white);text-decoration:none;"><span class="__cf_email__" data-cfemail="c1a9a4adadaeefafaea7a8adb5a4b3b2b5aeb3a8a4b281a6aca0a8adefa2aeac">[email&#160;protected]</span></a>
+          <a href="mailto:hello.nofilterstories@gmail.com" style="color:var(--off-white);text-decoration:none;">hello.nofilterstories@gmail.com</a>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
@@ -307,31 +312,39 @@
         </a>
       </div>
     </div>
-    <form class="contact-form" action="https://formspree.io/f/xkovvwwz" method="POST">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Name" required/>
+    <div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkovvwwz" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Name" required/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="session">Session Type</label>
+          <select id="session" name="session" required>
+            <option value="" disabled selected>— Select a session type —</option>
+            <option value="Dance Photography">Dance Photography</option>
+            <option value="Artistic Portrait">Artistic Portrait</option>
+            <option value="Event Photography">Event Photography</option>
+            <option value="Other">Other / Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your vision..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <p>✓ &nbsp; Thank you! Your message has been sent. We'll be in touch soon.</p>
       </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+      <div class="form-error" id="form-error">
+        <p>✗ &nbsp; Something went wrong. Please try again or email us directly.</p>
       </div>
-      <div class="form-group">
-        <label for="session">Session Type</label>
-        <select id="session" name="session">
-          <option value="">Select a session type</option>
-          <option value="Dance Photography">Dance Photography</option>
-          <option value="Artistic Portrait">Artistic Portrait</option>
-          <option value="Event Photography">Event Photography</option>
-          <option value="Other">Other / Not Sure Yet</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" placeholder="Tell us about your vision..."></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Message</button>
-    </form>
+    </div>
   </section>
 
   <footer>
@@ -349,7 +362,7 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+  <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,ro,el,es', autoDisplay: false }, 'google_translate_element');
     }
@@ -372,6 +385,34 @@
     if (localStorage.getItem('cookieConsent')) {
       document.getElementById('cookie-banner').style.display = 'none';
     }
+
+    // Contact form AJAX submission
+    var form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          document.getElementById('form-error').style.display = 'block';
+        }
+      }).catch(function() {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        document.getElementById('form-error').style.display = 'block';
+      });
+    });
+
     document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
     document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
     const observer = new IntersectionObserver((entries) => {
@@ -379,4 +420,10 @@
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
       });
     }, { threshold: 0.1 });
-    document.querySelec
+    document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
