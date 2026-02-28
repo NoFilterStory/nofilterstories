@@ -279,25 +279,7 @@
     const galleries = {
       sun: {
         name: 'Sun Drenched Stories',
-        images: [
-          'sun drenched stories-1.jpeg',
-          'sun drenched stories-2.jpg',
-          'sun drenched stories-3.jpg',
-          'sun drenched stories-4.jpg',
-          'sun drenched stories-5.jpg',
-          'sun drenched stories-6.jpg',
-          'sun drenched stories-7.jpg',
-          'sun drenched stories-8.jpg',
-          'sun drenched stories-9.jpg',
-          'sun drenched stories-10.jpg',
-          'sun drenched stories-11.jpg',
-          'sun drenched stories-12.jpg',
-          'sun drenched stories-13.jpg',
-          'sun drenched stories-14.jpeg',
-          'sun drenched stories-15.jpeg',
-          'sun drenched stories-16.jpeg',
-          'sun drenched stories-17.jpeg'
-        ]
+        images: Array.from({length: 17}, (_, i) => `sun drenched stories-${i+1}.jpg`)
       },
       cinematic: {
         name: 'Cinematic Portal',
@@ -309,12 +291,7 @@
       },
       wild: {
         name: 'Wild Editorial',
-        images: [
-          ...Array.from({length: 21}, (_, i) => `wild edit-${i+1}.jpg`),
-          'wild edit-22.jpeg',
-          'wild edit-23.jpeg',
-          'wild edit-24.jpg'
-        ]
+        images: Array.from({length: 24}, (_, i) => `wild edit-${i+1}.jpg`)
       }
     };
 
