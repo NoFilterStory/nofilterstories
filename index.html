@@ -156,8 +156,8 @@
     /* Image protection */
     img { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; }
     .gallery-item { position: relative; }
-    .gallery-item::after { content: ''; position: absolute; inset: 0; z-index: 2; }
-    .hero-photo-1::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); }
+    .gallery-item::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+    .hero-photo-1::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); pointer-events: none; }
     .about-image { position: relative; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
