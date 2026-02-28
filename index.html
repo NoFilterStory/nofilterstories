@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,25 +10,21 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- SEO -->
   <title>No Filters Stories — Artistic Dance & Editorial Photography Worldwide</title>
   <meta name="description" content="No Filters Stories is a creative photography brand specialising in dance, performer and editorial photography. Based in Bulgaria, available worldwide. Raw. Real. Unforgettable."/>
   <meta name="keywords" content="dance photography, performer photography, editorial photography, artistic portrait photography, dancer photographer, high end photography, editorial photographer, creative photography, Bulgaria photographer, worldwide photographer"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.nofiltersstories.com/"/>
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.nofiltersstories.com/"/>
   <meta property="og:title" content="No Filters Stories — Artistic Dance & Editorial Photography"/>
   <meta property="og:description" content="Creative photography specialising in dance, performers and editorial. Raw. Real. Unforgettable."/>
   <meta property="og:image" content="https://www.nofiltersstories.com/hero.jpg"/>
   <meta property="og:site_name" content="No Filters Stories"/>
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="No Filters Stories — Artistic Dance & Editorial Photography"/>
   <meta name="twitter:description" content="Creative photography specialising in dance, performers and editorial. Raw. Real. Unforgettable."/>
   <meta name="twitter:image" content="https://www.nofiltersstories.com/hero.jpg"/>
-  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,11 +34,7 @@
     "url": "https://www.nofiltersstories.com",
     "telephone": "+359899368857",
     "email": "hello.nofilterstories@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Velingrad",
-      "addressCountry": "BG"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Velingrad", "addressCountry": "BG" },
     "areaServed": "Worldwide",
     "sameAs": [
       "https://www.instagram.com/nofilterstories8",
@@ -79,10 +70,10 @@
     .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%); }
     .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 60px 60px; }
     .hero-photo-1 { position: absolute; top: 8%; right: 6%; width: 32vw; height: 70vh; background: var(--mid); overflow: hidden; }
-    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); pointer-events: none; }
-    .hero-photo-1::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); }
+    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); pointer-events: none; -webkit-user-drag: none; }
+    .hero-photo-1::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); pointer-events: none; }
     .hero-photo-2 { position: absolute; top: 55%; right: 30%; width: 16vw; height: 22vh; background: var(--mid); overflow: hidden; border: 1px solid rgba(201,168,76,0.2); z-index: 3; }
-    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; pointer-events: none; }
+    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; pointer-events: none; -webkit-user-drag: none; }
     .hero-content { position: relative; z-index: 2; max-width: 55%; }
     .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2rem; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; }
@@ -94,7 +85,7 @@
     .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease infinite; }
     #about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
     .about-image { position: relative; overflow: hidden; background: var(--mid); min-height: 400px; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; pointer-events: none; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; pointer-events: none; -webkit-user-drag: none; }
     .about-image:hover img { transform: scale(1.03); }
     .about-text { background: var(--mid); padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
     .section-label { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
@@ -106,10 +97,9 @@
     .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
     .portfolio-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1; }
     .portfolio-header h2 em { font-style: italic; color: var(--gold); }
-    .portfolio-header p { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--grey); text-transform: uppercase; text-align: right; max-width: 200px; }
     .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 80px; gap: 8px; }
     .gallery-item { position: relative; overflow: hidden; background: var(--mid); }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); pointer-events: none; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); pointer-events: none; -webkit-user-drag: none; }
     .gallery-item:hover img { transform: scale(1.05); filter: brightness(1); }
     .g2 img { object-position: center top; }
     .g9 img { object-position: center top; }
@@ -153,13 +143,7 @@
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
     .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
     .footer-location { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); text-align: right; }
-    /* Image protection */
     img { -webkit-user-select: none; -moz-user-select: none; user-select: none; -webkit-user-drag: none; }
-    .gallery-item { position: relative; }
-    .gallery-item::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; }
-    .hero-photo-1::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); pointer-events: none; }
-    .about-image { position: relative; }
-
     @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
@@ -180,28 +164,14 @@
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
       .footer-location { text-align: center; }
     }
-    /* Cookie Banner */
-    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: var(--mid); border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 9999; gap: 2rem; flex-wrap: wrap; }
-    .cookie-banner p { font-size: 0.7rem; color: var(--grey); line-height: 1.7; flex: 1; min-width: 250px; }
-    .cookie-banner a { color: var(--gold); text-decoration: none; }
-    .cookie-banner a:hover { text-decoration: underline; }
-    .cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
-    .cookie-accept { background: var(--gold); color: var(--black); border: none; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer !important; transition: background 0.3s; pointer-events: all !important; }
-    .cookie-accept:hover { background: var(--off-white); }
-    .cookie-decline { background: transparent; color: var(--grey); border: 1px solid #333; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer !important; transition: all 0.3s; pointer-events: all !important; }
-    .cookie-decline:hover { border-color: var(--grey); color: var(--off-white); }
+    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 99999; gap: 2rem; flex-wrap: wrap; }
+    #cookie-banner p { font-size: 0.7rem; color: #888; line-height: 1.7; flex: 1; min-width: 250px; }
+    #cookie-banner a { color: #c9a84c; text-decoration: none; }
+    #cookie-btn-accept { background: #c9a84c; color: #0a0a0a; border: none; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; margin-left: 1rem; }
+    #cookie-btn-decline { background: transparent; color: #888; border: 1px solid #333; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
   </style>
 </head>
 <body>
-
-  <!-- Cookie Banner -->
-  <div class="cookie-banner" id="cookieBanner">
-    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
-    <div class="cookie-buttons">
-      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
-      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
-    </div>
-  </div>
 
   <nav>
     <a href="#hero" class="nav-logo">No Filters Stories</a>
@@ -227,12 +197,12 @@
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-    <div class="hero-photo-1"><img src="hero.jpg" alt="No Filters Stories"/></div>
+    <div class="hero-photo-1"><img src="hero.jpg" alt="No Filters Stories artistic photography"/></div>
     <div class="hero-photo-2"><img src="hero-2.jpg" alt="No Filters Stories"/></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Artistic Photography · Velingrad, Bulgaria</p>
+      <p class="hero-eyebrow">Artistic Photography · Available Worldwide</p>
       <h1 class="hero-title">No <em>Filters.</em><br>Just Stories.</h1>
-      <p class="hero-sub">Dance &amp; Portrait Photography</p>
+      <p class="hero-sub">Dance · Performer · Editorial Photography · International</p>
       <a href="#contact" class="hero-cta">Book a Session</a>
     </div>
     <div class="hero-scroll">
@@ -250,7 +220,7 @@
       <h2>The face behind<br>every <em>story.</em></h2>
       <p>Georgiana is the soul of No Filters Stories — model, producer, and creative director. She brings vision, authenticity, and fearless energy to every project, transforming locations into stages and moments into art.</p>
       <p>Whether draped in silk at ancient ruins or moving freely through open landscapes, Georgiana's presence tells stories that no filter could ever capture. Raw. Real. Unforgettable.</p>
-      <p class="about-location">📍 Based in Velingrad · Serving Rakitovo, Kostandovo, Batak, Rila &amp; beyond</p>
+      <p class="about-location">📍 Based in Velingrad, Bulgaria · Available Worldwide</p>
     </div>
   </section>
 
@@ -284,7 +254,7 @@
       <div class="service-card">
         <div class="service-number">01</div>
         <h3>Dance Photography</h3>
-        <p>Capturing the power, grace, and emotion of movement. We work with dancers to tell their story through every frame — from studio sessions to outdoor locations.</p>
+        <p>Capturing the power, grace, and emotion of movement. We work with dancers to tell their story through every frame — from studio sessions to outdoor locations worldwide.</p>
       </div>
       <div class="service-card">
         <div class="service-number">02</div>
@@ -311,11 +281,11 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#bfd7dad3d3d091d1d0d9d6d3cbdacdcccbd0cdd6daccffd8d2ded6d391dcd0d2" style="color:var(--off-white);text-decoration:none;"><span class="__cf_email__" data-cfemail="81e9e4ededeeafefeee7e8edf5e4f3f2f5eef3e8e4f2c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#3d55585151521353525b545149584f4e49524f54584e7d5a505c5451135e5250" style="color:var(--off-white);text-decoration:none;"><span class="__cf_email__" data-cfemail="c1a9a4adadaeefafaea7a8adb5a4b3b2b5aeb3a8a4b281a6aca0a8adefa2aeac">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
-          <span>Velingrad, Bulgaria</span>
+          <span>Velingrad, Bulgaria · Available Worldwide</span>
         </div>
       </div>
       <div class="contact-social">
@@ -366,9 +336,18 @@
 
   <footer>
     <div class="footer-logo">No Filters Stories</div>
-    <div class="footer-copy">© 2025 Hello.NoFilterStories · All rights reserved</div>
+    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
     <div class="footer-location">Velingrad, Bulgaria · <a href="privacy.html" style="color:var(--grey);text-decoration:none;">Privacy Policy</a></div>
   </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div>
+      <button id="cookie-btn-decline" onclick="declineCookies()">Decline</button>
+      <button id="cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+    </div>
+  </div>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
     function googleTranslateElementInit() {
@@ -382,22 +361,19 @@
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
-    // Cookie consent
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
-      document.getElementById('cookieBanner').style.display = 'none';
+      document.getElementById('cookie-banner').style.display = 'none';
     }
     function declineCookies() {
       localStorage.setItem('cookieConsent', 'declined');
-      document.getElementById('cookieBanner').style.display = 'none';
+      document.getElementById('cookie-banner').style.display = 'none';
     }
     if (localStorage.getItem('cookieConsent')) {
-      document.getElementById('cookieBanner').style.display = 'none';
+      document.getElementById('cookie-banner').style.display = 'none';
     }
-    // Disable right click and drag on all images
-    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); return false; });
+    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
     document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
-    // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
