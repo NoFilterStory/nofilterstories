@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /members
+Disallow: /blog
+Disallow: /members/
+Disallow: /blog/
 
 Sitemap: https://www.nofiltersstories.com/sitemap.xml
