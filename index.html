@@ -153,8 +153,8 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
     @media (max-width: 900px) {
-      nav { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
+      .translate-wrapper { display: none; }
       #hero { padding: 6rem 2rem 4rem; }
       .hero-content { max-width: 100%; }
       .hero-photo-1 { width: 45vw; height: 45vh; top: 12%; right: 2%; }
@@ -168,7 +168,19 @@
       #contact { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 2rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
       .footer-location { text-align: center; }
+      nav { padding: 1.5rem 2rem; }
+      #cookie-banner { padding: 1.5rem 2rem; }
     }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 200; position: relative; background: none; border: none; padding: 0.5rem; }
+    .hamburger span { display: block; width: 24px; height: 1px; background: var(--off-white); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.2em; color: var(--grey); text-decoration: none; transition: color 0.3s; }
+    .mobile-menu a:hover { color: var(--gold); }
+    @media (max-width: 900px) { .hamburger { display: flex; } }
     #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 99999; gap: 2rem; flex-wrap: wrap; }
     #cookie-banner p { font-size: 0.7rem; color: #888; line-height: 1.7; flex: 1; min-width: 250px; }
     #cookie-banner a { color: #c9a84c; text-decoration: none; }
@@ -197,7 +209,18 @@
       </select>
       <div id="google_translate_element"></div>
     </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#contact" onclick="toggleMenu()">Book</a>
+  </div>
 
   <section id="hero">
     <div class="hero-bg"></div>
@@ -286,7 +309,7 @@
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Email</span>
-          <a href="mailto:hello.nofilterstories@gmail.com" style="color:var(--off-white);text-decoration:none;">hello.nofilterstories@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#e68e838a8a89c88889808f8a928394959289948f8395a6818b878f8ac885898b" style="color:var(--off-white);text-decoration:none;"><span class="__cf_email__" data-cfemail="523a373e3e3d7c3c3d343b3e26372021263d203b372112353f333b3e7c313d3f">[email&#160;protected]</span></a>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-label">Based</span>
@@ -362,7 +385,7 @@
     </div>
   </div>
 
-  <script type="text/javascript">
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,ro,el,es', autoDisplay: false }, 'google_translate_element');
     }
@@ -374,6 +397,11 @@
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobile-menu').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
+    }
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookie-banner').style.display = 'none';
@@ -420,7 +448,7 @@
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
+        document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
       el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
       observer.observe(el);
     });
