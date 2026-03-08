@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com https://formspree.io; frame-src https://translate.google.com;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com https://translate.google.com; connect-src 'self' https://www.google-analytics.com https://formspree.io https://translate.googleapis.com; frame-src https://translate.google.com https://*.translate.goog;"/>
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
@@ -159,6 +159,9 @@
     .lang-select { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--grey); font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; padding: 0.3rem 0.5rem; outline: none; cursor: pointer; }
     .lang-select option { background: var(--black); color: var(--off-white); }
     .goog-te-banner-frame { display: none !important; }
+    .goog-te-ftab-frame { display: none !important; }
+    #goog-gt-tt { display: none !important; }
+    .goog-te-balloon-frame { display: none !important; }
     body { top: 0 !important; }
     #google_translate_element { display: none; }
     .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
