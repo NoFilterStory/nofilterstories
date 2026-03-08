@@ -1,349 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7CK46ZNNYJ');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy — No Filters Stories</title>
+  <meta name="description" content="Privacy Policy for No Filters Stories — how we collect, use and protect your personal data in accordance with GDPR."/>
+  <meta name="robots" content="noindex, follow"/>
+  <link rel="canonical" href="https://www.nofiltersstories.com/privacy.html"/>
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com;"/>
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if(localStorage.getItem('cookie-consent') === 'accepted') {
+      gtag('js', new Date());
+      gtag('config', 'G-7CK46ZNNYJ');
+    }
+  </script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --black: #0a0a0a;
-      --off-white: #f0ece4;
-      --gold: #c9a84c;
-      --mid: #1a1a1a;
-      --grey: #888;
-    }
-
+    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--off-white);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 4rem;
-    }
-    nav::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
-      pointer-events: none;
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--off-white);
-      text-decoration: none;
-      position: relative;
-      z-index: 1;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      position: relative;
-      z-index: 1;
-    }
-    .nav-links a {
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+    body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; position: relative; z-index: 1; }
+    .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
-
-    /* PAGE HEADER */
-    .page-header {
-      padding: 12rem 4rem 5rem;
-      background: var(--mid);
-      border-bottom: 1px solid #222;
-    }
-    .page-header .eyebrow {
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-    .page-header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 300;
-      line-height: 1;
-    }
-    .page-header h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .page-header .last-updated {
-      margin-top: 1.5rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--grey);
-    }
-
-    /* CONTENT */
-    .privacy-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 6rem 4rem;
-    }
-    .privacy-section {
-      margin-bottom: 4rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .privacy-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .privacy-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--off-white);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #222;
-    }
-    .privacy-section h2 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .privacy-section p {
-      font-size: 0.8rem;
-      line-height: 2;
-      color: var(--grey);
-      margin-bottom: 1rem;
-    }
-    .privacy-section p strong {
-      color: var(--off-white);
-      font-weight: 500;
-    }
-    .privacy-section ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
-    .privacy-section ul li {
-      font-size: 0.8rem;
-      line-height: 2;
-      color: var(--grey);
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .privacy-section ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
-    .contact-box {
-      background: var(--mid);
-      border: 1px solid #222;
-      border-left: 3px solid var(--gold);
-      padding: 2rem 2.5rem;
-      margin-top: 2rem;
-    }
-    .contact-box p {
-      margin: 0;
-    }
-    .contact-box a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--mid);
-      padding: 2.5rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #1f1f1f;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-    }
-    .footer-copy {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--grey);
-    }
-    .footer-back {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: relative; z-index: 1; }
+    .hamburger span { width: 24px; height: 1px; background: var(--off-white); display: block; }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--black); z-index: 99; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; }
+    .page-header { padding: 12rem 4rem 5rem; background: var(--mid); border-bottom: 1px solid #222; }
+    .page-header .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; line-height: 1; }
+    .page-header h1 em { font-style: italic; color: var(--gold); }
+    .page-header .last-updated { margin-top: 1.5rem; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--grey); }
+    .privacy-content { max-width: 800px; margin: 0 auto; padding: 6rem 4rem; }
+    .privacy-section { margin-bottom: 4rem; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .privacy-section.visible { opacity: 1; transform: translateY(0); }
+    .privacy-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--off-white); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid #222; }
+    .privacy-section h2 em { font-style: italic; color: var(--gold); }
+    .privacy-section h3 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--off-white); margin: 2rem 0 1rem; }
+    .privacy-section p { font-size: 0.8rem; line-height: 2; color: var(--grey); margin-bottom: 1rem; }
+    .privacy-section p strong { color: var(--off-white); font-weight: 500; }
+    .privacy-section ul { list-style: none; margin: 1rem 0; }
+    .privacy-section ul li { font-size: 0.8rem; line-height: 2; color: var(--grey); padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+    .privacy-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+    .privacy-section ul li strong { color: var(--off-white); font-weight: 500; }
+    .contact-box { background: var(--mid); border: 1px solid #222; border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin-top: 2rem; }
+    .contact-box p { margin: 0; line-height: 2; }
+    .contact-box a { color: var(--gold); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+    .highlight-box { background: var(--mid); border: 1px solid #333; padding: 2rem 2.5rem; margin: 2rem 0; }
+    .highlight-box p { margin: 0; font-size: 0.75rem; line-height: 2; color: var(--grey); }
+    .cookie-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.75rem; }
+    .cookie-table th { text-align: left; padding: 0.75rem 1rem; background: var(--mid); color: var(--off-white); font-weight: 500; letter-spacing: 0.1em; border-bottom: 1px solid #333; }
+    .cookie-table td { padding: 0.75rem 1rem; color: var(--grey); border-bottom: 1px solid #1f1f1f; line-height: 1.8; vertical-align: top; }
+    .cookie-table tr:last-child td { border-bottom: none; }
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
+    .footer-back { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
     .footer-back:hover { text-decoration: underline; }
-
+    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #111; border-top: 1px solid #2a2a2a; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
+    .cookie-text { font-size: 0.7rem; line-height: 1.8; color: var(--grey); flex: 1; min-width: 200px; }
+    .cookie-text a { color: var(--gold); text-decoration: none; }
+    .cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
+    .cookie-btn { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.75rem 1.5rem; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; font-weight: 400; transition: all 0.3s; }
+    #cookie-btn-accept { background: var(--gold); color: var(--black); }
+    #cookie-btn-accept:hover { background: var(--off-white); }
+    #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #333; }
+    #cookie-btn-decline:hover { color: var(--off-white); border-color: var(--off-white); }
     @media (max-width: 768px) {
       nav { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       .page-header { padding: 8rem 2rem 3rem; }
       .privacy-content { padding: 4rem 2rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+      #cookie-banner { padding: 1.5rem 2rem; flex-direction: column; align-items: flex-start; }
+      .cookie-table { font-size: 0.65rem; }
+      .cookie-table th, .cookie-table td { padding: 0.5rem 0.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <div id="cookie-banner" style="display:none;">
+    <p class="cookie-text">We use cookies to analyse site traffic via Google Analytics. You can accept or decline non-essential cookies. For full details see our <a href="privacy.html">Privacy &amp; Cookie Policy</a>.</p>
+    <div class="cookie-buttons">
+      <button class="cookie-btn" id="cookie-btn-decline">Decline</button>
+      <button class="cookie-btn" id="cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+
   <nav>
     <a href="index.html" class="nav-logo">No Filters Stories</a>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#services">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="index.html#contact">Book</a></li>
     </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <p class="eyebrow">Legal</p>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="last-updated">Last updated: February 2026</p>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="index.html#about" onclick="toggleMenu()">About</a>
+    <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
+    <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Book</a>
   </div>
 
-  <!-- CONTENT -->
+  <div class="page-header">
+    <p class="eyebrow">Legal · GDPR Compliant</p>
+    <h1>Privacy &amp; Cookie <em>Policy</em></h1>
+    <p class="last-updated">Last updated: March 2026 · Effective date: March 2026</p>
+  </div>
+
   <div class="privacy-content">
 
     <div class="privacy-section">
-      <h2>1. <em>Who</em> We Are</h2>
-      <p>This website is operated by <strong>Hello.NoFilterStories</strong>, an artistic photography business based in Velingrad, Bulgaria. We are the data controller responsible for your personal information collected through this website.</p>
-      <p>If you have any questions about this policy, you can contact us at:</p>
+      <h2>1. <em>Introduction</em></h2>
+      <p>This Privacy and Cookie Policy explains how <strong>No Filters Stories</strong> ("we", "us", "our") collects, uses, stores and protects your personal data when you visit <strong>nofiltersstories.com</strong> or contact us through this website.</p>
+      <p>We are committed to protecting your privacy and handling your data transparently in full compliance with the <strong>General Data Protection Regulation (EU) 2016/679 (GDPR)</strong> and applicable Bulgarian data protection law.</p>
+      <p>By using our website, you acknowledge that you have read and understood this policy.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. <em>Data Controller</em></h2>
+      <p>The data controller responsible for your personal information is:</p>
       <div class="contact-box">
-        <p><strong>Email:</strong> <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
-        <strong>Phone:</strong> +359 899 368 857<br/>
-        <strong>Location:</strong> Velingrad, Bulgaria</p>
+        <p><strong>No Filters Stories</strong><br/>
+        Velingrad, Pazardzhik Region, Bulgaria<br/>
+        Email: <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
+        Phone: +359 899 368 857</p>
       </div>
     </div>
 
     <div class="privacy-section">
-      <h2>2. What <em>Data</em> We Collect</h2>
-      <p>We only collect personal data that you voluntarily provide to us through our contact form. This may include:</p>
+      <h2>3. What <em>Data</em> We Collect</h2>
+      <h3>3.1 Data You Provide Directly</h3>
+      <p>When you complete our contact form, we collect:</p>
       <ul>
-        <li>Your name</li>
-        <li>Your email address</li>
-        <li>The type of photography session you are interested in</li>
-        <li>Any message or information you choose to share with us</li>
+        <li><strong>Full name</strong> — to address you personally in our response</li>
+        <li><strong>Email address</strong> — to reply to your enquiry</li>
+        <li><strong>Session type</strong> — the type of photography session you are interested in</li>
+        <li><strong>Message content</strong> — any information you choose to share about your project</li>
       </ul>
-      <p>We do not collect any data automatically through cookies, tracking scripts, or analytics tools on this website.</p>
+      <p>Providing this information is entirely voluntary. You are not required to submit the contact form to browse our website.</p>
+      <h3>3.2 Data Collected Automatically (with your consent)</h3>
+      <p>If you accept cookies, we collect anonymised analytics data via <strong>Google Analytics 4</strong>, including:</p>
+      <ul>
+        <li>Pages visited and time spent on each page</li>
+        <li>General geographic location (country/region level only — not precise location)</li>
+        <li>Device type, browser and operating system</li>
+        <li>How you arrived at our site (e.g. search engine, direct link)</li>
+        <li>Anonymised IP address</li>
+      </ul>
+      <p>This data is aggregated and cannot be used to identify you personally. If you decline cookies, no analytics data is collected.</p>
+      <h3>3.3 Data We Do Not Collect</h3>
+      <ul>
+        <li>Payment or financial information</li>
+        <li>Sensitive personal data (health, ethnicity, religion, etc.)</li>
+        <li>Data from minors — our services are directed at adults only</li>
+        <li>Precise geolocation data</li>
+      </ul>
     </div>
 
     <div class="privacy-section">
-      <h2>3. How We <em>Use</em> Your Data</h2>
-      <p>The information you provide through our contact form is used solely to:</p>
+      <h2>4. <em>Legal Basis</em> for Processing</h2>
       <ul>
-        <li>Respond to your enquiry or booking request</li>
+        <li><strong>Consent (Art. 6(1)(a))</strong> — for analytics cookies. You may withdraw consent at any time by clearing your browser cookies or declining via our cookie banner.</li>
+        <li><strong>Legitimate interests (Art. 6(1)(f))</strong> — for responding to contact form enquiries. Our legitimate interest is to communicate with prospective clients who have chosen to contact us.</li>
+        <li><strong>Contract (Art. 6(1)(b))</strong> — where processing is necessary to take steps at your request prior to entering into a contract for photography services.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. How We <em>Use</em> Your Data</h2>
+      <ul>
+        <li>Respond to your enquiry or booking request in a timely manner</li>
         <li>Communicate with you about your photography session</li>
-        <li>Send you relevant information you have requested</li>
+        <li>Provide you with information you have specifically requested</li>
+        <li>Improve our website and understand how visitors use it (analytics only, with consent)</li>
       </ul>
-      <p>We will <strong>never</strong> sell, rent, or share your personal data with third parties for marketing purposes.</p>
+      <p>We will <strong>never</strong> sell, rent, share or transfer your personal data to third parties for marketing or commercial purposes. We do not use your data for automated decision-making or profiling.</p>
     </div>
 
     <div class="privacy-section">
-      <h2>4. <em>Legal</em> Basis for Processing</h2>
-      <p>Under the General Data Protection Regulation (GDPR), we process your personal data on the basis of <strong>legitimate interest</strong> — specifically, to respond to your enquiry — and where applicable, on the basis of your consent when you choose to contact us.</p>
+      <h2>6. <em>Cookies</em> &amp; Tracking</h2>
+      <p>Cookies are small text files stored on your device. We use cookies only with your explicit consent, except for strictly necessary cookies required for the site to function.</p>
+      <h3>6.1 Strictly Necessary Cookies</h3>
+      <table class="cookie-table">
+        <tr><th>Cookie Name</th><th>Purpose</th><th>Duration</th></tr>
+        <tr><td>cookie-consent</td><td>Stores your cookie preference (accepted/declined) so we do not ask you again</td><td>1 year</td></tr>
+      </table>
+      <h3>6.2 Analytics Cookies (Optional — Consent Required)</h3>
+      <p>These cookies are only set if you click "Accept" on our cookie banner.</p>
+      <table class="cookie-table">
+        <tr><th>Cookie Name</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
+        <tr><td>_ga</td><td>Google Analytics</td><td>Distinguishes unique users by assigning a randomly generated client identifier</td><td>2 years</td></tr>
+        <tr><td>_ga_*</td><td>Google Analytics</td><td>Stores and counts page views for this Analytics property</td><td>2 years</td></tr>
+        <tr><td>_gid</td><td>Google Analytics</td><td>Distinguishes users — used to throttle request rate</td><td>24 hours</td></tr>
+      </table>
+      <p>IP anonymisation is enabled — your IP address is truncated before storage. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Google's opt-out tool</a>.</p>
+      <h3>6.3 Managing Your Cookie Preferences</h3>
+      <p>You can change your preferences at any time by clearing your browser's cookies and revisiting our site, or by managing cookies through your browser settings.</p>
     </div>
 
     <div class="privacy-section">
-      <h2>5. How We <em>Store</em> Your Data</h2>
-      <p>Your contact form submissions are processed and delivered to us via <strong>Formspree</strong> (formspree.io), a secure form handling service. Formspree processes data in accordance with GDPR. You can read their privacy policy at formspree.io/legal/privacy-policy.</p>
-      <p>We retain your contact information only for as long as is necessary to fulfil the purpose for which it was provided, or as required by law.</p>
-    </div>
-
-    <div class="privacy-section">
-      <h2>6. Your <em>Rights</em></h2>
-      <p>Under GDPR, you have the following rights regarding your personal data:</p>
+      <h2>7. <em>Third Party</em> Data Processors</h2>
       <ul>
-        <li><strong>Right of access</strong> — you can request a copy of the data we hold about you</li>
-        <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data</li>
-        <li><strong>Right to erasure</strong> — you can ask us to delete your data</li>
-        <li><strong>Right to restrict processing</strong> — you can ask us to limit how we use your data</li>
-        <li><strong>Right to object</strong> — you can object to our processing of your data</li>
+        <li><strong>Formspree (formspree.io)</strong> — processes contact form submissions and delivers them to us by email. GDPR compliant. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Privacy Policy</a></li>
+        <li><strong>Google Analytics (Google LLC)</strong> — provides anonymised website analytics under Google's data processing terms. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Privacy Policy</a></li>
+        <li><strong>GitHub Pages (GitHub Inc.)</strong> — hosts this website. GitHub may process server logs including IP addresses. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Privacy Policy</a></li>
+        <li><strong>Cloudflare Inc.</strong> — provides security, CDN and DNS services. May process IP addresses to protect against threats. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Privacy Policy</a></li>
+        <li><strong>Google Fonts (Google LLC)</strong> — provides web fonts served from Google's servers. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Privacy Policy</a></li>
       </ul>
-      <p>To exercise any of these rights, please contact us at the details above. We will respond within 30 days.</p>
+      <p>We do not share your personal data with any other third parties.</p>
     </div>
 
     <div class="privacy-section">
-      <h2>7. Third Party <em>Links</em></h2>
-      <p>Our website contains links to external social media platforms including Instagram, Facebook, TikTok, and Pinterest. Once you leave our site, we are not responsible for the privacy practices of those platforms. We encourage you to read their individual privacy policies.</p>
+      <h2>8. International <em>Data Transfers</em></h2>
+      <p>Some third party processors (Google, GitHub, Cloudflare) are based in the United States. Where personal data is transferred outside the EEA, we ensure appropriate safeguards are in place including Standard Contractual Clauses (SCCs) approved by the European Commission and the EU-US Data Privacy Framework where applicable.</p>
     </div>
 
     <div class="privacy-section">
-      <h2>8. <em>Changes</em> to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically.</p>
+      <h2>9. Data <em>Retention</em></h2>
+      <ul>
+        <li><strong>Contact form submissions</strong> — retained for up to 12 months from the date of last contact, then deleted</li>
+        <li><strong>Analytics data</strong> — retained for 14 months within Google Analytics, then automatically deleted</li>
+        <li><strong>Cookie consent records</strong> — stored locally in your browser for 12 months</li>
+      </ul>
     </div>
 
     <div class="privacy-section">
-      <h2>9. <em>Contact</em> Us</h2>
-      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please do not hesitate to get in touch:</p>
+      <h2>10. Your <em>Rights</em> Under GDPR</h2>
+      <ul>
+        <li><strong>Right of access (Art. 15)</strong> — request a copy of all personal data we hold about you</li>
+        <li><strong>Right to rectification (Art. 16)</strong> — ask us to correct inaccurate or incomplete data</li>
+        <li><strong>Right to erasure (Art. 17)</strong> — request deletion of your personal data</li>
+        <li><strong>Right to restrict processing (Art. 18)</strong> — ask us to limit how we use your data</li>
+        <li><strong>Right to data portability (Art. 20)</strong> — request your data in a machine-readable format</li>
+        <li><strong>Right to object (Art. 21)</strong> — object to processing based on legitimate interests</li>
+        <li><strong>Right to withdraw consent (Art. 7(3))</strong> — withdraw consent at any time without affecting prior processing</li>
+        <li><strong>Right not to be subject to automated decision-making (Art. 22)</strong> — we carry out no automated profiling</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at the details below. We will respond within <strong>30 days</strong> at no charge.</p>
+      <h3>Right to Lodge a Complaint</h3>
+      <p>If you are unhappy with how we handle your data, you have the right to complain to the Bulgarian supervisory authority:</p>
+      <div class="highlight-box">
+        <p><strong>Commission for Personal Data Protection (CPDP)</strong><br/>
+        2 Prof. Tsvetan Lazarov Blvd., Sofia 1592, Bulgaria<br/>
+        Website: <a href="https://www.cpdp.bg" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">www.cpdp.bg</a><br/>
+        Email: kzld@cpdp.bg · Phone: +359 2 915 3518</p>
+      </div>
+      <p style="margin-top:1rem;">You also have the right to complain to the supervisory authority in your country of residence within the EU.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>11. <em>Security</em> of Your Data</h2>
+      <ul>
+        <li>HTTPS encryption across the entire website (enforced via Cloudflare)</li>
+        <li>HTTP Strict Transport Security (HSTS) to prevent downgrade attacks</li>
+        <li>Content Security Policy to prevent cross-site scripting attacks</li>
+        <li>Cloudflare DDoS protection and Web Application Firewall</li>
+        <li>No storage of personal data in databases on this website</li>
+      </ul>
+      <p>We will notify you and the relevant supervisory authority of any data breach as required by GDPR Art. 33-34.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>12. <em>Children's</em> Privacy</h2>
+      <p>Our website and services are directed exclusively at adults aged 18 and over. We do not knowingly collect personal data from children under the age of 16. If you believe we have inadvertently collected data from a child, please contact us immediately and we will delete it promptly.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>13. <em>External Links</em></h2>
+      <p>Our website contains links to Instagram, Facebook, TikTok and Pinterest. Once you leave our site, we are not responsible for the privacy practices of those platforms. We encourage you to read their individual privacy policies.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>14. <em>Changes</em> to This Policy</h2>
+      <p>We may update this policy from time to time. When we make material changes, we will update the "Last updated" date at the top of this page. Continued use of our website after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>15. <em>Contact</em> Us</h2>
+      <p>For any questions, concerns or data rights requests:</p>
       <div class="contact-box">
-        <p><strong>Hello.NoFilterStories</strong><br/>
-        Velingrad, Bulgaria<br/>
-        <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
-        +359 899 368 857</p>
+        <p><strong>No Filters Stories</strong><br/>
+        Velingrad, Pazardzhik Region, Bulgaria<br/>
+        Email: <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
+        Phone: +359 899 368 857<br/><br/>
+        We aim to respond to all data rights requests within <strong>30 days</strong>.</p>
       </div>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">No Filters Stories</div>
-    <div class="footer-copy">© 2025 Hello.NoFilterStories · All rights reserved</div>
+    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
     <a href="index.html" class="footer-back">← Back to site</a>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+    (function() {
+      const consent = localStorage.getItem('cookie-consent');
+      if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
+      document.getElementById('cookie-btn-accept').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+        gtag('js', new Date()); gtag('config', 'G-7CK46ZNNYJ');
       });
+      document.getElementById('cookie-btn-decline').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'declined');
+        document.getElementById('cookie-banner').style.display = 'none';
+      });
+    })();
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
-    document.querySelectorAll('.privacy-section').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.privacy-section').forEach(s => observer.observe(s));
   </script>
 
 </body>
