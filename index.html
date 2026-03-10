@@ -164,6 +164,59 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "No Filters Stories",
+    "url": "https://www.nofiltersstories.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "6",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Petq" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "I absolutely adore the photos taken of me! The pictures hold such genuine moments and really brought out my personality. The photographer has a wonderful eye."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Darina G" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "OMG! I LOVE the pictures and the girls do too. You proved me and my skeptical nature wrong. The pictures are truly amazing!! Thank you for the unforgettable experience and we 100% recommend!!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Georgi Kanliev" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "It was a pleasure working with them, they made my ideas come through even better than I imagined! They are easy to work with."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Jamilah BellyUp" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "As a dancer I look for versatility and originality. I have worked with many photographers and none have helped me pose or made me feel as comfortable."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Marta Iulia Crisan" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Very good experience, I always come back — they are the best."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Daniela S" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "100% Recommended — they gave my husband and I an incredible photo session, capturing moments worth a lifetime."
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
@@ -246,6 +299,27 @@
     .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 300; line-height: 1; margin-bottom: 1.5rem; }
     .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: var(--off-white); }
     .service-card p { font-size: 0.75rem; line-height: 1.8; color: var(--grey); }
+    /* TESTIMONIALS */
+    #testimonials { padding: 8rem 4rem; background: var(--black); }
+    .testimonials-header { text-align: center; margin-bottom: 5rem; }
+    .testimonials-header .section-label { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
+    .testimonials-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; }
+    .testimonials-header h2 em { font-style: italic; color: var(--gold); }
+    .testimonials-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.2em; margin-top: 1rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .testimonial-card { background: var(--mid); padding: 3rem 2.5rem; position: relative; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .testimonial-card.visible { opacity: 1; transform: translateY(0); }
+    .testimonial-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; position: absolute; top: 1rem; left: 2rem; line-height: 1; }
+    .testimonial-text { font-size: 0.78rem; line-height: 2; color: var(--off-white); margin-bottom: 1rem; font-style: italic; position: relative; z-index: 1; }
+    .testimonial-translation { font-size: 0.7rem; line-height: 1.8; color: var(--grey); margin-bottom: 1.5rem; border-left: 2px solid var(--gold); padding-left: 1rem; }
+    .testimonial-author { display: flex; flex-direction: column; gap: 0.3rem; }
+    .testimonial-name { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); }
+    .testimonial-detail { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); }
+    .testimonial-rating { color: var(--gold); font-size: 0.7rem; margin-bottom: 1.5rem; }
+    .testimonials-cta { text-align: center; margin-top: 4rem; }
+    .testimonials-cta a { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 0.3rem; transition: color 0.3s, border-color 0.3s; }
+    .testimonials-cta a:hover { color: var(--gold); border-color: var(--gold); }
+
     #contact { padding: 8rem 4rem; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
     .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
     .contact-left h2 em { font-style: italic; color: var(--gold); }
@@ -288,6 +362,8 @@
       .gallery-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 200px; }
       .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9 { grid-column: auto; grid-row: auto; }
       .services-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      #testimonials { padding: 6rem 2rem; }
       #contact { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 2rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
       .footer-location { text-align: center; }
@@ -417,6 +493,78 @@
         <h3>Events &amp; Occasions</h3>
         <p>From intimate gatherings to special celebrations, we document your moments with the same artistic eye we bring to every session we do.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="testimonials-header">
+      <span class="section-label">Client Words</span>
+      <h2>What clients <em>say</em></h2>
+      <div class="testimonials-stars">★★★★★ 5.0 · 6 reviews on Google</div>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"I absolutely adore the photos taken of me! The pictures hold such genuine moments and really brought out my personality. The photographer has a wonderful eye."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Petq</span>
+          <span class="testimonial-detail">Google Review · 5 stars</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"OMG! I LOVE the pictures and the girls do too. You proved me and my skeptical nature wrong. The pictures are truly amazing!! Thank you for the unforgettable experience and we 100% recommend!!"</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Darina G</span>
+          <span class="testimonial-detail">Google Review · 5 stars</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"It was a pleasure working with them, they made my ideas come through even better than I imagined! They are easy to work with."</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Georgi Kanliev</span>
+          <span class="testimonial-detail">Google Review · 5 stars</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"Como bailarina busco versatilidad y originalidad. He trabajado con muchos fotógrafos y ni me han ayudado a posar, ni me han echo sentir tan cómoda."</p>
+        <p class="testimonial-translation">As a dancer I look for versatility and originality. I have worked with many photographers and none have helped me pose or made me feel as comfortable.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Jamilah BellyUp</span>
+          <span class="testimonial-detail">Google Review · 5 stars · Dancer</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"Muy buena experiencia, siempre repito son los mejores."</p>
+        <p class="testimonial-translation">Very good experience, I always come back — they are the best.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Marta Iulia Crisan</span>
+          <span class="testimonial-detail">Google Review · 5 stars</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-rating">★★★★★</div>
+        <p class="testimonial-text">"100% Recomendados, me han hecho a mi esposo y a mi una sesión fotográfica increíble, capturando momentos que valen toda una vida."</p>
+        <p class="testimonial-translation">100% Recommended — they gave my husband and I an incredible photo session, capturing moments worth a lifetime.</p>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Daniela S</span>
+          <span class="testimonial-detail">Google Review · 5 stars</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="testimonials-cta">
+      <a href="https://www.google.com/maps/search/No+Filters+Stories" target="_blank" rel="noopener noreferrer">Read all reviews on Google →</a>
     </div>
   </section>
 
@@ -571,7 +719,7 @@
         if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
       });
     }, { threshold: 0.1 });
-        document.querySelectorAll('.service-card, .about-text, .gallery-item').forEach(el => {
+    document.querySelectorAll('.service-card, .about-text, .gallery-item, .testimonial-card').forEach(el => {
       el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
       observer.observe(el);
     });
