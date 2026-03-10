@@ -46,8 +46,8 @@
     .mobile-menu a { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; }
 
     /* HERO: full-width tall with text centred over image */
-    .post-hero { position: relative; height: 85vh; overflow: hidden; }
-    .post-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .post-hero { position: relative; max-height: 95vh; overflow: hidden; }
+    .post-hero img { width: 100%; height: auto; display: block; object-position: center 20%; }
     .post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.2) 60%, transparent 100%); }
     .post-hero-text { position: absolute; bottom: 5rem; left: 5rem; right: 5rem; }
     .post-breadcrumb { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(240,236,228,0.6); margin-bottom: 1.5rem; }
@@ -96,7 +96,7 @@
       nav { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .post-hero { height: 70vh; }
+      .post-hero { max-height: none; }
       .post-hero-text { left: 2rem; right: 2rem; bottom: 3rem; }
       .post-content { padding: 4rem 2rem 6rem; }
       footer { flex-direction: column; text-align: center; padding: 2rem; }
