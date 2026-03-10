@@ -34,14 +34,17 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "name": "No Filters Stories",
-    "description": "Artistic photography specialising in dance, performers and editorial photography. Based in Velingrad, Bulgaria. Available worldwide.",
+    "alternateName": "NoFilterStories",
+    "description": "No Filters Stories is an artistic photography brand based in Velingrad, Bulgaria, specialising in dance photography, performer portraits and high-end editorial photography. Available worldwide for international bookings and travel.",
     "url": "https://www.nofiltersstories.com",
     "telephone": "+359899368857",
     "email": "hello.nofilterstories@gmail.com",
     "image": "https://www.nofiltersstories.com/hero.jpg",
+    "logo": "https://www.nofiltersstories.com/favicon.png",
     "priceRange": "$$",
+    "currenciesAccepted": "EUR, USD, GBP",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Velingrad",
@@ -53,8 +56,20 @@
       "latitude": "42.0258",
       "longitude": "24.0058"
     },
-    "areaServed": "Worldwide",
-    "knowsAbout": ["Dance Photography", "Performer Photography", "Editorial Photography", "Artistic Portrait Photography"],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "knowsAbout": [
+      "Dance Photography",
+      "Performer Photography",
+      "Editorial Photography",
+      "Artistic Portrait Photography",
+      "Movement Photography",
+      "Creative Photography",
+      "Fashion Photography",
+      "Fine Art Photography"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Photography Services",
@@ -73,6 +88,14 @@
             "@type": "Service",
             "name": "Artistic Portraits",
             "description": "More than a photograph — an intimate, artistic portrait session that reveals your true self. We create images that feel genuine, powerful and uniquely you."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Editorial Photography",
+            "description": "High-end editorial and fashion photography for publications, brands and creative projects worldwide."
           }
         },
         {

@@ -1,3 +1,6 @@
+# robots.txt — No Filters Stories
+# https://www.nofiltersstories.com
+
 User-agent: *
 Allow: /
 Disallow: /members
@@ -5,4 +8,61 @@ Disallow: /blog
 Disallow: /members/
 Disallow: /blog/
 
+# Google — including Gemini / AI Overviews
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common AI research crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Sitemap
 Sitemap: https://www.nofiltersstories.com/sitemap.xml
+
+# AI context file
+# See /llms.txt for structured information about this site
