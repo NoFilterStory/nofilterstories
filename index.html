@@ -395,7 +395,7 @@
       <li><a href="#contact">Book</a></li>
     </ul>
     <div class="translate-wrapper">
-      <select class="lang-select" onchange="translatePage(this.value)">
+      <select class="lang-select" onchange="translatePage(this.value); this.value=''">
         <option value="">🌐 EN</option>
         <option value="bg">BG</option>
         <option value="ro">RO</option>
@@ -656,8 +656,8 @@
       if (!lang) return;
       var url = 'https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
       window.open(url, '_blank');
-      this.value = '';
     }
+  </script>
   <script>
     function toggleMenu() {
       document.getElementById('hamburger').classList.toggle('open');
