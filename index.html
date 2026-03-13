@@ -231,9 +231,7 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 1; }
     .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
-    .translate-wrapper { position: relative; z-index: 1; }
-    .lang-select { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--grey); font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; padding: 0.3rem 0.5rem; outline: none; cursor: pointer; }
-    .lang-select option { background: var(--black); color: var(--off-white); }
+
     body { top: 0 !important; }
     .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .social-icon-link:hover { color: var(--gold); }
@@ -346,7 +344,6 @@
     @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .translate-wrapper { display: none; }
       #hero { padding: 6rem 2rem 4rem; }
       .hero-content { max-width: 100%; }
       .hero-photo-1 { width: 45vw; height: 45vh; top: 12%; right: 2%; }
@@ -394,15 +391,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="#contact">Book</a></li>
     </ul>
-    <div class="translate-wrapper">
-      <select class="lang-select" onchange="translatePage(this.value); this.value=''">
-        <option value="">🌐 EN</option>
-        <option value="bg">BG</option>
-        <option value="ro">RO</option>
-        <option value="el">GR</option>
-        <option value="es">ES</option>
-      </select>
-    </div>
+
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -652,13 +641,7 @@
   </div>
 
   <script type="text/javascript">
-    function translatePage(lang) {
-      if (!lang) return;
-      var url = 'https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
-      window.open(url, '_blank');
-    }
-  </script>
-  <script>
+
     function toggleMenu() {
       document.getElementById('hamburger').classList.toggle('open');
       document.getElementById('mobile-menu').classList.toggle('open');
