@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com https://translate.google.com; connect-src 'self' https://www.google-analytics.com https://formspree.io https://translate.googleapis.com; frame-src https://translate.google.com https://*.translate.goog;"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com https://formspree.io; frame-src 'none';"/>
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
@@ -234,12 +234,7 @@
     .translate-wrapper { position: relative; z-index: 1; }
     .lang-select { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--grey); font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; padding: 0.3rem 0.5rem; outline: none; cursor: pointer; }
     .lang-select option { background: var(--black); color: var(--off-white); }
-    .goog-te-banner-frame { display: none !important; }
-    .goog-te-ftab-frame { display: none !important; }
-    #goog-gt-tt { display: none !important; }
-    .goog-te-balloon-frame { display: none !important; }
     body { top: 0 !important; }
-    #google_translate_element { display: none; }
     .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .social-icon-link:hover { color: var(--gold); }
     .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; pointer-events: none; }
@@ -400,14 +395,13 @@
       <li><a href="#contact">Book</a></li>
     </ul>
     <div class="translate-wrapper">
-      <select class="lang-select" onchange="doGTranslate(this.value)">
-        <option value="en|en">🌐 EN</option>
-        <option value="en|bg">BG</option>
-        <option value="en|ro">RO</option>
-        <option value="en|el">GR</option>
-        <option value="en|es">ES</option>
+      <select class="lang-select" onchange="translatePage(this.value)">
+        <option value="">🌐 EN</option>
+        <option value="bg">BG</option>
+        <option value="ro">RO</option>
+        <option value="el">GR</option>
+        <option value="es">ES</option>
       </select>
-      <div id="google_translate_element"></div>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -657,17 +651,13 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,bg,ro,el,es', autoDisplay: false }, 'google_translate_element');
+  <script type="text/javascript">
+    function translatePage(lang) {
+      if (!lang) return;
+      var url = 'https://translate.google.com/translate?sl=en&tl=' + lang + '&u=' + encodeURIComponent(window.location.href);
+      window.open(url, '_blank');
+      this.value = '';
     }
-    function doGTranslate(lang_pair) {
-      var lang = lang_pair.split('|')[1];
-      var teCombo = document.querySelector('.goog-te-combo');
-      if (teCombo) { teCombo.value = lang; teCombo.dispatchEvent(new Event('change')); }
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     function toggleMenu() {
       document.getElementById('hamburger').classList.toggle('open');
