@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://www.nofiltersstories.com/gallery.html"/>
   <meta property="og:title" content="Gallery — No Filters Stories | Dance & Editorial Photography"/>
   <meta property="og:description" content="Browse photography collections — artistic dance, editorial and portrait photography. Raw. Real. Unforgettable."/>
-  <meta property="og:image" content="https://www.nofiltersstories.com/hero.jpg"/>
+  <meta property="og:image" content="https://www.nofiltersstories.com/hero.webp"/>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,7 +35,7 @@
     "author": { "@type": "ProfessionalService", "name": "No Filters Stories", "url": "https://www.nofiltersstories.com" }
   }
   </script>
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/webp" href="favicon.webp"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -184,7 +184,7 @@
       <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#contact">Book</a></li>
+      <li><a href="index.html#contact">Book Now</a></li>
     </ul>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -198,7 +198,7 @@
     <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
     <a href="blog.html" onclick="toggleMenu()">Blog</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="index.html#contact" onclick="toggleMenu()">Book</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Book Now</a>
   </div>
 
   <div class="page-header">
@@ -220,7 +220,7 @@
   <div class="overview-view" id="overview">
     <div class="collections-grid">
       <div class="collection-card" onclick="openGallery('sun')">
-        <img src="sun drenched stories-1.jpg" alt="Sun Drenched Stories — outdoor golden light portrait photography"/>
+        <img src="sun drenched stories-1.webp" alt="Sun Drenched Stories — outdoor golden light portrait photography"/>
         <div class="collection-info">
           <span class="collection-count">18 Images</span>
           <h2 class="collection-name">Sun Drenched Stories</h2>
@@ -228,7 +228,7 @@
         </div>
       </div>
       <div class="collection-card" onclick="openGallery('cinematic')">
-        <img src="cinematic-1.jpg" alt="Cinematic Portal — atmospheric cinematic portrait photography"/>
+        <img src="cinematic-1.webp" alt="Cinematic Portal — atmospheric cinematic portrait photography"/>
         <div class="collection-info">
           <span class="collection-count">8 Images</span>
           <h2 class="collection-name">Cinematic Portal</h2>
@@ -236,7 +236,7 @@
         </div>
       </div>
       <div class="collection-card" onclick="openGallery('movement')">
-        <img src="movement-1.jpg" alt="The Movement Guide — dance and movement photography"/>
+        <img src="movement-1.webp" alt="The Movement Guide — dance and movement photography"/>
         <div class="collection-info">
           <span class="collection-count">9 Images</span>
           <h2 class="collection-name">The Movement Guide</h2>
@@ -244,7 +244,7 @@
         </div>
       </div>
       <div class="collection-card" onclick="openGallery('wild')">
-        <img src="wild edit-1.jpg" alt="Wild Editorial — outdoor editorial and dance photography"/>
+        <img src="wild edit-1.webp" alt="Wild Editorial — outdoor editorial and dance photography"/>
         <div class="collection-info">
           <span class="collection-count">24 Images</span>
           <h2 class="collection-name">Wild Editorial</h2>
@@ -252,9 +252,9 @@
         </div>
       </div>
       <div class="collection-card boudoir-card" onclick="confirmBoudoir()">
-        <img src="boudoir-1.jpg" alt="Boudoir — intimate artistic boudoir photography No Filters Stories" style="object-position: center 70%;"/>
+        <img src="boudoir-1.webp" alt="Boudoir — intimate artistic boudoir photography No Filters Stories" style="object-position: center 70%;"/>
         <div class="collection-info">
-          <span class="collection-count">8 Images · 18+</span>
+          <span class="collection-count">9 Images · 18+</span>
           <h2 class="collection-name">Boudoir</h2>
           <span class="collection-cta">View Collection →</span>
         </div>
@@ -314,7 +314,7 @@
   <div class="gallery-view" id="gallery-boudoir">
     <div class="gallery-view-header">
       <div>
-        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">8 Images · 18+</p>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">9 Images · 18+</p>
         <h2>Boudoir</h2>
       </div>
       <button class="back-btn" onclick="showOverview()">← All Collections</button>
@@ -353,7 +353,7 @@
       <a href="index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="services.html">Services</a>
-      <a href="index.html#contact">Book</a>
+      <a href="index.html#contact">Book Now</a>
       <a href="privacy.html">Privacy</a>
     </div>
   </footer>
@@ -380,11 +380,11 @@
     })();
 
     const galleries = {
-      sun:      { name: 'Sun Drenched Stories', images: Array.from({length:18}, (_,i) => `sun drenched stories-${i+1}.jpg`) },
-      cinematic:{ name: 'Cinematic Portal',     images: ['cinematic-1.jpg','cinematic-2.jpg','cinematic-3.jpg','cinematic-4.jpg','cinematic-5.jpg','cinematic-6.jpg','cinematic-7.jpg','cinematic-8.jpg'] },
-      movement: { name: 'The Movement Guide',   images: ['movement-1.jpg','movement-2.jpg','movement-3.jpg','movement-4.jpg','movement-5.jpg','movement-6.jpg','movement-7.jpg','movement-8.jpg','movement-9.jpg'] },
-      wild:     { name: 'Wild Editorial',       images: Array.from({length:24}, (_,i) => `wild edit-${i+1}.jpg`) },
-      boudoir:  { name: 'Boudoir',              images: Array.from({length:8},  (_,i) => `boudoir-${i+1}.jpg`) }
+      sun:      { name: 'Sun Drenched Stories', images: Array.from({length:18}, (_,i) => `sun drenched stories-${i+1}.webp`) },
+      cinematic:{ name: 'Cinematic Portal',     images: ['cinematic-1.webp','cinematic-2.webp','cinematic-3.webp','cinematic-4.webp','cinematic-5.webp','cinematic-6.webp','cinematic-7.webp','cinematic-8.webp'] },
+      movement: { name: 'The Movement Guide',   images: ['movement-1.webp','movement-2.webp','movement-3.webp','movement-4.webp','movement-5.webp','movement-6.webp','movement-7.webp','movement-8.webp','movement-9.webp'] },
+      wild:     { name: 'Wild Editorial',       images: Array.from({length:24}, (_,i) => `wild edit-${i+1}.webp`) },
+      boudoir:  { name: 'Boudoir',              images: Array.from({length:9},  (_,i) => `boudoir-${i+1}.webp`) }
     };
 
     let currentGallery = [], currentIndex = 0;
