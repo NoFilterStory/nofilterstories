@@ -78,6 +78,7 @@
     /* OVERVIEW GRID */
     .overview-view { padding: 5rem 4rem; }
     .collections-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
+    .collection-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-height: 50vh; }
     .collection-card { position: relative; overflow: hidden; height: 60vh; cursor: pointer; }
     /* Gold frame on collection cards */
     .collection-card::before { content: ''; position: absolute; inset: 12px; border: 1px solid var(--gold-dim); z-index: 3; pointer-events: none; transition: border-color 0.4s; }
@@ -212,6 +213,7 @@
     <button class="gallery-tab" onclick="openGallery('cinematic')">Cinematic Portal</button>
     <button class="gallery-tab" onclick="openGallery('movement')">The Movement Guide</button>
     <button class="gallery-tab" onclick="openGallery('wild')">Wild Editorial</button>
+    <button class="gallery-tab" onclick="confirmBoudoir()">Boudoir</button>
   </div>
 
   <!-- OVERVIEW -->
@@ -228,7 +230,7 @@
       <div class="collection-card" onclick="openGallery('cinematic')">
         <img src="cinematic-1.jpg" alt="Cinematic Portal — atmospheric cinematic portrait photography"/>
         <div class="collection-info">
-          <span class="collection-count">6 Images</span>
+          <span class="collection-count">8 Images</span>
           <h2 class="collection-name">Cinematic Portal</h2>
           <span class="collection-cta">View Collection →</span>
         </div>
@@ -236,7 +238,7 @@
       <div class="collection-card" onclick="openGallery('movement')">
         <img src="movement-1.jpg" alt="The Movement Guide — dance and movement photography"/>
         <div class="collection-info">
-          <span class="collection-count">5 Images</span>
+          <span class="collection-count">9 Images</span>
           <h2 class="collection-name">The Movement Guide</h2>
           <span class="collection-cta">View Collection →</span>
         </div>
@@ -246,6 +248,14 @@
         <div class="collection-info">
           <span class="collection-count">24 Images</span>
           <h2 class="collection-name">Wild Editorial</h2>
+          <span class="collection-cta">View Collection →</span>
+        </div>
+      </div>
+      <div class="collection-card boudoir-card" onclick="confirmBoudoir()">
+        <img src="boudoir-1.jpg" alt="Boudoir — intimate artistic boudoir photography No Filters Stories"/>
+        <div class="collection-info">
+          <span class="collection-count">8 Images · 18+</span>
+          <h2 class="collection-name">Boudoir</h2>
           <span class="collection-cta">View Collection →</span>
         </div>
       </div>
@@ -268,7 +278,7 @@
   <div class="gallery-view" id="gallery-cinematic">
     <div class="gallery-view-header">
       <div>
-        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">6 Images</p>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">8 Images</p>
         <h2>Cinematic <em>Portal</em></h2>
       </div>
       <button class="back-btn" onclick="showOverview()">← All Collections</button>
@@ -280,7 +290,7 @@
   <div class="gallery-view" id="gallery-movement">
     <div class="gallery-view-header">
       <div>
-        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">5 Images</p>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">9 Images</p>
         <h2>The Movement <em>Guide</em></h2>
       </div>
       <button class="back-btn" onclick="showOverview()">← All Collections</button>
@@ -298,6 +308,31 @@
       <button class="back-btn" onclick="showOverview()">← All Collections</button>
     </div>
     <div class="photo-grid" id="grid-wild"></div>
+  </div>
+
+  <!-- BOUDOIR -->
+  <div class="gallery-view" id="gallery-boudoir">
+    <div class="gallery-view-header">
+      <div>
+        <p style="font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">8 Images · 18+</p>
+        <h2>Boudoir</h2>
+      </div>
+      <button class="back-btn" onclick="showOverview()">← All Collections</button>
+    </div>
+    <div class="photo-grid" id="grid-boudoir"></div>
+  </div>
+
+  <!-- AGE GATE MODAL -->
+  <div id="age-gate" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.96); z-index:500; align-items:center; justify-content:center;">
+    <div style="max-width:480px; width:90%; text-align:center; padding:4rem 3rem; border:1px solid rgba(201,168,76,0.25); position:relative;">
+      <span style="font-size:0.55rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.5rem;">Adults Only</span>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; margin-bottom:1.5rem; line-height:1.2;">This collection contains <em style="font-style:italic; color:var(--gold);">artistic boudoir</em> photography</h2>
+      <p style="font-size:0.75rem; color:var(--grey); line-height:1.9; margin-bottom:3rem;">The images in this collection are intended for adult audiences. By entering you confirm that you are 18 years of age or older.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <button onclick="enterBoudoir()" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; background:var(--gold); color:var(--black); border:none; padding:1rem 2.5rem; cursor:pointer; font-family:'Montserrat',sans-serif; transition:background 0.3s;">I am 18 or older — Enter</button>
+        <button onclick="declineBoudoir()" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; background:transparent; color:var(--grey); border:1px solid #333; padding:1rem 2.5rem; cursor:pointer; font-family:'Montserrat',sans-serif; transition:all 0.3s;">Go Back</button>
+      </div>
+    </div>
   </div>
 
   <!-- LIGHTBOX -->
@@ -346,9 +381,10 @@
 
     const galleries = {
       sun:      { name: 'Sun Drenched Stories', images: Array.from({length:18}, (_,i) => `sun drenched stories-${i+1}.jpg`) },
-      cinematic:{ name: 'Cinematic Portal',     images: Array.from({length:6},  (_,i) => `cinematic-${i+1}.jpg`) },
-      movement: { name: 'The Movement Guide',   images: Array.from({length:5},  (_,i) => `movement-${i+1}.jpg`) },
-      wild:     { name: 'Wild Editorial',       images: Array.from({length:24}, (_,i) => `wild edit-${i+1}.jpg`) }
+      cinematic:{ name: 'Cinematic Portal',     images: ['cinematic-1.jpg','cinematic-2.jpg','cinematic-3.jpg','cinematic-4.jpg','cinematic-5.jpg','cinematic-6.jpg','cinematic-7.jpg','cinematic-8.jpg'] },
+      movement: { name: 'The Movement Guide',   images: ['movement-1.jpg','movement-2.jpg','movement-3.jpg','movement-4.jpg','movement-5.jpg','movement-6.jpg','movement-7.jpg','movement-8.jpg','movement-9.jpg'] },
+      wild:     { name: 'Wild Editorial',       images: Array.from({length:24}, (_,i) => `wild edit-${i+1}.jpg`) },
+      boudoir:  { name: 'Boudoir',              images: Array.from({length:8},  (_,i) => `boudoir-${i+1}.jpg`) }
     };
 
     let currentGallery = [], currentIndex = 0;
@@ -384,9 +420,31 @@
       document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
       buildGrid(key);
       document.getElementById('gallery-' + key).classList.add('active');
-      const tabMap = {sun:1, cinematic:2, movement:3, wild:4};
+      const tabMap = {sun:1, cinematic:2, movement:3, wild:4, boudoir:5};
       document.querySelectorAll('.gallery-tab')[tabMap[key]].classList.add('active');
       window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function confirmBoudoir() {
+      // If already confirmed this session, go straight in
+      if (sessionStorage.getItem('boudoir-confirmed') === 'yes') {
+        openGallery('boudoir');
+        return;
+      }
+      document.getElementById('age-gate').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function enterBoudoir() {
+      sessionStorage.setItem('boudoir-confirmed', 'yes');
+      document.getElementById('age-gate').style.display = 'none';
+      document.body.style.overflow = '';
+      openGallery('boudoir');
+    }
+
+    function declineBoudoir() {
+      document.getElementById('age-gate').style.display = 'none';
+      document.body.style.overflow = '';
     }
 
     function openLightbox(images, index) {
