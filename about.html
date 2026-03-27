@@ -91,6 +91,7 @@
     /* SECTION BASE */
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
     /* WHO AM I */
     .section-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 90vh; }
@@ -424,4 +425,10 @@
         document.getElementById('cookie-banner').style.display = 'none';
       });
     })();
-    const observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
