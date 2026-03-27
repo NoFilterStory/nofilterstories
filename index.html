@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
+  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -219,7 +219,10 @@
   }
   </script>
   <link rel="icon" type="image/webp" href="favicon.webp"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"/></noscript>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
@@ -385,7 +388,7 @@
   <nav>
     <a href="#hero" class="nav-logo">No Filters Stories</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="blog.html">Blog</a></li>
@@ -399,7 +402,7 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="gallery.html">Gallery</a>
     <a href="blog.html">Blog</a>
