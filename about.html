@@ -95,8 +95,8 @@
 
     /* WHO AM I */
     .section-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 90vh; }
-    .section-split.reverse { direction: rtl; }
-    .section-split.reverse > * { direction: ltr; }
+    .section-split.reverse .split-image { order: 2; }
+    .section-split.reverse .split-content { order: 1; }
     .split-image { overflow: hidden; position: relative; }
     .split-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
     .split-image:hover img { transform: scale(1.03); }
@@ -117,9 +117,9 @@
 
     /* MY VISUAL STYLE — image strip */
     .style-section { padding: 8rem 4rem; background: var(--black); }
-    .style-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 8rem; align-items: center; }
-    .style-strip { display: flex; flex-direction: column; gap: 4px; }
-    .style-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .style-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 380px) 1fr; gap: 6rem; align-items: center; }
+    .style-strip { display: flex; flex-direction: column; gap: 4px; min-width: 0; overflow: hidden; }
+    .style-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
     .style-strip img:nth-child(2) { aspect-ratio: 16/9; }
     .style-text .section-heading { margin-bottom: 2.5rem; }
 
@@ -192,13 +192,16 @@
       .about-hero-image img { height: 100%; }
       .about-hero-image::after { background: linear-gradient(to top, var(--black), transparent); }
       .about-hero-text { padding: 3rem 2rem 4rem; }
-      .section-split { grid-template-columns: 1fr; direction: ltr !important; min-height: auto; }
+      .section-split { grid-template-columns: 1fr; min-height: auto; }
+      .section-split.reverse .split-image { order: 0; }
+      .section-split.reverse .split-content { order: 0; }
       .split-image { height: 70vw; }
       .split-content { padding: 4rem 2rem; }
       .section-dark { padding: 5rem 2rem; }
       .section-dark-inner { grid-template-columns: 1fr; gap: 3rem; }
       .style-section { padding: 5rem 2rem; }
       .style-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .style-strip { overflow: visible; }
       .style-strip { flex-direction: row; overflow-x: auto; }
       .style-strip img { width: 200px; flex-shrink: 0; }
       .process-section { padding: 5rem 2rem; }
