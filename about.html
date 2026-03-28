@@ -51,12 +51,21 @@
   </script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --gold-dim: rgba(201,168,76,0.2); --mid: #1a1a1a; --grey: #888; --deep: #111; }
+    :root {
+      --black: #0a0a0a;
+      --off-white: #f0ece4;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,0.3);
+      --gold-faint: rgba(201,168,76,0.06);
+      --mid: #1a1a1a;
+      --grey: #888;
+      --deep: #111;
+    }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: hidden; }
     img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; max-width: 100%; display: block; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
     nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
@@ -73,87 +82,162 @@
     .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.2em; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .mobile-menu a:hover { color: var(--gold); }
 
-    /* HERO */
-    .about-hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
-    .about-hero-image { position: relative; overflow: hidden; }
-    .about-hero-image img { width: 100%; height: 100vh; object-fit: cover; object-position: center top; }
-    .about-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--black)); }
-    .about-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 8rem 5rem 4rem 4rem; position: relative; z-index: 1; }
-    .hero-eyebrow { font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
-    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 6vw, 7rem); font-weight: 300; line-height: 0.9; margin-bottom: 2rem; }
-    .hero-name em { font-style: italic; color: var(--gold); }
-    .hero-roles { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-    .hero-role { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); border: 1px solid #2a2a2a; padding: 0.5rem 1rem; }
-    .hero-intro { font-size: 0.85rem; line-height: 2.2; color: var(--grey); max-width: 480px; }
-    .hero-intro strong { color: var(--off-white); font-weight: 400; }
-    .hero-location { margin-top: 2.5rem; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: #444; }
-
-    /* SECTION BASE */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
-    /* WHO AM I */
-    .section-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 90vh; }
-    .section-split.reverse .split-image { order: 2; }
-    .section-split.reverse .split-content { order: 1; }
-    .split-image { overflow: hidden; position: relative; }
-    .split-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-    .split-image:hover img { transform: scale(1.03); }
-    .split-content { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; background: var(--mid); }
-    .section-label { font-size: 0.55rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: block; }
-    .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; line-height: 1; margin-bottom: 3rem; }
-    .section-heading em { font-style: italic; color: var(--gold); }
-    .section-body p { font-size: 0.8rem; line-height: 2.2; color: var(--grey); margin-bottom: 1.5rem; }
-    .section-body p strong { color: var(--off-white); font-weight: 400; }
-    .section-body p:last-child { margin-bottom: 0; }
+    /* ── PAGE INTRO ── */
+    .page-intro {
+      padding: 14rem 4rem 7rem;
+      text-align: center;
+    }
+    .page-intro::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 70px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      margin: 4rem auto 0;
+    }
+    .intro-eyebrow {
+      font-size: 0.55rem;
+      letter-spacing: 0.6em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-weight: 300;
+      line-height: 0.95;
+    }
+    .intro-title em { font-style: italic; color: var(--gold); }
+    .intro-sub {
+      margin-top: 2.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: #444;
+      text-transform: uppercase;
+    }
 
-    /* WHAT I DO — dark full section */
-    .section-dark { background: var(--deep); padding: 8rem 4rem; }
-    .section-dark-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-    .dark-image { position: relative; }
-    .dark-image img { width: 100%; object-fit: cover; }
-    .dark-image::before { content: ''; position: absolute; inset: -12px; border: 1px solid var(--gold-dim); pointer-events: none; z-index: 1; }
+    /* ── SLIDE FRAME ── */
+    .slide-block {
+      padding: 0 5vw;
+      margin-bottom: 0;
+    }
+    .slide-frame {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    /* Double border frame */
+    .slide-frame::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 1px solid var(--gold-dim);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .slide-frame::after {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border: 1px solid rgba(201,168,76,0.1);
+      pointer-events: none;
+      z-index: 2;
+    }
+    /* Gold corner accents */
+    .slide-frame .c {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      z-index: 3;
+    }
+    .slide-frame .c::before,
+    .slide-frame .c::after {
+      content: '';
+      position: absolute;
+      background: var(--gold);
+    }
+    .slide-frame .c::before { width: 100%; height: 1.5px; top: 0; left: 0; }
+    .slide-frame .c::after  { width: 1.5px; height: 100%; top: 0; left: 0; }
+    .slide-frame .c.tl { top: -8px; left: -8px; }
+    .slide-frame .c.tr { top: -8px; right: -8px; transform: rotate(90deg); }
+    .slide-frame .c.bl { bottom: -8px; left: -8px; transform: rotate(270deg); }
+    .slide-frame .c.br { bottom: -8px; right: -8px; transform: rotate(180deg); }
+    /* Deep shadow */
+    .slide-frame img {
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
+      box-shadow:
+        0 40px 100px rgba(0,0,0,0.9),
+        0 0 80px rgba(0,0,0,0.5),
+        0 0 40px var(--gold-faint);
+    }
 
-    /* MY VISUAL STYLE — image strip */
-    .style-section { padding: 8rem 4rem; background: var(--black); }
-    .style-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 380px) 1fr; gap: 6rem; align-items: center; }
-    .style-strip { display: flex; flex-direction: column; gap: 4px; min-width: 0; overflow: hidden; }
-    .style-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-    .style-strip img:nth-child(2) { aspect-ratio: 16/9; }
-    .style-text .section-heading { margin-bottom: 2.5rem; }
+    /* ── TEXT SECTION ── */
+    .text-section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 5rem 4rem 6rem;
+      text-align: center;
+    }
+    .text-section::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold-dim), transparent);
+      margin: 0 auto 3.5rem;
+    }
+    .text-section p {
+      font-size: 0.875rem;
+      line-height: 2.5;
+      color: var(--grey);
+      margin-bottom: 1.5rem;
+    }
+    .text-section p:last-child { margin-bottom: 0; }
+    .text-section p strong { color: var(--off-white); font-weight: 400; }
+    .text-section p em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.1em;
+    }
+    .text-section::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2a2a2a, transparent);
+      margin: 4rem auto 0;
+    }
 
-    /* HOW IT WORKS — steps */
-    .process-section { background: var(--mid); padding: 8rem 4rem; }
-    .process-inner { max-width: 1200px; margin: 0 auto; }
-    .process-header { text-align: center; margin-bottom: 6rem; }
-    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
-    .process-item { background: var(--black); padding: 3.5rem 3rem; position: relative; }
-    .process-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--gold-dim); }
-    .process-number { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: #1f1f1f; line-height: 1; margin-bottom: 1.5rem; }
-    .process-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem; }
-    .process-item h3 em { font-style: italic; color: var(--gold); }
-    .process-item p { font-size: 0.75rem; line-height: 2; color: var(--grey); }
-
-    /* WHY WORK WITH ME */
-    .why-section { padding: 8rem 4rem; background: var(--black); }
-    .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-    .why-image img { width: 100%; object-fit: cover; }
-    .why-points { display: flex; flex-direction: column; gap: 0; }
-    .why-point { padding: 2rem 0; border-bottom: 1px solid #1a1a1a; }
-    .why-point:first-child { border-top: 1px solid #1a1a1a; }
-    .why-point p { font-size: 0.8rem; line-height: 2; color: var(--grey); }
-    .why-point p::before { content: '— '; color: var(--gold); }
-
-    /* LANGUAGES */
-    .lang-strip { background: var(--mid); padding: 4rem; display: flex; align-items: center; justify-content: center; gap: 6rem; border-top: 1px solid #1f1f1f; flex-wrap: wrap; }
+    /* ── LANGUAGES ── */
+    .lang-strip {
+      background: var(--mid);
+      padding: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6rem;
+      border-top: 1px solid #1f1f1f;
+      border-bottom: 1px solid #1f1f1f;
+      flex-wrap: wrap;
+    }
     .lang-item { text-align: center; }
     .lang-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--off-white); display: block; }
     .lang-note { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); margin-top: 0.5rem; display: block; }
 
-    /* CTA */
+    /* ── CTA ── */
     .cta-section { background: var(--deep); padding: 10rem 4rem; text-align: center; position: relative; overflow: hidden; }
-    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(201,168,76,0.04) 0%, transparent 70%); }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 70%); }
     .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
     .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
     .cta-section h2 em { font-style: italic; color: var(--gold); }
@@ -164,7 +248,7 @@
     .cta-contact a { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .cta-contact a:hover { color: var(--gold); }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; flex-wrap: wrap; gap: 1rem; }
     .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
     .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
@@ -172,7 +256,7 @@
     .footer-links a { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
 
-    /* COOKIE */
+    /* ── COOKIE ── */
     #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #111; border-top: 1px solid #2a2a2a; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
     .cookie-text { font-size: 0.7rem; line-height: 1.8; color: var(--grey); flex: 1; min-width: 200px; }
     .cookie-text a { color: var(--gold); text-decoration: underline; }
@@ -183,31 +267,21 @@
     #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #333; }
     #cookie-btn-decline:hover { color: var(--off-white); border-color: var(--off-white); }
 
+    /* ── MOBILE ── */
     @media (max-width: 900px) {
       nav { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .about-hero { grid-template-columns: 1fr; min-height: auto; }
-      .about-hero-image { height: 60vw; min-height: 300px; }
-      .about-hero-image img { height: 100%; }
-      .about-hero-image::after { background: linear-gradient(to top, var(--black), transparent); }
-      .about-hero-text { padding: 3rem 2rem 4rem; }
-      .section-split { grid-template-columns: 1fr; min-height: auto; }
-      .section-split.reverse .split-image { order: 0; }
-      .section-split.reverse .split-content { order: 0; }
-      .split-image { height: 70vw; }
-      .split-content { padding: 4rem 2rem; }
-      .section-dark { padding: 5rem 2rem; }
-      .section-dark-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .style-section { padding: 5rem 2rem; }
-      .style-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .style-strip { overflow: visible; }
-      .style-strip { flex-direction: row; overflow-x: auto; }
-      .style-strip img { width: 200px; flex-shrink: 0; }
-      .process-section { padding: 5rem 2rem; }
-      .process-grid { grid-template-columns: 1fr; }
-      .why-section { padding: 5rem 2rem; }
-      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .page-intro { padding: 10rem 2rem 5rem; }
+      .slide-block { padding: 0 1.5rem; }
+      .slide-frame::before { inset: -5px; }
+      .slide-frame::after { inset: -10px; }
+      .slide-frame .c { width: 14px; height: 14px; }
+      .slide-frame .c.tl { top: -5px; left: -5px; }
+      .slide-frame .c.tr { top: -5px; right: -5px; }
+      .slide-frame .c.bl { bottom: -5px; left: -5px; }
+      .slide-frame .c.br { bottom: -5px; right: -5px; }
+      .text-section { padding: 4rem 2rem 5rem; }
       .lang-strip { gap: 2rem; padding: 3rem 2rem; }
       .cta-section { padding: 6rem 2rem; }
       .cta-contact { flex-direction: column; gap: 1rem; align-items: center; }
@@ -251,115 +325,95 @@
     <a href="index.html#contact" onclick="toggleMenu()">Book Now</a>
   </div>
 
-  <!-- HERO -->
-  <div class="about-hero">
-    <div class="about-hero-image">
-      <img src="about-1.webp" alt="Georgiana photographer dancer model No Filters Stories Velingrad Bulgaria" fetchpriority="high"/>
-    </div>
-    <div class="about-hero-text">
-      <span class="hero-eyebrow">Photographer · Dancer · Model</span>
-      <h1 class="hero-name">About <em>Me</em></h1>
-      <div class="hero-roles">
-        <span class="hero-role">Movement</span>
-        <span class="hero-role">Light</span>
-        <span class="hero-role">Story</span>
-      </div>
-      <p class="hero-intro">Hi, I'm Georgiana — born in Romania, raised in Spain, and now based in <strong>Velingrad, Bulgaria</strong>. Dance brought me in front of the camera. Modelling taught me how it really feels to be there — the good, the uncomfortable, and everything in between. <strong>That experience is what I bring to every shoot.</strong></p>
-      <p class="hero-location">📍 Velingrad, Bulgaria · Available Worldwide</p>
-    </div>
+  <!-- PAGE INTRO -->
+  <div class="page-intro reveal">
+    <span class="intro-eyebrow">Photographer · Dancer · Model</span>
+    <h1 class="intro-title">Meet <em>Georgiana</em></h1>
+    <p class="intro-sub">📍 Velingrad, Bulgaria · Available Worldwide</p>
   </div>
 
-  <!-- WHO AM I -->
-  <div class="section-split reveal">
-    <div class="split-image">
-      <img src="about-2.webp" alt="Georgiana dancing outdoors No Filters Stories" loading="lazy" decoding="async"/>
-    </div>
-    <div class="split-content">
-      <span class="section-label">My Background</span>
-      <h2 class="section-heading">Who <em>Am I?</em></h2>
-      <div class="section-body">
-        <p>I hold a Master's in Audiovisual Communication from <strong>MasterMedia Valencia</strong>. But my real school was festivals, studios, and years of figuring out what makes a person shine on camera.</p>
-        <p>I specialise in <strong>boudoir, dance and vogue-style photography</strong>. Movement, light and the right moment turn a simple photo into something you'll never forget.</p>
-        <p>I also take care of everything — props, fabrics, accessories, atmosphere. <strong>You show up. I handle the rest.</strong></p>
-        <p>My goal is simple: every person who steps in front of my lens leaves feeling <strong>powerful, beautiful and seen.</strong></p>
-      </div>
+  <!-- SLIDE 1 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-1.webp" alt="About Georgiana — Photographer, Dancer, Model — No Filters Stories" fetchpriority="high"/>
     </div>
   </div>
-
-  <!-- MY VISUAL STYLE -->
-  <div class="style-section reveal">
-    <div class="style-inner">
-      <div class="style-strip">
-        <img src="about-3.webp" alt="No Filters Stories visual style red dress sea" loading="lazy" decoding="async"/>
-        <img src="about-4.webp" alt="No Filters Stories visual style movement" loading="lazy" decoding="async"/>
-        <img src="about-5.webp" alt="No Filters Stories visual style legs sea" loading="lazy" decoding="async"/>
-      </div>
-      <div class="style-text">
-        <span class="section-label">My Visual Style</span>
-        <h2 class="section-heading">I don't shoot for <em>perfection.</em><br>I shoot for <em>feeling.</em></h2>
-        <div class="section-body">
-          <p>My style lives between movement and stillness — a fraction of a second where personality, emotion and light come together.</p>
-          <p>Dramatic shadows, rich colours, and real moments that tell a story without words.</p>
-          <p><strong>Every session is different because every person is different.</strong> But the result is always the same: images that feel alive.</p>
-          <p style="margin-top:2rem; font-size:0.75rem; color:var(--grey);">Want to see more? Follow my work on Pinterest — that's where I share full sessions, style inspiration and creative ideas.</p>
-          <a href="https://pin.it/46IPPJJNO" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:1rem; font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); text-decoration:underline;">View on Pinterest →</a>
-        </div>
-      </div>
-    </div>
+  <div class="text-section reveal">
+    <p>Hi, I'm Georgiana — born in Romania, raised in Spain, and now based in <strong>Velingrad, Bulgaria</strong>. Dance brought me in front of the camera. Modelling taught me how it really feels to be there — the good, the uncomfortable, and everything in between.</p>
+    <p><strong>That experience is what I bring to every shoot.</strong></p>
   </div>
 
-  <!-- HOW IT WORKS -->
-  <div class="process-section reveal">
-    <div class="process-inner">
-      <div class="process-header">
-        <span class="section-label" style="display:block; text-align:center; margin-bottom:1.5rem;">The Process</span>
-        <h2 class="section-heading" style="text-align:center;">How it <em>Works</em></h2>
-      </div>
-      <div class="process-grid">
-        <div class="process-item">
-          <div class="process-number">01</div>
-          <h3>We <em>Talk</em></h3>
-          <p>We start with a quick chat — to understand what you want, what makes you feel good, and what story we want to tell. Simple. Relaxed. All about you.</p>
-        </div>
-        <div class="process-item">
-          <div class="process-number">02</div>
-          <h3>I <em>Handle</em> Everything</h3>
-          <p>Props, accessories, atmosphere — I take care of it all. You just show up with good energy and an open mind. No prep stress, no awkward silences.</p>
-        </div>
-        <div class="process-item">
-          <div class="process-number">03</div>
-          <h3>You <em>Shine</em></h3>
-          <p>During the shoot I guide you every step of the way — movement, angles, expression. Just flow. You leave with images that don't look like photos. They look like <em>you</em> — at your best.</p>
-        </div>
-      </div>
+  <!-- SLIDE 2 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-2.webp" alt="Who Am I — Georgiana's background and story" loading="lazy" decoding="async"/>
     </div>
   </div>
+  <div class="text-section reveal">
+    <p>I hold a Master's in Audiovisual Communication from <strong>MasterMedia Valencia</strong>. But my real school was festivals, studios, and years of figuring out what makes a person shine on camera.</p>
+    <p>I specialise in <strong>boudoir, dance and vogue-style photography</strong>. Movement, light and the right moment turn a simple photo into something you'll never forget.</p>
+    <p>I speak Spanish, Romanian and English — and I'm working on the Bulgarian.</p>
+  </div>
 
-  <!-- WHY WORK WITH ME -->
-  <div class="why-section reveal">
-    <div class="why-inner">
-      <div class="why-image">
-        <img src="about-6.webp" alt="Georgiana working with client outdoors No Filters Stories" loading="lazy" decoding="async"/>
-      </div>
-      <div>
-        <span class="section-label">Why Work With Me</span>
-        <h2 class="section-heading" style="margin-bottom:3rem;">Why <em>Work<br>With Me?</em></h2>
-        <div class="why-points">
-          <div class="why-point">
-            <p>I've been on both sides of the camera. I know how it feels to stand there not knowing what to do — and I know how rare it is to find a photographer who actually guides you through it.</p>
-          </div>
-          <div class="why-point">
-            <p>I use dance and movement to help you forget the camera exists. No awkward posing. No uncomfortable silences. Just energy, flow and images that feel like you.</p>
-          </div>
-          <div class="why-point">
-            <p>I handle the props, the atmosphere, the details. You just bring yourself and good energy.</p>
-          </div>
-          <div class="why-point">
-            <p>Sessions available in Spanish, Romanian, English and Bulgarian — which means wherever you're from, you'll feel at home in my studio.</p>
-          </div>
-        </div>
-      </div>
+  <!-- SLIDE 3 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-3.webp" alt="My Visual Style — No Filters Stories photography aesthetic" loading="lazy" decoding="async"/>
     </div>
+  </div>
+  <div class="text-section reveal">
+    <p>My style lives between movement and stillness — a fraction of a second where personality, emotion and light come together.</p>
+    <p>Dramatic shadows, rich colours, and real moments that tell a story without words.</p>
+    <p><strong>Every session is different because every person is different.</strong> But the result is always the same: <em>images that feel alive.</em></p>
+    <p>Want to see more? <a href="https://pin.it/46IPPJJNO" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Follow my work on Pinterest →</a></p>
+  </div>
+
+  <!-- SLIDE 4 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-4.webp" alt="What I Do — No Filters Stories photography services" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+  <div class="text-section reveal">
+    <p>I create photographs that tell <em>your</em> story — no forced poses, no fake smiles. Just you, at your best.</p>
+    <p>I also take care of everything — props, fabrics, accessories, atmosphere. <strong>You show up. I handle the rest.</strong></p>
+    <p>My goal is simple: every person who steps in front of my lens leaves feeling <strong>powerful, beautiful and seen.</strong></p>
+  </div>
+
+  <!-- SLIDE 5 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-5.webp" alt="How It Works — booking a shoot with No Filters Stories" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+  <div class="text-section reveal">
+    <p>Simple. Relaxed. All about you. We start with a quick chat — to understand what you want, what makes you feel good, and what story we want to tell.</p>
+    <p>During the shoot I guide you every step of the way — movement, angles, expression. No awkward silences. No <em>"just stand there."</em> Just flow.</p>
+    <p>You leave with images that don't look like photos. <strong>They look like you — at your best.</strong></p>
+  </div>
+
+  <!-- SLIDE 6 + TEXT -->
+  <div class="slide-block reveal">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-6.webp" alt="Why Work With Me — Georgiana No Filters Stories" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+  <div class="text-section reveal">
+    <p>I've been on both sides of the camera. I know how it feels to stand there not knowing what to do — and I know how rare it is to find a photographer who actually guides you through it.</p>
+    <p>I use dance and movement to help you forget the camera exists. No awkward posing. No uncomfortable silences. <strong>Just energy, flow and images that feel like you.</strong></p>
+    <p>Sessions available in <strong>Spanish, Romanian, English and Bulgarian</strong> — which means wherever you're from, you'll feel at home in my studio.</p>
   </div>
 
   <!-- LANGUAGES -->
@@ -382,15 +436,23 @@
     </div>
   </div>
 
-  <!-- CTA -->
+  <!-- SLIDE 7 + CTA -->
+  <div class="slide-block reveal" style="padding-top: 6rem;">
+    <div class="slide-frame">
+      <span class="c tl"></span><span class="c tr"></span>
+      <span class="c bl"></span><span class="c br"></span>
+      <img src="about-7.webp" alt="Let's Work Together — book a session with No Filters Stories" loading="lazy" decoding="async"/>
+    </div>
+  </div>
+
   <div class="cta-section reveal">
     <div class="cta-inner">
-      <span class="section-label" style="display:block; text-align:center; margin-bottom:2rem;">Let's Create Together</span>
+      <span style="font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:2rem;">Let's Create Together</span>
       <h2>Let's Work <em>Together</em></h2>
       <p>If you've read this far, I think we're a good match. Whether you're a model, a dancer, an artist, or simply someone who wants to feel powerful in front of a camera — I'm here for it. Let's create something you'll never forget.</p>
       <a href="index.html#contact" class="cta-btn">Book Your Session</a>
       <div class="cta-contact">
-        <a href="/cdn-cgi/l/email-protection#97fff2fbfbf8b9f9f8f1fefbe3f2e5e4e3f8e5fef2e4d7f0faf6fefbb9f4f8fa"><span class="__cf_email__" data-cfemail="5038353c3c3f7e3e3f36393c24352223243f2239352310373d31393c7e333f3d">[email&#160;protected]</span></a>
+        <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a>
         <a href="tel:+359899368857">+359 899 368 857</a>
       </div>
     </div>
@@ -409,7 +471,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     function toggleMenu() {
       document.getElementById('hamburger').classList.toggle('open');
       document.getElementById('mobile-menu').classList.toggle('open');
