@@ -13,7 +13,6 @@
   <meta property="og:type" content="article"/>
   <meta name="robots" content="index, follow"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com;"/>
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
@@ -26,7 +25,7 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    if(localStorage.getItem('cookie-consent') === 'accepted') {
+    if(localStorage.getItem('cookieConsent') === 'accepted') {
       gtag('js', new Date()); gtag('config', 'G-7CK46ZNNYJ');
     }
   </script>
@@ -227,15 +226,15 @@
   </footer>
   <script>
     (function() {
-      const consent = localStorage.getItem('cookie-consent');
+      const consent = localStorage.getItem('cookieConsent');
       if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
       document.getElementById('cookie-btn-accept').addEventListener('click', function() {
-        localStorage.setItem('cookie-consent', 'accepted');
+        localStorage.setItem('cookieConsent', 'accepted');
         document.getElementById('cookie-banner').style.display = 'none';
         gtag('js', new Date()); gtag('config', 'G-7CK46ZNNYJ');
       });
       document.getElementById('cookie-btn-decline').addEventListener('click', function() {
-        localStorage.setItem('cookie-consent', 'declined');
+        localStorage.setItem('cookieConsent', 'declined');
         document.getElementById('cookie-banner').style.display = 'none';
       });
     })();
