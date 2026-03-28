@@ -5,14 +5,14 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7CK46ZNNYJ');
+    if(localStorage.getItem('cookieConsent') === 'accepted') {
+      gtag('js', new Date()); gtag('config', 'G-7CK46ZNNYJ');
+    }
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://www.google-analytics.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://www.google-analytics.com https://formspree.io; frame-src 'none';"/>
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
@@ -412,8 +412,8 @@
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-    <div class="hero-photo-1"><img src="hero.webp" alt="Georgiana artistic dance and editorial photographer No Filters Stories Bulgaria" fetchpriority="high" decoding="async"/></div>
-    <div class="hero-photo-2"><img src="hero-2.webp" alt="No Filters Stories creative portrait photography available worldwide" loading="lazy" decoding="async"/></div>
+    <div class="hero-photo-1"><img src="hero.webp" alt="Georgiana artistic dance and editorial photographer No Filters Stories Bulgaria" fetchpriority="high" decoding="async" width="800" height="1067"/></div>
+    <div class="hero-photo-2"><img src="hero-2.webp" alt="No Filters Stories creative portrait photography available worldwide" loading="lazy" decoding="async" width="400" height="300"/></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Artistic Photography · Available Worldwide</p>
       <h1 class="hero-title">No <em>Filters.</em><br>Just Stories.</h1>
@@ -428,7 +428,7 @@
 
   <section id="about">
     <div class="about-image">
-      <img src="about.webp" alt="Georgiana model producer and creative director of No Filters Stories photography brand Bulgaria" loading="lazy" decoding="async"/>
+      <img src="about.webp" alt="Georgiana model producer and creative director of No Filters Stories photography brand Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/>
     </div>
     <div class="about-text">
       <p class="section-label">About Georgiana</p>
@@ -448,15 +448,15 @@
       <a href="portfolio.html" style="font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;text-decoration:none;">View Portfolio →</a>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item g1"><img src="gallery-1.webp" alt="Artistic editorial portrait photography by No Filters Stories Bulgaria" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g2"><img src="gallery-2.webp" alt="Professional dancer portrait photography international" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g3"><img src="gallery-3.webp" alt="Creative editorial photography performer portrait No Filters Stories" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g4"><img src="gallery-4.webp" alt="Dance movement photography artistic editorial Bulgaria worldwide" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g5"><img src="gallery-5.webp" alt="High end portrait photography performer artistic No Filters Stories" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g6"><img src="gallery-6.webp" alt="Artistic outdoor portrait photography editorial style Bulgaria" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g7"><img src="gallery-7.webp" alt="Dance and movement artistic photography No Filters Stories international" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g8"><img src="gallery-8.webp" alt="Editorial portrait photography high profile clients worldwide" loading="lazy" decoding="async"/></div>
-      <div class="gallery-item g9"><img src="gallery-9.webp" alt="Creative artistic photography Georgiana No Filters Stories Bulgaria" loading="lazy" decoding="async"/></div>
+      <div class="gallery-item g1"><img src="gallery-1.webp" alt="Artistic editorial portrait photography by No Filters Stories Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g2"><img src="gallery-2.webp" alt="Professional dancer portrait photography international" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g3"><img src="gallery-3.webp" alt="Creative editorial photography performer portrait No Filters Stories" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g4"><img src="gallery-4.webp" alt="Dance movement photography artistic editorial Bulgaria worldwide" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g5"><img src="gallery-5.webp" alt="High end portrait photography performer artistic No Filters Stories" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g6"><img src="gallery-6.webp" alt="Artistic outdoor portrait photography editorial style Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g7"><img src="gallery-7.webp" alt="Dance and movement artistic photography No Filters Stories international" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g8"><img src="gallery-8.webp" alt="Editorial portrait photography high profile clients worldwide" loading="lazy" decoding="async" width="800" height="1067"/></div>
+      <div class="gallery-item g9"><img src="gallery-9.webp" alt="Creative artistic photography Georgiana No Filters Stories Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
     </div>
   </section>
 
