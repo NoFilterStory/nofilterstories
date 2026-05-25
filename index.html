@@ -3,10 +3,11 @@
 <head>
   <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    if(localStorage.getItem('cookieConsent') === 'accepted') {
-      gtag('js', new Date()); gtag('config', 'G-7CK46ZNNYJ');
+ gtag('js', new Date());
+gtag('config', 'G-7CK46ZNNYJ', { anonymize_ip: true });
+if(localStorage.getItem('cookieConsent') !== 'accepted') {
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+}
     }
   </script>
   <meta charset="UTF-8" />
