@@ -27,12 +27,11 @@ No Filters Stories works with dancers, performers, artists and high-profile clie
 - Editorial Photography: High-end editorial and fashion photography for publications, brands and creative projects.
 - Events and Occasions: Artistic documentation of special events, performances and celebrations.
 
-## Photography Collections
+## Photography Galleries
 
-- Sun Drenched Stories: Outdoor golden light portrait and dance photography series
-- Cinematic Portal: Atmospheric, cinematic portrait and performer photography series
-- The Movement Guide: Dance and movement photography series capturing the artistry of motion
-- Wild Editorial: Wild outdoor editorial and fashion photography series
+- Black & White: Monochrome portrait, editorial and motorcycle photography (gallery-bw.html)
+- Colour: Dance, editorial and portrait photography in colour, studio and on location (gallery-colour.html)
+- Boudoir (18+): Artistic boudoir photography for adult audiences, behind an age confirmation (gallery-boudoir.html)
 
 ## Key Facts for AI Citation
 

@@ -122,12 +122,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --color-bg: #0d0d0d;
-      --color-surface: #141414;
+      --color-bg: #ffffff;
+      --color-surface: #f6f6f6;
       --color-accent: #c9a96e;
       --color-text: #e8e0d5;
-      --color-muted: #888;
-      --color-border: #2a2a2a;
+      --color-muted: #6f6f6f;
+      --color-border: #e7e7e7;
       --font-display: 'Georgia', 'Times New Roman', serif;
       --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --max-width: 780px;
@@ -228,10 +228,10 @@
       padding-top: 0.5rem;
       border-top: 1px solid var(--color-border);
     }
-    .post-body p { margin-bottom: 1.25rem; color: #ccc; }
+    .post-body p { margin-bottom: 1.25rem; color: #444444; }
     .post-body ul, .post-body ol {
       margin: 0.5rem 0 1.25rem 1.5rem;
-      color: #ccc;
+      color: #444444;
     }
     .post-body li { margin-bottom: 0.4rem; }
 
@@ -243,7 +243,7 @@
       border-radius: 2px;
       margin: 2rem 0;
       font-size: 0.95rem;
-      color: #ccc;
+      color: #444444;
     }
     .callout strong { color: var(--color-accent); }
 
@@ -265,7 +265,7 @@
       color: var(--color-text);
       margin-bottom: 0.4rem;
     }
-    .faq-item p { color: #ccc; margin: 0; font-size: 0.95rem; }
+    .faq-item p { color: #444444; margin: 0; font-size: 0.95rem; }
 
     /* CTA */
     .post-cta {
@@ -287,7 +287,7 @@
     .btn {
       display: inline-block;
       background: var(--color-accent);
-      color: #0d0d0d;
+      color: #ffffff;
       padding: 0.7rem 1.75rem;
       font-size: 0.85rem;
       letter-spacing: 0.08em;
@@ -295,7 +295,7 @@
       border-radius: 1px;
       font-weight: 600;
     }
-    .btn:hover { background: #d4b37e; text-decoration: none; }
+    .btn:hover { background: #444444; text-decoration: none; }
 
     /* Related posts */
     .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
@@ -317,15 +317,20 @@
       .post-hero, .post-body { padding-left: 1.25rem; padding-right: 1.25rem; }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body data-shared-consent>
 
   <nav class="site-nav" aria-label="Main navigation">
     <a href="/" class="logo">No Filters Stories</a>
     <ul>
       <li><a href="/index.html">Home</a></li>
       <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/contact.html">Book</a></li>
+      <li><a href="index.html#contact">Book</a></li>
     </ul>
   </nav>
 
@@ -411,7 +416,7 @@
     <div class="post-cta">
       <h3>Ready to Book Your Session?</h3>
       <p>Every session starts with a conversation. No pressure, no commitment — just a chance to ask anything you're wondering about.</p>
-      <a href="/contact.html" class="btn">Get in Touch</a>
+      <a href="index.html#contact" class="btn">Get in Touch</a>
     </div>
 
     <div class="related">
@@ -421,9 +426,25 @@
 
   </main>
 
-  <footer>
-    <p>&copy; 2026 No Filters Stories &middot; <a href="/privacy.html">Privacy</a></p>
-  </footer>
-
+    <div class="sf" role="contentinfo">
+    <div class="sf-logo">No Filters Stories</div>
+    <div class="sf-links">
+      <a href="gallery-bw.html">Black &amp; White</a>
+      <a href="gallery-colour.html">Colour</a>
+      <a href="gallery-boudoir.html">Boudoir 18+</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="sf-copy">&copy; 2026 No Filters Stories &middot; Velingrad, Bulgaria &middot; Available worldwide</div>
+  </div>
+  <div id="cookie-banner" style="display:none;">
+    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div>
+      <button id="cookie-btn-decline">Decline</button>
+      <button id="cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+  <script src="site.js" defer></script>
 </body>
 </html>

@@ -13,26 +13,22 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
   <link rel="icon" type="image/webp" href="favicon.webp"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"/></noscript>
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){window.dataLayer.push(arguments);}
-  gtag('consent', 'default', { analytics_storage: 'granted' });
+  gtag('consent', 'default', { analytics_storage: 'denied' });
   gtag('js', new Date());
   gtag('config', 'G-7CK46ZNNYJ');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
+    :root { --black: #ffffff; --off-white: #111111; --gold: #111111; --mid: #f6f6f6; --grey: #6f6f6f; }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
-    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.95), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; position: relative; z-index: 1; }
     .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
@@ -41,15 +37,15 @@
     .mobile-menu { display: none; position: fixed; inset: 0; background: var(--black); z-index: 99; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; }
-    .page-header { padding: 12rem 4rem 5rem; background: var(--mid); border-bottom: 1px solid #222; }
+    .page-header { padding: 12rem 4rem 5rem; background: var(--mid); border-bottom: 1px solid #e7e7e7; }
     .page-header .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; line-height: 1; }
+    .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; line-height: 1; }
     .page-header h1 em { font-style: italic; color: var(--gold); }
     .page-header .last-updated { margin-top: 1.5rem; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--grey); }
     .privacy-content { max-width: 800px; margin: 0 auto; padding: 6rem 4rem; }
     .privacy-section { margin-bottom: 4rem; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .privacy-section.visible { opacity: 1; transform: translateY(0); }
-    .privacy-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--off-white); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid #222; }
+    .privacy-section h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 400; color: var(--off-white); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e7e7e7; }
     .privacy-section h2 em { font-style: italic; color: var(--gold); }
     .privacy-section h3 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--off-white); margin: 2rem 0 1rem; }
     .privacy-section p { font-size: 0.8rem; line-height: 2; color: var(--grey); margin-bottom: 1rem; }
@@ -58,29 +54,29 @@
     .privacy-section ul li { font-size: 0.8rem; line-height: 2; color: var(--grey); padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
     .privacy-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
     .privacy-section ul li strong { color: var(--off-white); font-weight: 500; }
-    .contact-box { background: var(--mid); border: 1px solid #222; border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin-top: 2rem; }
+    .contact-box { background: var(--mid); border: 1px solid #e7e7e7; border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin-top: 2rem; }
     .contact-box p { margin: 0; line-height: 2; }
     .contact-box a { color: var(--gold); text-decoration: none; }
     .contact-box a:hover { text-decoration: underline; }
-    .highlight-box { background: var(--mid); border: 1px solid #333; padding: 2rem 2.5rem; margin: 2rem 0; }
+    .highlight-box { background: var(--mid); border: 1px solid #dcdcdc; padding: 2rem 2.5rem; margin: 2rem 0; }
     .highlight-box p { margin: 0; font-size: 0.75rem; line-height: 2; color: var(--grey); }
     .cookie-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.75rem; }
-    .cookie-table th { text-align: left; padding: 0.75rem 1rem; background: var(--mid); color: var(--off-white); font-weight: 500; letter-spacing: 0.1em; border-bottom: 1px solid #333; }
-    .cookie-table td { padding: 0.75rem 1rem; color: var(--grey); border-bottom: 1px solid #1f1f1f; line-height: 1.8; vertical-align: top; }
+    .cookie-table th { text-align: left; padding: 0.75rem 1rem; background: var(--mid); color: var(--off-white); font-weight: 500; letter-spacing: 0.1em; border-bottom: 1px solid #dcdcdc; }
+    .cookie-table td { padding: 0.75rem 1rem; color: var(--grey); border-bottom: 1px solid #e7e7e7; line-height: 1.8; vertical-align: top; }
     .cookie-table tr:last-child td { border-bottom: none; }
-    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e7e7e7; }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
     .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
     .footer-back { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
     .footer-back:hover { text-decoration: underline; }
-    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #111; border-top: 1px solid #2a2a2a; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
+    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; border-top: 1px solid #e7e7e7; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
     .cookie-text { font-size: 0.7rem; line-height: 1.8; color: var(--grey); flex: 1; min-width: 200px; }
     .cookie-text a { color: var(--gold); text-decoration: none; }
     .cookie-buttons { display: flex; gap: 1rem; flex-shrink: 0; }
     .cookie-btn { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.75rem 1.5rem; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; font-weight: 400; transition: all 0.3s; }
     #cookie-btn-accept { background: var(--gold); color: var(--black); }
     #cookie-btn-accept:hover { background: var(--off-white); }
-    #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #333; }
+    #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #dcdcdc; }
     #cookie-btn-decline:hover { color: var(--off-white); border-color: var(--off-white); }
     @media (max-width: 768px) {
       nav { padding: 1.5rem 2rem; }
@@ -94,6 +90,11 @@
       .cookie-table th, .cookie-table td { padding: 0.5rem 0.75rem; }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
@@ -105,20 +106,13 @@
     </div>
   </div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">No Filters Stories</a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="index.html#contact">Book Now</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
+    <header class="sh">
+    <a class="sh-logo" href="index.html">No Filters Stories</a>
+    <div class="sh-links" role="navigation" aria-label="Main"><a href="index.html">Home</a><a href="gallery-bw.html">Black &amp; White</a><a href="gallery-colour.html">Colour</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></div>
+    <button class="sh-burger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span></button>
+  </header>
+  <div class="mm" id="mobile-menu"><a href="index.html" onclick="toggleMenu()">Home</a><a href="gallery-bw.html" onclick="toggleMenu()">Black &amp; White</a><a href="gallery-colour.html" onclick="toggleMenu()">Colour</a><a href="about.html" onclick="toggleMenu()">About</a><a href="services.html" onclick="toggleMenu()">Services</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="index.html#contact" onclick="toggleMenu()">Contact</a></div>
+<div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
@@ -147,7 +141,7 @@
       <div class="contact-box">
         <p><strong>No Filters Stories</strong><br/>
         Velingrad, Pazardzhik Region, Bulgaria<br/>
-        Email: <a href="/cdn-cgi/l/email-protection#0c64696060632262636a656078697e7f78637e65697f4c6b616d6560226f6361"><span class="__cf_email__" data-cfemail="a5cdc0c9c9ca8bcbcac3ccc9d1c0d7d6d1cad7ccc0d6e5c2c8c4ccc98bc6cac8">[email&#160;protected]</span></a><br/>
+        Email: <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
         Phone: +359 899 368 857</p>
       </div>
     </div>
@@ -268,7 +262,7 @@
         <p><strong>Commission for Personal Data Protection (CPDP)</strong><br/>
         2 Prof. Tsvetan Lazarov Blvd., Sofia 1592, Bulgaria<br/>
         Website: <a href="https://www.cpdp.bg" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">www.cpdp.bg</a><br/>
-        Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0abbaaca480a3b0a4b0eea2a7">[email&#160;protected]</a> · Phone: +359 2 915 3518</p>
+        Email: <a href="mailto:kzld@cpdp.bg">kzld@cpdp.bg</a> · Phone: +359 2 915 3518</p>
       </div>
       <p style="margin-top:1rem;">You also have the right to complain to the supervisory authority in your country of residence within the EU.</p>
     </div>
@@ -306,7 +300,7 @@
       <div class="contact-box">
         <p><strong>No Filters Stories</strong><br/>
         Velingrad, Pazardzhik Region, Bulgaria<br/>
-        Email: <a href="/cdn-cgi/l/email-protection#1d75787171723373727b747169786f6e69726f74786e5d7a707c7471337e7270"><span class="__cf_email__" data-cfemail="127a777e7e7d3c7c7d747b7e66776061667d607b776152757f737b7e3c717d7f">[email&#160;protected]</span></a><br/>
+        Email: <a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a><br/>
         Phone: +359 899 368 857<br/><br/>
         We aim to respond to all data rights requests within <strong>30 days</strong>.</p>
       </div>
@@ -314,19 +308,25 @@
 
   </div>
 
-  <footer>
-    <div class="footer-logo">No Filters Stories</div>
-    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
-    <a href="index.html" class="footer-back">← Back to site</a>
-  </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <div class="sf" role="contentinfo">
+    <div class="sf-logo">No Filters Stories</div>
+    <div class="sf-links">
+      <a href="gallery-bw.html">Black &amp; White</a>
+      <a href="gallery-colour.html">Colour</a>
+      <a href="gallery-boudoir.html">Boudoir 18+</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="sf-copy">&copy; 2026 No Filters Stories &middot; Velingrad, Bulgaria &middot; Available worldwide</div>
+  </div>
+<script>
     (function() {
       const consent = localStorage.getItem('cookieConsent');
       if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
       document.getElementById('cookie-btn-accept').addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         document.getElementById('cookie-banner').style.display = 'none';
-        if (typeof gtag === 'function') { gtag('consent', 'update', { analytics_storage: 'granted' }); }
+        if (typeof gtag === 'function') { gtag('consent', 'update', { analytics_storage: 'denied' }); }
       });
       document.getElementById('cookie-btn-decline').addEventListener('click', function() {

@@ -4,7 +4,7 @@
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){window.dataLayer.push(arguments);}
-  gtag('consent', 'default', { analytics_storage: 'granted' });
+  gtag('consent', 'default', { analytics_storage: 'denied' });
   gtag('js', new Date());
   gtag('config', 'G-7CK46ZNNYJ');
 </script>
@@ -15,25 +15,26 @@
   <meta name="description" content="The page you were looking for could not be found. Return to the No Filters Stories homepage to explore our photography portfolio, gallery and services."/>
   <meta http-equiv="refresh" content="5;url=https://www.nofiltersstories.com/"/>
   <link rel="icon" type="image/webp" href="favicon.webp"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"/></noscript>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
+    :root { --black: #ffffff; --off-white: #111111; --gold: #111111; --mid: #f6f6f6; --grey: #6f6f6f; }
     body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--off-white); text-decoration: none; margin-bottom: 4rem; display: block; }
-    .error-number { font-family: 'Cormorant Garamond', serif; font-size: clamp(6rem, 20vw, 14rem); font-weight: 300; color: rgba(201,168,76,0.15); line-height: 1; margin-bottom: 1rem; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 300; margin-bottom: 1.5rem; }
+    .logo { font-family: 'Montserrat', sans-serif; font-size: 1rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--off-white); text-decoration: none; margin-bottom: 4rem; display: block; }
+    .error-number { font-family: 'Montserrat', sans-serif; font-size: clamp(6rem, 20vw, 14rem); font-weight: 300; color: rgba(0,0,0,0.12); line-height: 1; margin-bottom: 1rem; }
+    h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 300; margin-bottom: 1.5rem; }
     h1 em { font-style: italic; color: var(--gold); }
     p { font-size: 0.75rem; color: var(--grey); line-height: 1.9; max-width: 400px; margin-bottom: 3rem; }
     .btn { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; }
     .btn:hover { background: var(--off-white); }
-    .redirect-note { margin-top: 2rem; font-size: 0.6rem; color: #444; letter-spacing: 0.1em; }
+    .redirect-note { margin-top: 2rem; font-size: 0.6rem; color: #cfcfcf; letter-spacing: 0.1em; }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body data-shared-consent>
   <a href="https://www.nofiltersstories.com/" class="logo">No Filters Stories</a>
   <div class="error-number">404</div>
   <h1>This page doesn't <em>exist.</em></h1>
@@ -41,5 +42,13 @@
   <a href="https://www.nofiltersstories.com/" class="btn">Back to Homepage</a>
   <p class="redirect-note">Redirecting automatically in 5 seconds...</p>
   <script>setTimeout(function(){ window.location.href = 'https://www.nofiltersstories.com/'; }, 5000);</script>
+  <div id="cookie-banner" style="display:none;">
+    <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div>
+      <button id="cookie-btn-decline">Decline</button>
+      <button id="cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+  <script src="site.js" defer></script>
 </body>
 </html>

@@ -24,7 +24,7 @@
   <link rel="alternate" hreflang="en" href="https://www.nofiltersstories.com/"/>
   <link rel="alternate" hreflang="x-default" href="https://www.nofiltersstories.com/"/>
   <!-- When the Spanish version exists, add: <link rel="alternate" hreflang="es" href="https://www.nofiltersstories.com/es/"/> -->
-  <link rel="preload" as="image" href="hero.webp" imagesrcset="hero-mobile.webp 480w, hero.webp 600w" imagesizes="(max-width: 900px) 45vw, 32vw" fetchpriority="high"/>
+  <link rel="preload" as="image" href="hero.webp" imagesrcset="hero-mobile.webp 480w, hero.webp 600w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://www.nofiltersstories.com/"/>
   <meta property="og:title" content="No Filters Stories — Artistic Dance & Editorial Photography"/>
@@ -309,386 +309,148 @@
   <link rel="icon" type="image/webp" href="favicon.webp"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"/></noscript>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
-    img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
-    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent); pointer-events: none; }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 1; }
-    .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--gold); }
-
-    body { top: 0 !important; }
-    .social-icon-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
-    .social-icon-link:hover { color: var(--gold); }
-    .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; pointer-events: none; }
-    #hero { height: 100vh; position: relative; display: flex; align-items: flex-end; padding: 6rem 4rem; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0a0a0a 0%, #1a1208 50%, #0a0a0a 100%); }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 60px 60px; }
-    .hero-photo-1 { position: absolute; top: 8%; right: 6%; width: 32vw; height: 70vh; background: var(--mid); overflow: hidden; }
-    .hero-photo-1 img { width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0.85; filter: contrast(1.05); }
-    .hero-photo-1::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.5), transparent); pointer-events: none; }
-    .hero-photo-2 { position: absolute; top: 55%; right: 30%; width: 16vw; height: 22vh; background: var(--mid); overflow: hidden; border: 1px solid rgba(201,168,76,0.2); z-index: 3; }
-    .hero-photo-2 img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
-    .hero-content { position: relative; z-index: 2; max-width: 55%; }
-    .hero-eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
-    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2rem; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; }
-    .hero-title em { font-style: italic; color: var(--gold); }
-    .hero-sub { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--grey); text-transform: uppercase; margin-bottom: 3rem; opacity: 0; animation: fadeUp 1s ease 0.7s forwards; }
-    .hero-cta { display: inline-block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1rem 2.5rem; text-decoration: none; transition: all 0.3s; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
-    .hero-cta:hover { background: var(--off-white); transform: translateY(-2px); }
-    .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); z-index: 2; opacity: 0; animation: fadeIn 2s ease 1.5s forwards; }
-    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease infinite; }
-    #about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
-    .about-image { position: relative; overflow: hidden; background: var(--mid); min-height: 400px; }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease; }
-    .about-image:hover img { transform: scale(1.03); }
-    .about-text { background: var(--mid); padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
-    .section-label { font-size: 0.55rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
-    .about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 2rem; }
-    .about-text h2 em { font-style: italic; color: var(--gold); }
-    .about-text p { font-size: 0.8rem; line-height: 1.9; color: var(--grey); margin-bottom: 1.5rem; }
-    .about-location { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-top: 1rem; }
-    #portfolio { padding: 8rem 4rem; background: var(--black); }
-    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
-    .portfolio-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1; }
-    .portfolio-header h2 em { font-style: italic; color: var(--gold); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 80px; gap: 8px; }
-    .gallery-item { position: relative; overflow: hidden; background: var(--mid); }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.9); }
-    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1); }
-    .g2 img { object-position: center top; }
-    .g9 img { object-position: center top; }
-    .g1 { grid-column: 1/6; grid-row: 1/6; }
-    .g2 { grid-column: 6/9; grid-row: 1/4; }
-    .g3 { grid-column: 9/13; grid-row: 1/5; }
-    .g4 { grid-column: 6/9; grid-row: 4/8; }
-    .g5 { grid-column: 9/13; grid-row: 5/9; }
-    .g6 { grid-column: 1/5; grid-row: 6/10; }
-    .g7 { grid-column: 5/9; grid-row: 8/12; }
-    .g8 { grid-column: 9/13; grid-row: 9/13; }
-    .g9 { grid-column: 1/5; grid-row: 10/13; }
-    #services { padding: 8rem 4rem; background: var(--mid); }
-    .services-header { text-align: center; margin-bottom: 5rem; }
-    .services-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; }
-    .services-header h2 em { font-style: italic; color: var(--gold); }
-    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-    .service-card { padding: 3.5rem 3rem; background: var(--black); border-top: 1px solid rgba(201,168,76,0.2); transition: background 0.3s; }
-    .service-card:hover { background: #111; }
-    .service-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 300; line-height: 1; margin-bottom: 1.5rem; }
-    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; color: var(--off-white); }
-    .service-card p { font-size: 0.75rem; line-height: 1.8; color: var(--grey); }
-    /* TESTIMONIALS */
-    #testimonials { padding: 8rem 4rem; background: var(--black); }
-    .testimonials-header { text-align: center; margin-bottom: 5rem; }
-    .testimonials-header .section-label { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
-    .testimonials-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; }
-    .testimonials-header h2 em { font-style: italic; color: var(--gold); }
-    .testimonials-stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.2em; margin-top: 1rem; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .testimonial-card { background: var(--mid); padding: 3rem 2.5rem; position: relative; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .testimonial-card.visible { opacity: 1; transform: translateY(0); }
-    .testimonial-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--gold); opacity: 0.3; position: absolute; top: 1rem; left: 2rem; line-height: 1; }
-    .testimonial-text { font-size: 0.78rem; line-height: 2; color: var(--off-white); margin-bottom: 1rem; font-style: italic; position: relative; z-index: 1; }
-    .testimonial-translation { font-size: 0.7rem; line-height: 1.8; color: var(--grey); margin-bottom: 1.5rem; border-left: 2px solid var(--gold); padding-left: 1rem; }
-    .testimonial-author { display: flex; flex-direction: column; gap: 0.3rem; }
-    .testimonial-name { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--off-white); }
-    .testimonial-detail { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); }
-    .testimonial-rating { color: var(--gold); font-size: 0.7rem; margin-bottom: 1.5rem; }
-    .testimonials-cta { text-align: center; margin-top: 4rem; }
-    .testimonials-cta a { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 0.3rem; transition: color 0.3s, border-color 0.3s; }
-    .testimonials-cta a:hover { color: var(--gold); border-color: var(--gold); }
-
-    #contact { padding: 8rem 4rem; background: var(--black); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-    .contact-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 2rem; }
-    .contact-left h2 em { font-style: italic; color: var(--gold); }
-    .contact-left > p { font-size: 0.75rem; line-height: 1.9; color: var(--grey); margin-bottom: 2.5rem; }
-    .contact-details { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-detail { display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; color: var(--grey); }
-    .contact-detail-label { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); min-width: 70px; }
-    .contact-social { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-    .form-group label { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
-    .form-group input, .form-group textarea, .form-group select { background: transparent; border: none; border-bottom: 1px solid #333; color: var(--off-white); font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 300; padding: 0.75rem 0; outline: none; transition: border-color 0.3s; width: 100%; }
-    .form-group select option { background: var(--black); }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-bottom-color: var(--gold); }
-    .form-group input:invalid:not(:placeholder-shown), .form-group textarea:invalid:not(:placeholder-shown) { border-bottom-color: #c0392b; }
-    .form-group textarea { resize: none; height: 100px; }
-    .form-submit { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--black); background: var(--gold); border: none; padding: 1rem 2.5rem; cursor: pointer; transition: all 0.3s; align-self: flex-start; margin-top: 0.5rem; }
-    .form-submit:hover { background: var(--off-white); transform: translateY(-2px); }
-    .form-success { display: none; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); padding: 1.5rem; margin-top: 1rem; }
-    .form-success p { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; }
-    .form-error { display: none; background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.3); padding: 1.5rem; margin-top: 1rem; }
-    .form-error p { font-size: 0.75rem; color: #e74c3c; letter-spacing: 0.1em; }
-    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
-    .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
-    .footer-location { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); text-align: right; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.6); } }
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      #hero { padding: 6rem 2rem 4rem; }
-      .hero-content { max-width: 100%; }
-      .hero-photo-1 { width: 45vw; height: 45vh; top: 12%; right: 2%; }
-      .hero-photo-2 { display: none; }
-      #about { grid-template-columns: 1fr; }
-      .about-text { padding: 4rem 2rem; }
-      #portfolio { padding: 5rem 2rem; }
-      .gallery-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 200px; }
-      .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8,.g9 { grid-column: auto; grid-row: auto; }
-      .services-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      #testimonials { padding: 6rem 2rem; }
-      #contact { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 2rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-      .footer-location { text-align: center; }
-      nav { padding: 1.5rem 2rem; }
-      #cookie-banner { padding: 1.5rem 2rem; }
-    }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 200; position: relative; background: none; border: none; padding: 0.5rem; }
-    .hamburger span { display: block; width: 24px; height: 1px; background: var(--off-white); transition: all 0.3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.98); z-index: 150; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; letter-spacing: 0.2em; color: var(--grey); text-decoration: none; transition: color 0.3s; }
-    .mobile-menu a:hover { color: var(--gold); }
-    @media (max-width: 900px) { .hamburger { display: flex; } }
-    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 1px solid rgba(201,168,76,0.3); padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 99999; gap: 2rem; flex-wrap: wrap; }
-    #cookie-banner p { font-size: 0.7rem; color: #888; line-height: 1.7; flex: 1; min-width: 250px; }
-    #cookie-banner a { color: #c9a84c; text-decoration: underline; }
-    #cookie-btn-accept { background: #c9a84c; color: #0a0a0a; border: none; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; margin-left: 1rem; }
-    #cookie-btn-decline { background: transparent; color: #888; border: 1px solid #333; padding: 0.7rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
-  </style>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body data-shared-consent>
+  <header class="sh">
+    <a class="sh-logo" href="index.html">No Filters Stories</a>
+    <div class="sh-links" role="navigation" aria-label="Main"><a href="index.html" class="active">Home</a><a href="gallery-bw.html">Black &amp; White</a><a href="gallery-colour.html">Colour</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="index.html#contact">Contact</a></div>
+    <button class="sh-burger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span></button>
+  </header>
+  <div class="mm" id="mobile-menu"><a href="index.html" onclick="toggleMenu()">Home</a><a href="gallery-bw.html" onclick="toggleMenu()">Black &amp; White</a><a href="gallery-colour.html" onclick="toggleMenu()">Colour</a><a href="about.html" onclick="toggleMenu()">About</a><a href="services.html" onclick="toggleMenu()">Services</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="index.html#contact" onclick="toggleMenu()">Contact</a></div>
 
-  <nav>
-    <a href="#hero" class="nav-logo">No Filters Stories</a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="#contact">Book Now</a></li>
-    </ul>
-
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="about.html" onclick="toggleMenu()">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="blog.html">Blog</a>
-    <a href="#contact" onclick="toggleMenu()">Book Now</a>
-  </div>
-
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-photo-1"><img src="hero.webp" srcset="hero-mobile.webp 480w, hero.webp 600w" sizes="(max-width: 900px) 45vw, 32vw" alt="Georgiana artistic dance and editorial photographer No Filters Stories Bulgaria" fetchpriority="high" decoding="async" width="800" height="1067"/></div>
-    <div class="hero-photo-2"><img src="hero-2.webp" alt="No Filters Stories creative portrait photography available worldwide" loading="lazy" decoding="async" width="400" height="300"/></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Artistic Photography · Available Worldwide</p>
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Artistic Photography &middot; Available Worldwide</span>
       <h1 class="hero-title">Dance &amp; Editorial <em>Photography.</em><br>No Filters, Just Stories.</h1>
-      <p class="hero-sub">Dance · Performer · Editorial · International</p>
-      <a href="#contact" class="hero-cta">Book a Session</a>
+      <p class="hero-sub">Dance &middot; Performer &middot; Editorial &middot; International</p>
+      <div><a href="#contact" class="hero-cta">Book a Session</a></div>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+    <div class="hero-photo"><img src="hero.webp" srcset="hero-mobile.webp 480w, hero.webp 600w" sizes="(max-width: 900px) 100vw, 50vw" alt="Georgiana artistic dance and editorial photographer No Filters Stories Bulgaria" fetchpriority="high" decoding="async" width="600" height="800"/></div>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:3rem">
+        <span class="section-label">Our Work</span>
+        <h2 class="title">Stories <em>told</em> through light.</h2>
+      </div>
+      <div class="tiles">
+        <a class="tile" href="gallery-bw.html"><img src="wild edit-12.webp" alt="Black &amp; White photography by No Filters Stories" loading="lazy" decoding="async"/><div class="tile-label"><strong>Black &amp; White</strong><span>View gallery</span></div></a>
+        <a class="tile" href="gallery-colour.html"><img src="colour-beach-lace.webp" alt="Colour photography by No Filters Stories" loading="lazy" decoding="async"/><div class="tile-label"><strong>Colour</strong><span>View gallery</span></div></a>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="about-image">
-      <img src="about.webp" alt="Georgiana model producer and creative director of No Filters Stories photography brand Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/>
-    </div>
-    <div class="about-text">
-      <p class="section-label">About Georgiana</p>
-      <h2>The face behind<br>every <em>story.</em></h2>
-      <p>Georgiana is the soul of No Filters Stories — model, producer, and creative director. She brings vision, authenticity, and fearless energy to every project, transforming locations into stages and moments into art.</p>
-      <p>Whether draped in silk at ancient ruins or moving freely through open landscapes, Georgiana's presence tells stories that no filter could ever capture. Raw. Real. Unforgettable.</p>
-      <p class="about-location">📍 Based in Velingrad, Bulgaria · Available Worldwide</p>
+  <section class="section soft" id="about">
+    <div class="wrap split">
+      <img src="about.webp" alt="Georgiana model producer and creative director of No Filters Stories photography brand Bulgaria" loading="lazy" decoding="async" width="600" height="800"/>
+      <div class="about-text">
+        <span class="section-label">About Georgiana</span>
+        <h2 class="title">The face behind every <em>story.</em></h2>
+        <p>Georgiana is the soul of No Filters Stories — model, producer, and creative director. She brings vision, authenticity, and fearless energy to every project, transforming locations into stages and moments into art.</p>
+        <p>Whether draped in silk at ancient ruins or moving freely through open landscapes, Georgiana's presence tells stories that no filter could ever capture. Raw. Real. Unforgettable.</p>
+        <p style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase">Based in Velingrad, Bulgaria &middot; Available worldwide</p>
+        <a class="btn ghost" href="about.html" style="margin-top:1rem">More about us</a>
+      </div>
     </div>
   </section>
 
-  <section id="portfolio">
-    <div class="portfolio-header">
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:3.5rem">
+        <span class="section-label">What We Offer</span>
+        <h2 class="title">Every session is an <em>experience.</em></h2>
+      </div>
+      <div class="cols4">
+        <div><div class="num">01</div><h3>Dance Photography</h3><p>Capturing the power, grace, and emotion of movement. We work with dancers to tell their story through every frame — from studio sessions to outdoor locations worldwide.</p></div>
+        <div><div class="num">02</div><h3>Artistic Portraits</h3><p>More than a photograph — an intimate, artistic portrait session that reveals your true self. We create images that feel genuine, powerful, and uniquely you.</p></div>
+        <div><div class="num">03</div><h3>Boudoir Photography</h3><p>Intimate, empowering boudoir sessions for all body types. A private, guided experience that celebrates confidence and self-expression.</p></div>
+        <div><div class="num">04</div><h3>Events &amp; Occasions</h3><p>From intimate gatherings to special celebrations, we document your moments with the same artistic eye we bring to every session we do.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="testimonials">
+    <div class="wrap">
+      <div class="center" style="margin-bottom:3.5rem">
+        <span class="section-label">Client Words</span>
+        <h2 class="title">What clients <em>say</em></h2>
+        <p class="lead">★★★★★ 5.0 · 6 reviews on Google</p>
+      </div>
+      <div class="tgrid">
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"I absolutely adore the photos taken of me! The pictures hold such genuine moments and really brought out my personality. The photographer has a wonderful eye."</p>
+          
+          <div class="who">Petq<small>Google Review · 5 stars</small></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"OMG! I LOVE the pictures and the girls do too. You proved me and my skeptical nature wrong. The pictures are truly amazing!! Thank you for the unforgettable experience and we 100% recommend!!"</p>
+          
+          <div class="who">Darina G<small>Google Review · 5 stars</small></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"It was a pleasure working with them, they made my ideas come through even better than I imagined! They are easy to work with."</p>
+          
+          <div class="who">Georgi Kanliev<small>Google Review · 5 stars</small></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"Como bailarina busco versatilidad y originalidad. He trabajado con muchos fotógrafos y ni me han ayudado a posar, ni me han echo sentir tan cómoda."</p>
+          <p class="tr">As a dancer I look for versatility and originality. I have worked with many photographers and none have helped me pose or made me feel as comfortable.</p>
+          <div class="who">Jamilah BellyUp<small>Google Review · 5 stars · Dancer</small></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"Muy buena experiencia, siempre repito son los mejores."</p>
+          <p class="tr">Very good experience, I always come back — they are the best.</p>
+          <div class="who">Marta Iulia Crisan<small>Google Review · 5 stars</small></div>
+        </div>
+        <div class="tcard">
+          <div class="stars">★★★★★</div>
+          <p>"100% Recomendados, me han hecho a mi esposo y a mi una sesión fotográfica increíble, capturando momentos que valen toda una vida."</p>
+          <p class="tr">100% Recommended — they gave my husband and I an incredible photo session, capturing moments worth a lifetime.</p>
+          <div class="who">Daniela S<small>Google Review · 5 stars</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact">
       <div>
-        <p class="section-label">Our Work</p>
-        <h2>Stories <em>told</em><br>through light.</h2>
-      </div>
-      <a href="portfolio.html" style="font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;text-decoration:none;">View Portfolio →</a>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item g1"><img src="gallery-1.webp" alt="Artistic editorial portrait photography by No Filters Stories Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g2"><img src="gallery-2.webp" alt="Professional dancer portrait photography international" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g3"><img src="gallery-3.webp" alt="Creative editorial photography performer portrait No Filters Stories" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g4"><img src="gallery-4.webp" alt="Dance movement photography artistic editorial Bulgaria worldwide" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g5"><img src="gallery-5.webp" alt="High end portrait photography performer artistic No Filters Stories" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g6"><img src="gallery-6.webp" alt="Artistic outdoor portrait photography editorial style Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g7"><img src="gallery-7.webp" alt="Dance and movement artistic photography No Filters Stories international" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g8"><img src="gallery-8.webp" alt="Editorial portrait photography high profile clients worldwide" loading="lazy" decoding="async" width="800" height="1067"/></div>
-      <div class="gallery-item g9"><img src="gallery-9.webp" alt="Creative artistic photography Georgiana No Filters Stories Bulgaria" loading="lazy" decoding="async" width="800" height="1067"/></div>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="services-header">
-      <p class="section-label">What We Offer</p>
-      <h2>Every session is an <em>experience.</em></h2>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-number">01</div>
-        <h3>Dance Photography</h3>
-        <p>Capturing the power, grace, and emotion of movement. We work with dancers to tell their story through every frame — from studio sessions to outdoor locations worldwide.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">02</div>
-        <h3>Artistic Portraits</h3>
-        <p>More than a photograph — an intimate, artistic portrait session that reveals your true self. We create images that feel genuine, powerful, and uniquely you.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">03</div>
-        <h3>Boudoir Photography</h3>
-        <p>Intimate, empowering boudoir sessions for all body types. A private, guided experience that celebrates confidence and self-expression.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">04</div>
-        <h3>Events &amp; Occasions</h3>
-        <p>From intimate gatherings to special celebrations, we document your moments with the same artistic eye we bring to every session we do.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="testimonials-header">
-      <span class="section-label">Client Words</span>
-      <h2>What clients <em>say</em></h2>
-      <div class="testimonials-stars">★★★★★ 5.0 · 6 reviews on Google</div>
-    </div>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"I absolutely adore the photos taken of me! The pictures hold such genuine moments and really brought out my personality. The photographer has a wonderful eye."</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Petq</span>
-          <span class="testimonial-detail">Google Review · 5 stars</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"OMG! I LOVE the pictures and the girls do too. You proved me and my skeptical nature wrong. The pictures are truly amazing!! Thank you for the unforgettable experience and we 100% recommend!!"</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Darina G</span>
-          <span class="testimonial-detail">Google Review · 5 stars</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"It was a pleasure working with them, they made my ideas come through even better than I imagined! They are easy to work with."</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Georgi Kanliev</span>
-          <span class="testimonial-detail">Google Review · 5 stars</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"Como bailarina busco versatilidad y originalidad. He trabajado con muchos fotógrafos y ni me han ayudado a posar, ni me han echo sentir tan cómoda."</p>
-        <p class="testimonial-translation">As a dancer I look for versatility and originality. I have worked with many photographers and none have helped me pose or made me feel as comfortable.</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Jamilah BellyUp</span>
-          <span class="testimonial-detail">Google Review · 5 stars · Dancer</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"Muy buena experiencia, siempre repito son los mejores."</p>
-        <p class="testimonial-translation">Very good experience, I always come back — they are the best.</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Marta Iulia Crisan</span>
-          <span class="testimonial-detail">Google Review · 5 stars</span>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-rating">★★★★★</div>
-        <p class="testimonial-text">"100% Recomendados, me han hecho a mi esposo y a mi una sesión fotográfica increíble, capturando momentos que valen toda una vida."</p>
-        <p class="testimonial-translation">100% Recommended — they gave my husband and I an incredible photo session, capturing moments worth a lifetime.</p>
-        <div class="testimonial-author">
-          <span class="testimonial-name">Daniela S</span>
-          <span class="testimonial-detail">Google Review · 5 stars</span>
-        </div>
-      </div>
-
-    </div>
-    <div class="testimonials-cta">
-      <a href="https://www.google.com/maps/search/No+Filters+Stories" target="_blank" rel="noopener noreferrer">Read all reviews on Google →</a>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="contact-left">
-      <p class="section-label">Get In Touch</p>
-      <h2>Let's create something <em>beautiful</em> together.</h2>
-      <p>Ready to book a session or have a question? We'd love to hear from you. Reach out and let's start planning your story.</p>
-      <div class="contact-details">
-        <div class="contact-detail">
-          <span class="contact-detail-label">Phone</span>
-          <span>+359 899 368 857</span>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#e68e838a8a89c88889808f8a928394959289948f8395a6818b878f8ac885898b" style="color:var(--off-white);text-decoration:none;"><span class="__cf_email__" data-cfemail="523a373e3e3d7c3c3d343b3e26372021263d203b372112353f333b3e7c313d3f">[email&#160;protected]</span></a>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-label">Based</span>
-          <span>Velingrad, Bulgaria · Available Worldwide</span>
-        </div>
-      </div>
-      <div class="contact-social">
-        <a href="https://www.instagram.com/nofilterstories8" target="_blank" class="social-icon-link">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="title">Let's create something <em>beautiful</em> together.</h2>
+        <p class="lead" style="margin-bottom:2.2rem">Ready to book a session or have a question? We'd love to hear from you. Reach out and let's start planning your story.</p>
+        <div class="contact-detail"><span class="lab">Phone</span>+359 899 368 857</div>
+        <div class="contact-detail"><span class="lab">Email</span><a href="mailto:hello.nofilterstories@gmail.com">hello.nofilterstories@gmail.com</a></div>
+        <div class="contact-detail"><span class="lab">Based</span>Velingrad, Bulgaria &middot; Available worldwide</div>
+        <div class="social">
+        <a href="https://www.instagram.com/nofilterstories8" target="_blank" >
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61579846281691" target="_blank" class="social-icon-link">
+        <a href="https://www.facebook.com/profile.php?id=61579846281691" target="_blank" >
           <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </a>
-        <a href="https://www.tiktok.com/@nofilterstories" target="_blank" class="social-icon-link">
+        <a href="https://www.tiktok.com/@nofilterstories" target="_blank" >
           <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
           TikTok
         </a>
-        <a href="https://pin.it/18yFm2XLx" target="_blank" class="social-icon-link">
+        <a href="https://pin.it/18yFm2XLx" target="_blank" >
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
           Pinterest
         </a>
+        </div>
       </div>
-    </div>
-    <div>
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkovvwwz" method="POST">
+      <div>
+        <form id="contact-form" action="https://formspree.io/f/xkovvwwz" method="POST">
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" placeholder="Name" required/>
@@ -713,93 +475,31 @@
         </div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
-      <div class="form-success" id="form-success">
-        <p>✓ &nbsp; Thank you! Your message has been sent. We'll be in touch soon.</p>
-      </div>
-      <div class="form-error" id="form-error">
-        <p>✗ &nbsp; Something went wrong. Please try again or email us directly.</p>
+        <div class="form-success" id="form-success"><p>✓ &nbsp; Thank you! Your message has been sent. We'll be in touch soon.</p></div>
+        <div class="form-error" id="form-error"><p>✗ &nbsp; Something went wrong. Please try again or email us directly.</p></div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-logo">No Filters Stories</div>
-    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
-    <div class="footer-location">Velingrad, Bulgaria · <a href="privacy.html" style="color:var(--grey);text-decoration:none;">Privacy Policy</a></div>
-  </footer>
-
-  <!-- Cookie Banner -->
-  <div id="cookie-banner">
+  <div class="sf" role="contentinfo">
+    <div class="sf-logo">No Filters Stories</div>
+    <div class="sf-links">
+      <a href="gallery-bw.html">Black &amp; White</a>
+      <a href="gallery-colour.html">Colour</a>
+      <a href="gallery-boudoir.html">Boudoir 18+</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="sf-copy">&copy; 2026 No Filters Stories &middot; Velingrad, Bulgaria &middot; Available worldwide</div>
+  </div>
+  <div id="cookie-banner" style="display:none;">
     <p>We use cookies to analyse site traffic via Google Analytics. By accepting, you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
     <div>
-      <button id="cookie-btn-decline" onclick="declineCookies()">Decline</button>
-      <button id="cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+      <button id="cookie-btn-decline">Decline</button>
+      <button id="cookie-btn-accept">Accept</button>
     </div>
   </div>
-
-  <script type="text/javascript">
-
-    function toggleMenu() {
-      document.getElementById('hamburger').classList.toggle('open');
-      document.getElementById('mobile-menu').classList.toggle('open');
-      document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
-    }
-    function acceptCookies() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-    }
-    function declineCookies() {
-      localStorage.setItem('cookieConsent', 'declined');
-      document.getElementById('cookie-banner').style.display = 'none';
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', { analytics_storage: 'denied' });
-      }
-    }
-    if (localStorage.getItem('cookieConsent')) {
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    // Contact form AJAX submission
-    var form = document.getElementById('contact-form');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('.form-submit');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-        } else {
-          btn.textContent = 'Send Message';
-          btn.disabled = false;
-          document.getElementById('form-error').style.display = 'block';
-        }
-      }).catch(function() {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        document.getElementById('form-error').style.display = 'block';
-      });
-    });
-
-    document.addEventListener('contextmenu', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
-    document.addEventListener('dragstart', function(e) { if(e.target.tagName === 'IMG') e.preventDefault(); });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .about-text, .gallery-item, .testimonial-card').forEach(el => {
-      el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-      observer.observe(el);
-    });
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>

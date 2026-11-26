@@ -17,27 +17,23 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
   <link rel="icon" type="image/webp" href="favicon.webp"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"/></noscript>
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){window.dataLayer.push(arguments);}
-  gtag('consent', 'default', { analytics_storage: 'granted' });
+  gtag('consent', 'default', { analytics_storage: 'denied' });
   gtag('js', new Date());
   gtag('config', 'G-7CK46ZNNYJ');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7CK46ZNNYJ"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --black: #0a0a0a; --off-white: #f0ece4; --gold: #c9a84c; --mid: #1a1a1a; --grey: #888; }
+    :root { --black: #ffffff; --off-white: #111111; --gold: #111111; --mid: #f6f6f6; --grey: #6f6f6f; }
     html { scroll-behavior: smooth; }
     body { background: var(--black); color: var(--off-white); font-family: 'Montserrat', sans-serif; font-weight: 300; }
     img { -webkit-user-select: none; user-select: none; -webkit-user-drag: none; pointer-events: none; max-width: 100%; display: block; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; }
-    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent); pointer-events: none; }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
+    nav::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.95), transparent); pointer-events: none; }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--off-white); text-decoration: none; position: relative; z-index: 1; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; position: relative; z-index: 1; }
     .nav-links a { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
@@ -53,14 +49,14 @@
     .post-breadcrumb { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); margin-bottom: 2rem; }
     .post-breadcrumb a { color: var(--grey); text-decoration: none; }
     .post-breadcrumb a:hover { color: var(--gold); }
-    .post-breadcrumb span { color: #444; margin: 0 0.75rem; }
+    .post-breadcrumb span { color: #cfcfcf; margin: 0 0.75rem; }
     .post-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap; }
     .post-category { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); }
     .series-nav { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .series-pill { font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 0.9rem; border: 1px solid #333; color: var(--grey); text-decoration: none; transition: all 0.3s; }
+    .series-pill { font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 0.9rem; border: 1px solid #dcdcdc; color: var(--grey); text-decoration: none; transition: all 0.3s; }
     .series-pill.active { border-color: var(--gold); color: var(--gold); }
     .series-pill:hover { border-color: var(--off-white); color: var(--off-white); }
-    .post-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 5rem); font-weight: 300; line-height: 1.05; margin-bottom: 2rem; }
+    .post-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2.8rem, 4.5vw, 5rem); font-weight: 300; line-height: 1.05; margin-bottom: 2rem; }
     .post-hero h1 em { font-style: italic; color: var(--gold); }
     .post-hero-intro { font-size: 0.8rem; line-height: 2; color: var(--grey); }
     .post-hero-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; }
@@ -69,30 +65,30 @@
     .post-body p { font-size: 0.85rem; line-height: 2.4; color: var(--grey); margin-bottom: 2.2rem; }
     .post-body p strong { color: var(--off-white); font-weight: 500; }
     .post-body p em { font-style: italic; color: var(--off-white); }
-    .post-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--off-white); margin: 4rem 0 1.5rem; }
+    .post-body h2 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 400; color: var(--off-white); margin: 4rem 0 1.5rem; }
     .post-body h2 em { color: var(--gold); font-style: italic; }
     blockquote { border-left: 2px solid var(--gold); padding: 1.5rem 2.5rem; margin: 4rem 0; background: var(--mid); }
-    blockquote p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--off-white); margin: 0 !important; line-height: 1.7; }
+    blockquote p { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-style: italic; color: var(--off-white); margin: 0 !important; line-height: 1.7; }
     .post-cta { background: var(--mid); border-left: 3px solid var(--gold); padding: 2.5rem 3rem; margin: 5rem 0; }
     .post-cta p { font-size: 0.8rem; line-height: 2; color: var(--grey); margin-bottom: 1.5rem !important; }
     .post-cta a { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 0.3rem; }
-    .post-nav { display: flex; justify-content: space-between; align-items: center; padding: 3rem 0; border-top: 1px solid #1f1f1f; margin-top: 3rem; flex-wrap: wrap; gap: 1rem; }
+    .post-nav { display: flex; justify-content: space-between; align-items: center; padding: 3rem 0; border-top: 1px solid #e7e7e7; margin-top: 3rem; flex-wrap: wrap; gap: 1rem; }
     .post-nav a { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .post-nav a:hover { color: var(--gold); }
-    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f1f1f; flex-wrap: wrap; gap: 1rem; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    footer { background: var(--mid); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e7e7e7; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; }
     .footer-copy { font-size: 0.6rem; letter-spacing: 0.15em; color: var(--grey); }
     .footer-links { display: flex; gap: 2rem; }
     .footer-links a { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
-    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #111; border-top: 1px solid #2a2a2a; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
+    #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; border-top: 1px solid #e7e7e7; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; z-index: 999; flex-wrap: wrap; }
     .cookie-text { font-size: 0.7rem; line-height: 1.8; color: var(--grey); flex: 1; min-width: 200px; }
     .cookie-text a { color: var(--gold); text-decoration: none; }
     .cookie-buttons { display: flex; gap: 1rem; }
     .cookie-btn { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.75rem 1.5rem; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; transition: all 0.3s; }
     #cookie-btn-accept { background: var(--gold); color: var(--black); }
     #cookie-btn-accept:hover { background: var(--off-white); }
-    #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #333; }
+    #cookie-btn-decline { background: transparent; color: var(--grey); border: 1px solid #dcdcdc; }
     #cookie-btn-decline:hover { color: var(--off-white); border-color: var(--off-white); }
     @media (max-width: 900px) {
       nav { padding: 1.5rem 2rem; }
@@ -105,6 +101,11 @@
       #cookie-banner { padding: 1.5rem 2rem; flex-direction: column; align-items: flex-start; }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div id="cookie-banner" style="display:none;">
@@ -114,19 +115,13 @@
       <button class="cookie-btn" id="cookie-btn-accept">Accept</button>
     </div>
   </div>
-  <nav>
-    <a href="index.html" class="nav-logo">No Filters Stories</a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#contact">Book Now</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
+    <header class="sh">
+    <a class="sh-logo" href="index.html">No Filters Stories</a>
+    <div class="sh-links" role="navigation" aria-label="Main"><a href="index.html">Home</a><a href="gallery-bw.html">Black &amp; White</a><a href="gallery-colour.html">Colour</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html" class="active">Blog</a><a href="index.html#contact">Contact</a></div>
+    <button class="sh-burger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span></button>
+  </header>
+  <div class="mm" id="mobile-menu"><a href="index.html" onclick="toggleMenu()">Home</a><a href="gallery-bw.html" onclick="toggleMenu()">Black &amp; White</a><a href="gallery-colour.html" onclick="toggleMenu()">Colour</a><a href="about.html" onclick="toggleMenu()">About</a><a href="services.html" onclick="toggleMenu()">Services</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="index.html#contact" onclick="toggleMenu()">Contact</a></div>
+<div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
@@ -192,25 +187,26 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-logo">No Filters Stories</div>
-    <div class="footer-copy">© 2026 No Filters Stories · All rights reserved</div>
-    <div class="footer-links">
-      <a href="blog.html">Blog</a>
-    <a href="services.html">Services</a>
+    <div class="sf" role="contentinfo">
+    <div class="sf-logo">No Filters Stories</div>
+    <div class="sf-links">
+      <a href="gallery-bw.html">Black &amp; White</a>
+      <a href="gallery-colour.html">Colour</a>
+      <a href="gallery-boudoir.html">Boudoir 18+</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="index.html#contact">Book Now</a>
+      <a href="services.html">Services</a>
       <a href="privacy.html">Privacy</a>
     </div>
-  </footer>
-  <script>
+    <div class="sf-copy">&copy; 2026 No Filters Stories &middot; Velingrad, Bulgaria &middot; Available worldwide</div>
+  </div>
+<script>
     (function() {
       const consent = localStorage.getItem('cookieConsent');
       if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
       document.getElementById('cookie-btn-accept').addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         document.getElementById('cookie-banner').style.display = 'none';
-        if (typeof gtag === 'function') { gtag('consent', 'update', { analytics_storage: 'granted' }); }
+        if (typeof gtag === 'function') { gtag('consent', 'update', { analytics_storage: 'denied' }); }
       });
       document.getElementById('cookie-btn-decline').addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'declined');
@@ -219,5 +215,6 @@
     })();
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
